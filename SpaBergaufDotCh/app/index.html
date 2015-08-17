@@ -13,7 +13,7 @@
     <!-- endinject -->
   </head>
   <body>
-
+<!--
     <div class='navbar navbar-inverse' role='navigation' data-bs-navbar data-bs-collapse data-start-collapsed='true'>
       <div class='container'>
         <div class='navbar-header'>
@@ -23,7 +23,7 @@
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
           </button>
-          <a class='navbar-brand' href='#/'>SpaBergaufDotCh</a>
+          <a class='navbar-brand' href='#/'>bergauf.ch</a>
         </div>
         <div class='navbar-collapse collapse' data-bs-collapse-target>
           <ul class='nav navbar-nav'>
@@ -34,11 +34,100 @@
         </div>
       </div>
     </div>
+-->
+
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse" role="navigation" data-bs-navbar data-bs-collapse data-start-collapsed='true'>
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-bs-collapse-toggle>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#/">
+            <span class="hidden-xs">bergauf.ch</span>
+            <span class="visible-xs glyphicon glyphicon glyphicon-home" aria-hidden="true"></span>
+            <span class="sr-only">Home</span></a>
+
+          <!--form class="navbar-form pull-left" role="search">
+            <div class="form-group twitter-typeahead">
+              <input type="text" class="form-control typeahead" placeholder="Tourensuche">
+            </div>
+          </form-->
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" data-bs-collapse-target>
+          <ul class="nav navbar-nav navbar-right">
+            <li data-match-route='/skitouren'><a href="#/skitouren">Skitouren</a></li>
+            <li data-match-route='/bergtouren'><a href="#/bergtouren">Bergtouren</a></li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Reisen <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li data-match-route='/exped/reise-nach-cabo-verde'><a href="#/exped/reise-nach-cabo-verde">Kapverden (Cabo Verde)</a></li>
+                <li data-match-route='/exped/reise-nach-kuba'><a href="#/exped/reise-nach-kuba">Kuba</a></li>
+                <li class="divider"></li>
+                <li role="presentation" class="dropdown-header">Ski-Reisen</li>
+                <li data-match-route='/exped/skitouren-im-iran'><a href="#/exped/skitouren-im-iran">Damavand (Iran)</a></li>
+                <li class="divider"></li>
+                <li role="presentation" class="dropdown-header">MTB-Reisen</li>
+                <li data-match-route='/exped/mtb-reise-ladakh'><a href="#/exped/mtb-reise-ladakh">Ladakh</a></li>
+                <li class="divider"></li>
+                <li data-match-route='/exped'><a href="#/exped">Alle Reisen</a></li>
+
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Extras <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li data-match-route='/impressum'><a href="#/impressum">Impressum</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+
+      </div><!-- /.container -->
+    </div>
 
     <div class='container'>
       <div data-ng-view>
 
       </div>
+
+
+      <!-- Footer  ToDo: Add font-awesome to this project, e.g. https://github.com/picardy/angular-fontawesome-->
+      <footer>
+
+        <div class="row">
+
+          <div class="col-lg-12">
+            <hr>
+            <ul class="list-unstyled list-inline list-social-icons">
+              <li class="hidden-xs">Follow</li>
+              <li><a title="Facebook / bergauf" href="http://www.facebook.com/bergauf" target="_blank"><i class="fa fa-facebook-square fa-2x"></i>Facebook</a></li>
+              <li><a title="Twitter / bergauf" href="http://twitter.com/bergauf" target="_blank"><i class="fa fa-twitter-square fa-2x"></i>Twitter</a></li>
+              <li><a title="Google+ / bergauf" href="https://plus.google.com/104173602900161889722?rel=author"  target="_blank"><i class="fa fa-google-plus-square fa-2x"></i>Google+</a></li>
+              <li><a title="bergauf.ch News Feed" href="http://feeds.feedburner.com/bergauf" rel="alternate" type="application/rss+xml" target="_blank"><i class="fa fa-rss-square fa-2x"></i>News per Feed</a></li>
+            </ul>
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <hr>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Copyright © 2015 bergauf.ch&nbsp;&nbsp;&nbsp;&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/images/icons/by-nc-80x15.png" width="80" height="15" /></a></p>
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </footer>
     </div>
 
     <!-- bower:js -->
