@@ -73,10 +73,10 @@ module home {
           }]
         }
       })
-      .when('/exped/:categoryId', {
-        templateUrl: 'home/views/index.tpl.html',
-        controller: 'IndexCtrl',
-        controllerAs: 'home',
+      .when('/exped/:galleryLabel', {
+        templateUrl: 'home/views/gallery-detail.tpl.html',
+        controller: 'GalleryDetailCtrl',
+        controllerAs: 'galleryDetail',
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();

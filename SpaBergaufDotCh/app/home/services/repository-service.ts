@@ -22,17 +22,31 @@ module Home.Services {
     //ToDo: either one master json or for each type a data set, e.g. loadSkitourenGalleryData
     loadGalleryData() : ng.IPromise<Home.Data.IGallery> {
       var deferred = this.$q.defer();
-      var jsonfile = '/data/bergtouren.json';
-      /*
-      if (this.$location.path().indexOf("skitouren") > 0 ) {
-        jsonfile = '/data/skitouren.json';
-      }
-       this.$log.debug('data file: ' + jsonfile);
-      */
+      var jsonfile = '/data/master.json';
 
       if (!this.galleryData) {
         this.$http.get(jsonfile).then((data) => {
-          this.galleryData = <Array<Home.Data.IGallery>> data.data;
+
+          var gdata = [];
+          // loop through root (bergtouren, skitouren, etc.
+          angular.forEach(data.data, function(data) {
+            //console.log(data.title);
+
+            // loop through galleries
+            angular.forEach(data.galleries, function(galleries) {
+              //console.log(galleries);
+              gdata.push(galleries);
+
+              // loop through additional travel galleries
+              angular.forEach(galleries.galleries, function(galleries) {
+                //console.log(galleries);
+                gdata.push(galleries);
+              });
+
+            });
+          });
+          this.galleryData = <Array<Home.Data.IGallery>> gdata;
+          //this.galleryData = <Array<Home.Data.IGallery>> data.data;
           deferred.resolve(this.galleryData);
         });
       } else {
@@ -43,7 +57,7 @@ module Home.Services {
 
 
     getGalleries():Array<Home.Data.IGallery> {
-      //this.$log.debug('getGalleries() called');
+
       return this.galleryData;
     }
 
