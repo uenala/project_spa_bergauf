@@ -35,12 +35,16 @@ module Home.Services {
             // loop through galleries
             angular.forEach(data.galleries, function(galleries) {
               //console.log(galleries);
-              gdata.push(galleries);
+              if (galleries.images) {
+                gdata.push(galleries);
+              }
 
               // loop through additional travel galleries
               angular.forEach(galleries.galleries, function(galleries) {
                 //console.log(galleries);
-                gdata.push(galleries);
+                if (galleries.images) {
+                  gdata.push(galleries);
+                }
               });
 
             });

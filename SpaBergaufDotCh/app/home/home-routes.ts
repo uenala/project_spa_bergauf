@@ -10,7 +10,7 @@ module home {
     $routeProvider
       .when('/home', {
         templateUrl: 'home/views/home.tpl.html',
-        controller: 'HomeCtrl',
+        controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
@@ -67,6 +67,66 @@ module home {
         templateUrl: 'home/views/index.tpl.html',
         controller: 'IndexCtrl',
         controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
+      })
+      .when('/exped/skitouren-im-iran', {
+        templateUrl: 'home/views/index.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
+      })
+      .when('/exped/skitouren-im-iran/:galleryLabel', {
+        templateUrl: 'home/views/gallery-detail.tpl.html',
+        controller: 'GalleryDetailCtrl',
+        controllerAs: 'galleryDetail',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
+      })
+      .when('/exped/reise-nach-kuba', {
+        templateUrl: 'home/views/index.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
+      })
+      .when('/exped/reise-nach-kuba/:galleryLabel', {
+        templateUrl: 'home/views/gallery-detail.tpl.html',
+        controller: 'GalleryDetailCtrl',
+        controllerAs: 'galleryDetail',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
+      })
+      .when('/exped/mtb-reise-ladakh', {
+        templateUrl: 'home/views/index.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
+      })
+      .when('/exped/mtb-reise-ladakh/:galleryLabel', {
+        templateUrl: 'home/views/gallery-detail.tpl.html',
+        controller: 'GalleryDetailCtrl',
+        controllerAs: 'galleryDetail',
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
