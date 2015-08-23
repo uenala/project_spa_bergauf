@@ -11,6 +11,7 @@ module spaBergaufDotCh {
     .module('spaBergaufDotCh', [
       'ngRoute',
       'mgcrea.ngStrap',
+      'dcbImgFallback',
       'home'
     ]);
 }

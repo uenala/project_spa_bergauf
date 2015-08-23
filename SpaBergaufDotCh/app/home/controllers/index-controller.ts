@@ -6,7 +6,7 @@ module Home.IndexCtrl {
 
     galleries : Array<Home.Data.IGallery>;
     query: string;
-    title: string;
+    themeId: string;
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
@@ -18,8 +18,9 @@ module Home.IndexCtrl {
     constructor(private $log : ng.ILogService, private $location : ng.ILocationService, private $http : ng.IHttpService, private repository : Home.Services.IRepository) {
 
       this.galleries = this.repository.getGalleries();
-      this.title = this.$location.path().slice(1,this.$location.path().length);
+      this.themeId = this.$location.path().slice(1,this.$location.path().length);
       //this.$log.debug('title: ' + this.title);
+
 
     }
   }
