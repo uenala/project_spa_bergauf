@@ -6,7 +6,8 @@ module Home.IndexCtrl {
 
     galleries : Array<Home.Data.IGallery>;
     query: string;
-    themeId: string;
+    themeFilter: string;
+    title: string;
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
@@ -18,9 +19,28 @@ module Home.IndexCtrl {
     constructor(private $log : ng.ILogService, private $location : ng.ILocationService, private $http : ng.IHttpService, private repository : Home.Services.IRepository) {
 
       this.galleries = this.repository.getGalleries();
-      this.themeId = this.$location.path().slice(1,this.$location.path().length);
-      //this.$log.debug('title: ' + this.title);
+      //this.themeFilter = this.$location.path().slice(1,this.$location.path().length);
+      this.themeFilter = this.$location.path();
 
+      switch (this.themeFilter) {
+        case "/bergtouren":
+          this.title = "Bergtouren";
+          break;
+        case "/skitouren":
+          this.title = "Skitouren";
+          break;
+        case "/exped/reise-nach-kuba":
+          this.title = "Kuba 2013 - Unterwegs in Kuba";
+          break;
+        case "/exped/skitouren-im-iran":
+          this.title = "Iran 2015 - Skitouren im Iran";
+          break;
+        case "/exped/mtb-reise-ladakh":
+          this.title = "Himalaya - Ladakh das kleine Tibet (bike adventure tours Bikereise)";
+          break;
+        default:
+          this.title = "Reisen";
+      }
 
     }
   }
