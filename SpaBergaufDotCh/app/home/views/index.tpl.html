@@ -18,7 +18,7 @@
         <div class="header">
           <a title="{{home.title}}: {{gallery.name}}" href="#{{gallery.path}}">{{gallery.name}}</a>
           <p class="small">{{gallery.country}} - {{gallery.region}}</p>
-          <p class="small">{{gallery.date}}</p>
+          <p class="small"><span ng-if="gallery.dateStart">{{gallery.dateStart}} - </span>{{gallery.date}}</p>
         </div>
         <a href="#{{gallery.path}}"><img class="img-responsive" ng-src="/images{{gallery.icon}}" alt="" height="120" width="160" /></a>
       </div>
