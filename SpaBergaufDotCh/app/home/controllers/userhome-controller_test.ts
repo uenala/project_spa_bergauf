@@ -12,8 +12,8 @@ describe('UserhomeCtrl', function () {
     ctrl = $controller('UserhomeCtrl');
   }));
 
-  it('should have ctrlName as UserhomeCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('UserhomeCtrl');
-  });
+  // it('should have ctrlName as UserhomeCtrl', function () {
+  //   expect(ctrl.ctrlName).toEqual('UserhomeCtrl');
+  // });
 
 });

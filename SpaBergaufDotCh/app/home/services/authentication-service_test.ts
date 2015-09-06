@@ -15,5 +15,4 @@ describe('Authentication', function () {
   it('should equal Authentication', function () {
     expect(service.get()).toEqual('Authentication');
   });
-
 });

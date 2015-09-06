@@ -31,14 +31,14 @@ module Home.LoginCtrl {
 
       vm.login = login;
 
-      function initController() {
+
         // reset login status
         Authentication.ClearCredentials();
-      }
+
 
       function login() {
         vm.dataLoading = true;
-        Authentication.Login(vm.username, vm.password, function (response) {
+        Authentication.Login(vm.username, vm.password, function (response) { // function (response) is a callback-function
           if (response.success) {
             Authentication.SetCredentials(vm.username, vm.password);
             $location.path('/userhome');
