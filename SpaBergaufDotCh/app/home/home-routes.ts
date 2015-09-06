@@ -143,6 +143,21 @@ module home {
           }]
         }
       })
+      .when('/userhome', {
+        templateUrl: 'home/views/userhome.tpl.html',
+        controller: 'UserhomeCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/login', {
+        templateUrl: 'home/views/login.tpl.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/register', {
+        templateUrl: 'home/views/register.tpl.html',
+        controller: 'RegisterCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/home'
       });

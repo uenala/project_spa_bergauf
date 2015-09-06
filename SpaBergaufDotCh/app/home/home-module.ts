@@ -9,6 +9,8 @@ module home {
   */
   angular
     .module('home', [
-      'ngRoute'
+      'ngRoute',
+      'ngStorage',
+      'ngCookies'
     ]);
 }
