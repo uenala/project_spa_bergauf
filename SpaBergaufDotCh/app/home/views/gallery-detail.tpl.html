@@ -1,20 +1,16 @@
-<!--
-<h4>ctrlName: {{galleryDetail.ctrlName}}</h4>
-<p>Type: {{galleryDetail.gallery.type}}</p>
-<p>Description: {{galleryDetail.gallery.description}}</p>
-<p>Path: {{galleryDetail.gallery.path}}</p>
-<p>Icon: {{galleryDetail.gallery.icon}}</p>
-<p>IconAlt: {{galleryDetail.gallery.iconAlt}}</p>
-<p>Date: {{galleryDetail.gallery.date}}</p>
-<p>Country: {{galleryDetail.gallery.country}}</p>
-<p>Region: {{galleryDetail.gallery.region}}</p>
-<p>galleryImages: {{galleryDetail.galleryImages}}</p>
--->
+<!-- Update Metatags -->
+<view-title>{{galleryDetail.metaTitle}}</view-title>
+<meta view-head name="description" content="{{galleryDetail.metaDescription}}" />
+<meta view-head name="keywords" content="{{galleryDetail.metaKeywords}}" />
+<meta view-head property="og:title" content="{{galleryDetail.metaTitle}}" />
+<meta view-head property="og:description" content="{{galleryDetail.metaDescription}}" />
+<meta view-head property="og:url" content="http://www.bergauf.ch/#{{galleryDetail.gallery.path}}" />
+<link view-head rel="canonical" href="http://www.bergauf.ch/#{{galleryDetail.gallery.path}}" />
 
 <!-- Page Heading/Breadcrumbs -->
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">{{galleryDetail.gallery.name}} <small>{{galleryDetail.gallery.height}}
+    <h1 class="page-header">{{galleryDetail.gallery.name}} <small>{{galleryDetail.gallery.altitudeLabel}}
       ({{galleryDetail.gallery.country}} - {{galleryDetail.gallery.region}})</small>
     </h1>
   </div>

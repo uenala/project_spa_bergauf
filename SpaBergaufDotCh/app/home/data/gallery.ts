@@ -5,7 +5,6 @@ module Home.Data {
   export interface IGallery {
     "name": string;
     "height": string;
-    "type": string;
     "description": string;
     "path": string;
     "icon": string;
@@ -21,7 +20,7 @@ module Home.Data {
     "map-x": number;
     "map-y": number;
     "map-zoom": number;
-    "types": Array<string>;
+    "type": Array<string>;
     "dateStart": string;
     "sortDate": number;
     "images": Array<Home.Data.IImage>;
