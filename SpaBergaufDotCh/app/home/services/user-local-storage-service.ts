@@ -112,6 +112,7 @@ module Home.Services {
       var users: string = localStorage.getItem("users");
       if (users === null || typeof users === "undefined" || users === "undefined"){
         this.$log.debug("LocalStorageService::read('users') not found, returned null");
+        localStorage.setItem("users", "[]");
         return null;
       }
       else {

@@ -13,6 +13,8 @@ module User {
       return 'User';
     }
 
+    // TODO add node.js/express on server side. Can this be automated with yeoman?
+
     GetAll() {
       return this.$http.get('/api/users').then(this.handleSuccess, this.handleError('Error getting all users'));
     }

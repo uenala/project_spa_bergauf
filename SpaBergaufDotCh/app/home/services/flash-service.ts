@@ -13,7 +13,7 @@ module Flash {
     public static $inject = ['$rootScope'
     ];
 
-    constructor(private $rootScope:any) {  // rootScope könnte ich auch als any - type definieren, gruusig wie js ..
+    constructor(private $rootScope: any) {
 
       $rootScope.$on('$locationChangeStart', function () {
         var flash = $rootScope.flash;
