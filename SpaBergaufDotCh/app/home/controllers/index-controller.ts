@@ -17,35 +17,46 @@ module Home.IndexCtrl {
     public static $inject = ['$log', '$location', '$http', 'Repository'];
 
     // dependencies are injected via AngularJS $injector
-    constructor(private $log : ng.ILogService, private $location : ng.ILocationService, private $http : ng.IHttpService, private repository : Home.Services.IRepository) {
+    constructor(private $log : ng.ILogService, private $location : ng.ILocationService, private $http : ng.IHttpService,
+                private repository : Home.Services.IRepository) {
 
       var vm = this;
       vm.ctrlName = 'IndexCtrl';
 
       vm.galleries = this.repository.getGalleries();
       vm.themeFilter = this.$location.path();
-
-      switch (vm.themeFilter) {
-        case '/bergtouren':
-          vm.title = 'Bergtouren';
-          break;
-        case '/skitouren':
-          vm.title = 'Skitouren';
-          break;
-        case '/exped/reise-nach-kuba':
-          vm.title = 'Kuba 2013 - Unterwegs in Kuba';
-          break;
-        case '/exped/skitouren-im-iran':
-          vm.title = "Iran 2015 - Skitouren im Iran";
-          break;
-        case '/exped/mtb-reise-ladakh':
-          vm.title = 'Himalaya - Ladakh das kleine Tibet (bike adventure tours Bikereise)';
-          break;
-        default:
-          vm.title = 'Reisen';
-      }
+      vm.title = this.getTitle(vm.themeFilter);
 
     }
+
+    getTitle(path:string):string {
+      var title;
+      switch (path) {
+        case '/bergtouren':
+          title = 'Bergtouren';
+          break;
+        case '/skitouren':
+          title = 'Skitouren';
+          break;
+        case '/exped/reise-nach-kuba':
+          title = 'Kuba 2013 - Unterwegs in Kuba';
+          break;
+        case '/exped/skitouren-im-iran':
+          title = "Iran 2015 - Skitouren im Iran";
+          break;
+        case '/exped/mtb-reise-ladakh':
+          title = 'Himalaya - Ladakh das kleine Tibet (bike adventure tours Bikereise)';
+          break;
+        case '/exped':
+          title = 'Reisen';
+          break;
+        default:
+          title = 'Übersicht';
+      }
+
+      return title;
+    }
+
   }
 
 
