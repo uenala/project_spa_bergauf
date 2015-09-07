@@ -50,7 +50,6 @@ module Home.Services {
             });
           });
           this.galleryData = <Array<Home.Data.IGallery>> gdata;
-          //this.galleryData = <Array<Home.Data.IGallery>> data.data;
           deferred.resolve(this.galleryData);
         });
       } else {
@@ -67,12 +66,9 @@ module Home.Services {
 
 
     getGallery():Home.Data.IGallery {
-      this.$log.debug('getGallery called: '+this.$location.path());
       var i=0;
       for (i; i<this.galleryData.length; i++) {
-        this.$log.debug('getGallery path: '+this.galleryData[i].path);
         if (this.galleryData[i].path === this.$location.path()) {
-          this.$log.debug('getGallery path i: '+i);
           break;
         }
       }
@@ -86,10 +82,7 @@ module Home.Services {
       var i=0;
       for (i; i<this.galleryData.length; i++) {
         if (this.galleryData[i].path === this.$location.path()) {
-          //this.$log.debug('img 1: ' + this.galleryData[i].path);
           this.imagesData = this.galleryData[i].images;
-          //this.$log.debug('imagesData length: ' + this.imagesData.length);
-          //this.$log.debug('imagesData test: ' + this.imagesData[1].filename);
           break;
         }
       }

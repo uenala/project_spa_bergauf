@@ -27,16 +27,17 @@ module Home.GalleryDetailCtrl {
     constructor($routeParams : IGalleryRouteParams, private $http : ng.IHttpService, private repository : Home.Services.IRepository, private $rootScope :ng.IRootScopeService, private $window : ng.IWindowService) {
       var vm = this;
       vm.ctrlName = 'GalleryDetailCtrl';
-      this.gallery = repository.getGallery();
-      this.galleryImages = repository.getGalleryImages();
-      this.galleryLabel = $routeParams.galleryLabel;
+
+      vm.gallery = repository.getGallery();
+      vm.galleryImages = repository.getGalleryImages();
+      vm.galleryLabel = $routeParams.galleryLabel;
 
       // ToDo: Validate values, e.g not every gallery has an altitudeLabel
-      this.metaTitle = this.gallery.type[0] + " " + this.gallery.name + " " + this.gallery.altitudeLabel +
-        " (" + this.gallery.country + " " + this.gallery.region +  ")";
+      vm.metaTitle = vm.gallery.type[0] + " " + vm.gallery.name + ' ' + vm.gallery.altitudeLabel +
+        ' (' + vm.gallery.country + " " + vm.gallery.region +  ')';
       // ToDo: create gallery type dependent descriptions and keywords
-      this.metaDescription = "Fotoalbum " + this.gallery.name;
-      this.metaKeywords = this.gallery.name + ", " + this.gallery.region + ", " + this.gallery.type[0] + ", Photoblog";
+      vm.metaDescription = 'Fotoalbum ' + vm.gallery.name;
+      vm.metaKeywords = vm.gallery.name + ", " + vm.gallery.region + ", " + vm.gallery.type[0] + ', Photoblog';
 
     }
   }

@@ -12,8 +12,8 @@ describe('IndexCtrl', function () {
     ctrl = $controller('IndexCtrl');
   }));
 
-//  it('should have ctrlName as IndexCtrl', function () {
-//    expect(ctrl.ctrlName).toEqual('IndexCtrl');
-//  });
+  it('should have ctrlName as IndexCtrl', function () {
+    expect(ctrl.ctrlName).toEqual('IndexCtrl');
+  });
 
 });

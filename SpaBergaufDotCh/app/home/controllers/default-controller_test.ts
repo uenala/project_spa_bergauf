@@ -12,8 +12,8 @@ describe('DefaultCtrl', function () {
     ctrl = $controller('DefaultCtrl');
   }));
 
-//  it('should have ctrlName as HomeCtrl', function () {
-//    expect(ctrl.ctrlName).toEqual('HomeCtrl');
-//  });
+  it('should have ctrlName as DefaultCtrl', function () {
+    expect(ctrl.ctrlName).toEqual('DefaultCtrl');
+  });
 
 });

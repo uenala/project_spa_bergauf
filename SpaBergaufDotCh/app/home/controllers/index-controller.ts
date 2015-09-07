@@ -4,6 +4,7 @@ module Home.IndexCtrl {
 
   class IndexCtrl {
 
+    ctrlName: string;
     galleries : Array<Home.Data.IGallery>;
     query: string;
     themeFilter: string;
@@ -18,28 +19,30 @@ module Home.IndexCtrl {
     // dependencies are injected via AngularJS $injector
     constructor(private $log : ng.ILogService, private $location : ng.ILocationService, private $http : ng.IHttpService, private repository : Home.Services.IRepository) {
 
-      this.galleries = this.repository.getGalleries();
-      //this.themeFilter = this.$location.path().slice(1,this.$location.path().length);
-      this.themeFilter = this.$location.path();
+      var vm = this;
+      vm.ctrlName = 'IndexCtrl';
 
-      switch (this.themeFilter) {
-        case "/bergtouren":
-          this.title = "Bergtouren";
+      vm.galleries = this.repository.getGalleries();
+      vm.themeFilter = this.$location.path();
+
+      switch (vm.themeFilter) {
+        case '/bergtouren':
+          vm.title = 'Bergtouren';
           break;
-        case "/skitouren":
-          this.title = "Skitouren";
+        case '/skitouren':
+          vm.title = 'Skitouren';
           break;
-        case "/exped/reise-nach-kuba":
-          this.title = "Kuba 2013 - Unterwegs in Kuba";
+        case '/exped/reise-nach-kuba':
+          vm.title = 'Kuba 2013 - Unterwegs in Kuba';
           break;
-        case "/exped/skitouren-im-iran":
-          this.title = "Iran 2015 - Skitouren im Iran";
+        case '/exped/skitouren-im-iran':
+          vm.title = "Iran 2015 - Skitouren im Iran";
           break;
-        case "/exped/mtb-reise-ladakh":
-          this.title = "Himalaya - Ladakh das kleine Tibet (bike adventure tours Bikereise)";
+        case '/exped/mtb-reise-ladakh':
+          vm.title = 'Himalaya - Ladakh das kleine Tibet (bike adventure tours Bikereise)';
           break;
         default:
-          this.title = "Reisen";
+          vm.title = 'Reisen';
       }
 
     }
