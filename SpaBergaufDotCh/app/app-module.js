@@ -9,6 +9,7 @@ var spaBergaufDotCh;
      */
     angular.module('spaBergaufDotCh', [
         'ngRoute',
+        'viewhead',
         'mgcrea.ngStrap',
         'dcbImgFallback',
         'home'
