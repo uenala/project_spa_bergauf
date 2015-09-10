@@ -13,7 +13,8 @@
           "zoom": 7
         },
         "type": [
-          "Hochtour"
+          "Hochtour",
+          "Bergtour"
         ],
         "description": "Aig. de Tour und Petite Fourche",
         "path": "/bergtouren/aiguille-du-tour-und-petite-fourche",
@@ -11465,7 +11466,7 @@
         "date": "16.03.2015",
         "dateStart": "04.03.2015",
         "sortDate": 20150316,
-        "country": "Iran",
+        "country": "IR",
         "region": "",
         "galleries": {
           "chelgerd_sirdan_zardkouh": {
@@ -11483,7 +11484,7 @@
             "date": "05.03.2015",
             "dateStart": "04.03.2015",
             "sortDate": 20150305,
-            "country": "Iran",
+            "country": "IR",
             "region": "Zardkouh",
             "images": [
               {
@@ -11850,7 +11851,7 @@
             "date": "06.03.2015",
             "dateStart": "",
             "sortDate": 20150306,
-            "country": "Iran",
+            "country": "IR",
             "region": "Zardkouh",
             "images": [
               {
@@ -12153,7 +12154,7 @@
             "date": "07.03.2015",
             "dateStart": "",
             "sortDate": 20150307,
-            "country": "Iran",
+            "country": "IR",
             "region": "Zardkouh",
             "images": [
               {
@@ -12424,7 +12425,7 @@
             "date": "08.03.2015",
             "dateStart": "",
             "sortDate": 20150308,
-            "country": "Iran",
+            "country": "IR",
             "region": "Isfahan",
             "images": [
               {
@@ -12863,7 +12864,7 @@
             "date": "11.03.2015",
             "dateStart": "09.03.2015",
             "sortDate": 20150311,
-            "country": "Iran",
+            "country": "IR",
             "region": "Alborz",
             "images": [
               {
@@ -13230,7 +13231,7 @@
             "date": "13.03.2015",
             "dateStart": "12.03.2015",
             "sortDate": 20150313,
-            "country": "Iran",
+            "country": "IR",
             "region": "Alborz",
             "images": [
               {
@@ -13589,7 +13590,7 @@
             "date": "14.03.2015",
             "dateStart": "",
             "sortDate": 20150314,
-            "country": "Iran",
+            "country": "IR",
             "region": "Alborz",
             "images": [
               {
@@ -14028,7 +14029,7 @@
             "date": "16.03.2015",
             "dateStart": "15.03.2015",
             "sortDate": 20150316,
-            "country": "Iran",
+            "country": "IR",
             "region": "Teheran",
             "images": [
               {
@@ -14533,7 +14534,7 @@
         "date": "21.12.2013",
         "dateStart": "24.11.2013",
         "sortDate": 20131221,
-        "country": "Kuba",
+        "country": "CU",
         "region": "",
         "galleries": {
           "havanna": {
@@ -14549,7 +14550,7 @@
             "date": "26.11.2013",
             "dateStart": "24.11.2013",
             "sortDate": 131126,
-            "country": "Kuba",
+            "country": "CU",
             "region": "Havanna",
             "images": [
               {
@@ -15020,7 +15021,7 @@
             "date": "28.11.2013",
             "dateStart": "27.11.2013",
             "sortDate": 131128,
-            "country": "Kuba",
+            "country": "CU",
             "region": "Las Terrazas",
             "images": [
               {
@@ -15259,7 +15260,7 @@
             "date": "01.12.2013",
             "dateStart": "29.11.2013",
             "sortDate": 131201,
-            "country": "Kuba",
+            "country": "CU",
             "region": "Vinales Tal",
             "images": [
               {
@@ -15682,7 +15683,7 @@
             "date": "04.12.2013",
             "dateStart": "02.12.2013",
             "sortDate": 131204,
-            "country": "Kuba",
+            "country": "CU",
             "region": "Cayo Levisa",
             "images": [
               {
@@ -15985,7 +15986,7 @@
             "date": "08.12.2013",
             "dateStart": "05.12.2013",
             "sortDate": 131208,
-            "country": "Kuba",
+            "country": "CU",
             "region": "Trinidad",
             "images": [
               {
@@ -16328,7 +16329,7 @@
             "date": "09.12.2013",
             "dateStart": "",
             "sortDate": 131209,
-            "country": "Kuba",
+            "country": "CU",
             "region": "",
             "images": [
               {
@@ -16615,7 +16616,7 @@
             "date": "13.12.2013",
             "dateStart": "10.12.2013",
             "sortDate": 131213,
-            "country": "Kuba",
+            "country": "CU",
             "region": "Santiago de Cuba",
             "images": [
               {
@@ -17222,7 +17223,7 @@
             "date": "21.12.2013",
             "dateStart": "14.12.2013",
             "sortDate": 131221,
-            "country": "Kuba",
+            "country": "CU",
             "region": "Baracoa",
             "images": [
               {
@@ -17695,7 +17696,7 @@
         "date": "06.08.2011",
         "dateStart": "25.07.2011",
         "sortDate": 20110806,
-        "country": "Indien",
+        "country": "IN",
         "region": "Ladakh",
         "galleries": {
           "delhi": {
@@ -17711,7 +17712,7 @@
             "date": "25.07.2011",
             "dateStart": "22.07.2011",
             "sortDate": 110725,
-            "country": "Indien",
+            "country": "IN",
             "region": "Delhi",
             "images": [
               {
@@ -18010,7 +18011,7 @@
             "date": "26.07.2011",
             "dateStart": "",
             "sortDate": 110726,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -18333,7 +18334,7 @@
             "date": "27.07.2011",
             "dateStart": "",
             "sortDate": 110727,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -18560,7 +18561,7 @@
             "date": "28.07.2011",
             "dateStart": "",
             "sortDate": 110728,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -18875,7 +18876,7 @@
             "date": "29.07.2011",
             "dateStart": "",
             "sortDate": 110729,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -19246,7 +19247,7 @@
             "date": "30.07.2011",
             "dateStart": "",
             "sortDate": 110730,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -19729,7 +19730,7 @@
             "date": "31.07.2011",
             "dateStart": "",
             "sortDate": 110731,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -19996,7 +19997,7 @@
             "date": "01.08.2011",
             "dateStart": "",
             "sortDate": 110801,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -20327,7 +20328,7 @@
             "date": "02.08.2011",
             "dateStart": "",
             "sortDate": 110802,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -20618,7 +20619,7 @@
             "date": "03.08.2011",
             "dateStart": "",
             "sortDate": 110803,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -20837,7 +20838,7 @@
             "date": "06.08.2011",
             "dateStart": "04.08.2011",
             "sortDate": 110806,
-            "country": "Indien",
+            "country": "IN",
             "region": "Ladakh",
             "images": [
               {
@@ -21178,7 +21179,7 @@
         "date": "2001",
         "dateStart": "",
         "sortDate": 0,
-        "country": "Brasilien",
+        "country": "BR",
         "region": "Amazonas",
         "images": [
           {
@@ -21428,7 +21429,7 @@
         "date": "2001",
         "dateStart": "",
         "sortDate": 0,
-        "country": "Brasilien",
+        "country": "BR",
         "region": "Amazonas",
         "images": [
           {
