@@ -53,7 +53,7 @@ module Home.Services {
       this.GetByUsername(user.username)
         .then(function (duplicateUser) {
           if (duplicateUser !== null) {
-            deferred.resolve({ success: false, message: 'Username "' + user.username + '" is already taken' });
+            deferred.resolve({ success: false, message: 'Diese Email "' + user.username + '" ist bereits registriert' });
           } else {
             var users =  JSON.parse(localStorage.getItem("users"));
 
@@ -88,6 +88,7 @@ module Home.Services {
 
     return deferred.promise;
   }
+
 
     Delete(id) {
     var deferred = this.$q.defer();

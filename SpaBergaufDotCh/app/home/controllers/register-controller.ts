@@ -32,7 +32,7 @@ module Home.RegisterCtrl {
         UserLocalStorage.Create(vm.user)
           .then(function (response) {
             if (response.success) {
-              Flash.Success('Registration successful', true);
+              Flash.Success('Registration erfolgreich, bitte einloggen', true);
               $location.path('/login');
             } else {
               Flash.Error(response.message, false);
