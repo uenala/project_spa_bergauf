@@ -9,12 +9,28 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-    <h2><input class="form-control" type="text" placeholder="Tourensuche" ng-model="home.query" /></h2>
+
+    <div class="form-group">
+      <label for="fulltext" class="sr-only">Volltext:</label>
+      <input class="form-control input-lg" type="text" placeholder="Volltextsuche" ng-model="home.query" id="fulltext" />
+    </div>
+    <div class="form-group">
+      <label for="country">Nach Land filtern:</label>
+      <select class="form-control input-sm" id="country" ng-model="home.country">
+        <option value="" selected="selected">Alle</option>
+        <option ng-repeat="country in home.countries" value="{{country.code}}">
+          {{country.name}}
+        </option>
+      </select>
+      <!-- ToDo: dropdown for type of gallery filter -->
+      <!-- ToDo: add slider for alltidue range filter -->
+
+    </div>
   </div>
 </div>
 
 <div class="row">
-  <div ng-repeat="gallery in home.galleries | orderBy:'-sortDate' | filter:home.query" class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
+  <div ng-repeat="gallery in home.galleries | orderBy:'-sortDate' | filter:home.query | filter:home.country:true" class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
     <div class="thumbnail">
       <div class="index center-block">
         <div class="header">
