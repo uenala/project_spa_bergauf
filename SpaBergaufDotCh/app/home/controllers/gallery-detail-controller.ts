@@ -33,11 +33,11 @@ module Home.GalleryDetailCtrl {
       vm.galleryLabel = $routeParams.galleryLabel;
 
       // ToDo: Validate values, e.g not every gallery has an altitudeLabel
-      vm.metaTitle = vm.gallery.type[0] + " " + vm.gallery.name + ' ' + vm.gallery.altitudeLabel +
+      vm.metaTitle = vm.gallery.activity[0] + " " + vm.gallery.name + ' ' + vm.gallery.altitudeLabel +
         ' (' + vm.gallery.country + " " + vm.gallery.region +  ')';
       // ToDo: create gallery type dependent descriptions and keywords
       vm.metaDescription = 'Fotoalbum ' + vm.gallery.name;
-      vm.metaKeywords = vm.gallery.name + ", " + vm.gallery.region + ", " + vm.gallery.type[0] + ', Photoblog';
+      vm.metaKeywords = vm.gallery.name + ", " + vm.gallery.region + ", " + vm.gallery.activity[0] + ', Photoblog';
 
     }
   }

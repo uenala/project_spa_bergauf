@@ -21,7 +21,7 @@
 </div>
 
 <div class="row">
-  <div ng-repeat="gallery in home.galleries | orderBy:'-sortDate' | filter:home.query | filter:home.themeFilter" class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
+  <div ng-repeat="gallery in home.galleries | orderBy:'-sortDate' | filter:home.query | activity:home.themeFilter" class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
     <div class="thumbnail">
       <div class="index center-block">
         <div class="header">

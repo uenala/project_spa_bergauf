@@ -12,9 +12,10 @@
           "y": 568689.75,
           "zoom": 7
         },
-        "type": [
-          "Hochtour",
-          "Bergtour"
+        "activity": [
+          "Bergtour",
+          "Hochtour"
+
         ],
         "description": "Aig. de Tour und Petite Fourche",
         "path": "/bergtouren/aiguille-du-tour-und-petite-fourche",
@@ -358,7 +359,8 @@
           "y": 711784,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Clariden",
@@ -543,7 +545,8 @@
           "y": 666430.75,
           "zoom": 7
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Hohsandhorn - Ofenhorn",
@@ -720,7 +723,8 @@
           "y": 607211,
           "zoom": 7
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Mont Brulé",
@@ -945,7 +949,8 @@
           "y": 704998.25,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Gross Düssi",
@@ -1258,7 +1263,8 @@
           "y": 658600,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Hangendgletscherhorn",
@@ -1475,7 +1481,8 @@
           "y": 676994.5,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Dammastock",
@@ -1724,8 +1731,11 @@
           "y": 733992.51229,
           "zoom": 6
         },
-        "type": [
-          "Bike & Hike"
+        "activity": [
+          "Bergtour",
+          "Bike & Hike",
+          "MTB",
+          "Alpinwanderung"
         ],
         "description": "Gulderstock",
         "path": "/bergtouren/gulderstock",
@@ -1909,8 +1919,11 @@
           "y": 711009.90083,
           "zoom": 6
         },
-        "type": [
-          "Bike & Hike"
+        "activity": [
+          "Bergtour",
+          "Bike & Hike",
+          "MTB",
+          "Wanderung"
         ],
         "description": "Silberen",
         "path": "/bergtouren/silberen",
@@ -2134,8 +2147,11 @@
           "y": 708196.48327,
           "zoom": 7
         },
-        "type": [
-          "Bike & Hike"
+        "activity": [
+          "Bergtour",
+          "Bike & Hike",
+          "MTB",
+          "Wanderung"
         ],
         "description": "Lauiberg",
         "path": "/bergtouren/lauiberg",
@@ -2303,7 +2319,8 @@
           "y": 682920.9701,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Gross Spannort",
@@ -2656,7 +2673,8 @@
           "y": 746904.51278,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Alpinwanderung"
         ],
         "description": "Piz Beverin (Überschreitung)",
@@ -2788,8 +2806,11 @@
         "navTitle": "",
         "altitude": 2560,
         "altitudeLabel": "2560 m",
-        "type": [
-          "Bike & Hike"
+        "activity": [
+          "Bergtour",
+          "Bike & Hike",
+          "MTB",
+          "Wanderung"
         ],
         "description": "Falknis",
         "path": "/velotouren/falknis",
@@ -2811,7 +2832,8 @@
           "y": 800955.75383,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Piz Linard",
@@ -2956,7 +2978,8 @@
           "y": 617050.52148,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Matterhorn (Hörnligrat)",
@@ -3213,7 +3236,8 @@
           "y": 771001.32432,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Klettertour"
         ],
         "description": "Tinzenhorn",
@@ -3398,7 +3422,8 @@
           "y": 686351.9908,
           "zoom": 6
         },
-        "type": [
+        "activity": [
+          "Bergtour",
           "Hochtour"
         ],
         "description": "Krönten Überschreitung",
@@ -3596,7 +3621,7 @@
           "y": 681865.56,
           "zoom": 7
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Meiental - Bärenhorn",
@@ -3829,7 +3854,7 @@
           "y": 635266.44,
           "zoom": 6
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Blatten - Anenhütte - Mittaghorn",
@@ -4134,7 +4159,7 @@
           "y": 751341.50,
           "zoom": 7
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Oberschan / Reggella - Gauschla",
@@ -4423,7 +4448,7 @@
           "y": 679401.84,
           "zoom": 7
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Chli Griessenhorn im Meiental",
@@ -4651,7 +4676,7 @@
         "navTitle": "",
         "altitude": 891,
         "altitudeLabel": " 891 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Rosengarten Durchquerung / Punta de Larsech",
@@ -4972,7 +4997,7 @@
         "navTitle": "",
         "altitude": 3343,
         "altitudeLabel": "3343 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Lago di Fedàia - Marmolada Punta Penia",
@@ -5261,7 +5286,7 @@
         "navTitle": "",
         "altitude": 3152,
         "altitudeLabel": "3152 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Piz Boè - Val de Mesdi",
@@ -5598,7 +5623,7 @@
         "navTitle": "",
         "altitude": 2913,
         "altitudeLabel": "2913 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Campill - Östliche Puezspitze",
@@ -5959,7 +5984,7 @@
         "navTitle": "",
         "altitude": 3055,
         "altitudeLabel": "3055 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Faneshütte - Lavarella Überschreitung",
@@ -6288,7 +6313,7 @@
         "navTitle": "",
         "altitude": 2968,
         "altitudeLabel": "2968 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Rifugio Pederü - Neunerspitze",
@@ -6558,7 +6583,7 @@
           "y": 653605.50,
           "zoom": 7
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Rosenlauibivak - Wetterhorn",
@@ -6898,7 +6923,7 @@
         "navTitle": "",
         "altitude": 3122,
         "altitudeLabel": "3122 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Stubaier Alpen: Innere Sommerwand",
@@ -7087,7 +7112,7 @@
         "navTitle": "",
         "altitude": 3288,
         "altitudeLabel": "3288 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Stubaier Alpen: Wildes Hinterbergl",
@@ -7316,7 +7341,7 @@
         "navTitle": "",
         "altitude": 3275,
         "altitudeLabel": "P.3275",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Stubaier Alpen: Schrankarkogel",
@@ -7569,7 +7594,7 @@
         "navTitle": "",
         "altitude": 3189,
         "altitudeLabel": "3189 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Stubaier Alpen: Kuhscheibe",
@@ -7838,7 +7863,7 @@
         "navTitle": "",
         "altitude": 3505,
         "altitudeLabel": "3505 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Stubaier Alpen: Zuckerhütl",
@@ -8048,7 +8073,7 @@
           "y": 627520.8542,
           "zoom": 6
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Pollux",
@@ -8537,7 +8562,7 @@
           "y": 633209.02647,
           "zoom": 6
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Monte Rosa, ca. 4100 m",
@@ -8882,7 +8907,7 @@
           "y": 616645.52145,
           "zoom": 6
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Äbihorn",
@@ -9078,7 +9103,7 @@
         "navTitle": "",
         "altitude": 3803,
         "altitudeLabel": "3803 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Cima di Jazzi",
@@ -9287,7 +9312,7 @@
           "y": 728715.25,
           "zoom": 6
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Schilt und Alpbiglenstöckli",
@@ -9488,7 +9513,7 @@
           "y": 766000.73939,
           "zoom": 6
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Stallerberg",
@@ -9666,7 +9691,7 @@
           "y": 766605.10607,
           "zoom": 6
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Piz Turba und Piz dal Sasc",
@@ -10156,7 +10181,7 @@
           "y": 775062.44711,
           "zoom": 6
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Piz Surgonda",
@@ -10537,7 +10562,7 @@
         "navTitle": "",
         "altitude": 3205,
         "altitudeLabel": "3205 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Piz d'Agnel",
@@ -10878,7 +10903,7 @@
         "navTitle": "",
         "altitude": 2992,
         "altitudeLabel": "2992 m",
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Piz Scalotta",
@@ -11080,7 +11105,7 @@
           "y": 750607.02265,
           "zoom": 6
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Gauschla",
@@ -11233,7 +11258,7 @@
           "y": 726031.92899,
           "zoom": 7
         },
-        "type": [
+        "activity": [
           "Skitour"
         ],
         "description": "Skitour Chli Chärpf",
@@ -11456,7 +11481,7 @@
       "skitouren-im-iran": {
         "name": "Ski-Reise Iran",
         "navTitle": "",
-        "type": [
+        "activity": [
           "Ski-Reise"
         ],
         "description": "Ski-Reise in den Iran (Iran, 2015)",
@@ -11474,8 +11499,9 @@
             "navTitle": "",
             "altitude": 3800,
             "altitudeLabel": "ca. 3800 m",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "Skitour"
             ],
             "description": "",
             "path": "/exped/skitouren-im-iran/chelgerd_sirdan_zardkouh",
@@ -11841,8 +11867,9 @@
           "chelgerd_noname_zardkouh": {
             "name": "Skitour Noname",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "Skitour"
             ],
             "description": "",
             "path": "/exped/skitouren-im-iran/chelgerd_noname_zardkouh",
@@ -12144,8 +12171,9 @@
           "chelgerd_koohrang_zardkouh": {
             "name": "Skitour Koohrang",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "Skitour"
             ],
             "description": "",
             "path": "/exped/skitouren-im-iran/chelgerd_koohrang_zardkouh",
@@ -12415,7 +12443,7 @@
           "sightseeing_in_isfahan": {
             "name": "Sightseeing in Isfahan",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -12854,8 +12882,9 @@
           "damavand_basecamp": {
             "name": "Transfer zum Basecamp",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "Skitour"
             ],
             "description": "",
             "path": "/exped/skitouren-im-iran/damavand_basecamp",
@@ -13221,8 +13250,9 @@
           "damavand_highcamp": {
             "name": "Skitour Highcamp",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "Skitour"
             ],
             "description": "",
             "path": "/exped/skitouren-im-iran/damavand_highcamp",
@@ -13580,8 +13610,9 @@
           "damavand_summit_day": {
             "name": "Skitour Damavand",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "Skitour"
             ],
             "description": "",
             "path": "/exped/skitouren-im-iran/damavand_summit_day",
@@ -14019,7 +14050,7 @@
           "sightseeing_in_teheran": {
             "name": "Sightseeing in Teheran",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -14524,7 +14555,7 @@
       "reise-nach-kuba": {
         "name": "Reise nach Kuba",
         "navTitle": "",
-        "type": [
+        "activity": [
           "Reise"
         ],
         "description": "Reise nach Kuba (Cuba, 2013)",
@@ -14540,7 +14571,7 @@
           "havanna": {
             "name": "Havanna",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -15011,7 +15042,7 @@
           "lasterrazas": {
             "name": "Las Terrazas",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -15250,7 +15281,7 @@
           "vinales": {
             "name": "Vinales Tal",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -15673,7 +15704,7 @@
           "cayolevisa": {
             "name": "Cayo Levisa / Matanzas",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -15976,7 +16007,7 @@
           "trinidadincuba": {
             "name": "Trinidad",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -16319,7 +16350,7 @@
           "unterwegsincuba": {
             "name": "Unterwegs ostwärts",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -16606,7 +16637,7 @@
           "santiagodecuba": {
             "name": "Santiago de Cuba",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -17213,7 +17244,7 @@
           "baracoa": {
             "name": "Baracoa und Umgebung",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -17686,7 +17717,7 @@
       "mtb-reise-ladakh": {
         "name": "Ladakh",
         "navTitle": "",
-        "type": [
+        "activity": [
           "MTB-Reise"
         ],
         "description": "Ladakh MTB Reise (Nordindien, 2011)",
@@ -17702,7 +17733,7 @@
           "delhi": {
             "name": "Delhi - Manali",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "Delhi Sightseeing - Manali",
@@ -18001,8 +18032,9 @@
           "rohtangla": {
             "name": "Rohtang La Pass",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "MTB"
             ],
             "description": "",
             "path": "/exped/mtb-reise-ladakh/rohtangla",
@@ -18324,8 +18356,9 @@
           "keylong": {
             "name": "Keylong",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "MTB"
             ],
             "description": "",
             "path": "/exped/mtb-reise-ladakh/keylong",
@@ -18551,8 +18584,9 @@
           "darcha": {
             "name": "Darcha, Patseo",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "MTB"
             ],
             "description": "",
             "path": "/exped/mtb-reise-ladakh/darcha",
@@ -18866,8 +18900,9 @@
           "baralachala": {
             "name": "Baralacha La Pass",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "MTB"
             ],
             "description": "",
             "path": "/exped/mtb-reise-ladakh/baralachala",
@@ -19237,8 +19272,9 @@
           "lachulungla": {
             "name": "Lachulung La Pass",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "MTB"
             ],
             "description": "",
             "path": "/exped/mtb-reise-ladakh/lachulungla",
@@ -19720,8 +19756,9 @@
           "tsokar": {
             "name": "Tso Kar Salzsee",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "MTB"
             ],
             "description": "",
             "path": "/exped/mtb-reise-ladakh/tsokar",
@@ -19987,8 +20024,9 @@
           "taglangla": {
             "name": "Taglang La Pass",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "MTB"
             ],
             "description": "",
             "path": "/exped/mtb-reise-ladakh/taglangla",
@@ -20318,8 +20356,9 @@
           "gya": {
             "name": "Gya Schlucht, Leh",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "MTB"
             ],
             "description": "",
             "path": "/exped/mtb-reise-ladakh/gya",
@@ -20609,8 +20648,9 @@
           "kardungla": {
             "name": "Kardung La Pass",
             "navTitle": "",
-            "type": [
-              "Reise"
+            "activity": [
+              "Reise",
+              "MTB"
             ],
             "description": "",
             "path": "/exped/mtb-reise-ladakh/kardungla",
@@ -20828,7 +20868,7 @@
           "leh": {
             "name": "Leh & Agra",
             "navTitle": "",
-            "type": [
+            "activity": [
               "Reise"
             ],
             "description": "",
@@ -21169,7 +21209,7 @@
       "amazon_fishing": {
         "name": "Amazonas - Jatapu",
         "navTitle": "",
-        "type": [
+        "activity": [
           "Trekking"
         ],
         "description": "",
@@ -21419,7 +21459,7 @@
       "amazon_futbol": {
         "name": "Amazonas - Futbol",
         "navTitle": "",
-        "type": [
+        "activity": [
           "Trekking"
         ],
         "description": "",

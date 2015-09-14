@@ -14,11 +14,14 @@ module Home.IndexCtrl {
     // It provides $injector with information about dependencies to be injected into constructor
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
-    public static $inject = ['$log', '$location', '$http', 'Repository', 'theCountries'];
+    public static $inject = ['$log', '$location', '$http', 'Repository', 'theCountries' , 'theActivities'];
 
     // dependencies are injected via AngularJS $injector
-    constructor(private $log : ng.ILogService, private $location : ng.ILocationService, private $http : ng.IHttpService,
-                private repository : Home.Services.IRepository, private countries: theCountries.countries) {
+    constructor(private $log : ng.ILogService, private $location : ng.ILocationService,
+                private $http : ng.IHttpService,
+                private repository : Home.Services.IRepository,
+                private countries: theCountries.countries,
+                private activities: theActivities.activities) {
 
       var vm = this;
       vm.ctrlName = 'IndexCtrl';

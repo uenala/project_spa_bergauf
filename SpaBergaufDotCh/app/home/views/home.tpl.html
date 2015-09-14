@@ -15,6 +15,15 @@
       <input class="form-control input-lg" type="text" placeholder="Volltextsuche" ng-model="home.query" id="fulltext" />
     </div>
     <div class="form-group">
+      <label for="activity">Nach Aktivität filtern:</label>
+      <select class="form-control input-sm" id="activity" ng-model="home.activity">
+        <option value="" selected="selected">Alle</option>
+        <option ng-repeat="activity in home.activities" value="{{activity.name}}">
+          {{activity.name}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
       <label for="country">Nach Land filtern:</label>
       <select class="form-control input-sm" id="country" ng-model="home.country">
         <option value="" selected="selected">Alle</option>
@@ -22,15 +31,14 @@
           {{country.name}}
         </option>
       </select>
-      <!-- ToDo: dropdown for type of gallery filter -->
-      <!-- ToDo: add slider for alltidue range filter -->
-
     </div>
+    <!-- ToDo: add slider for alltidue range filter -->
+    <!-- ToDo: layout / styling for filter options -->
   </div>
 </div>
 
 <div class="row">
-  <div ng-repeat="gallery in home.galleries | orderBy:'-sortDate' | filter:home.query | filter:home.country:true" class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
+  <div ng-repeat="gallery in home.galleries | orderBy:'-sortDate' | filter:home.query | filter:home.activity:true | filter:home.country:true" class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
     <div class="thumbnail">
       <div class="index center-block">
         <div class="header">

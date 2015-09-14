@@ -20,7 +20,7 @@ module Home.Data {
     "map-x": number;
     "map-y": number;
     "map-zoom": number;
-    "type": Array<string>;
+    "activity": Array<string>;
     "dateStart": string;
     "sortDate": number;
     "images": Array<Home.Data.IImage>;

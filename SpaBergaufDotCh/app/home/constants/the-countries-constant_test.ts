@@ -6,7 +6,7 @@
 describe('theCountries', function () {
   var constant;
 
-  beforeEach(module('home'));
+  beforeEach(angular.mock.module('home'));
 
   beforeEach(inject(function (theCountries) {
     constant = theCountries;
