@@ -22,7 +22,6 @@ module Home.Data {
     "map-zoom": number;
     "activity": Array<string>;
     "dateStart": string;
-    "sortDate": number;
     "images": Array<Home.Data.IImage>;
   }
 
