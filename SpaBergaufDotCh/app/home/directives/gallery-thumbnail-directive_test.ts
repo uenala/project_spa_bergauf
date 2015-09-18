@@ -7,7 +7,7 @@ describe('galleryThumbnail', function () {
   var scope
     , element;
 
-  beforeEach(angular.mock.module('home'));
+  beforeEach(angular.mock.module('home', 'home/directives/gallery-thumbnail-directive.tpl.html'));
 
   beforeEach(inject(function ($compile, $rootScope) {
     scope = $rootScope.$new();

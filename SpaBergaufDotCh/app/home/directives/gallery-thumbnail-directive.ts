@@ -28,7 +28,7 @@ module GalleryThumbnail {
       restrict: 'E',
       scope: {
       },
-      templateUrl: '/home/views/gallery-thumbnail.tpl.html',
+      templateUrl: 'home/directives/gallery-thumbnail-directive.tpl.html',
       replace: false,
       controllerAs: 'galleryThumbnail',
       controller: function () {
