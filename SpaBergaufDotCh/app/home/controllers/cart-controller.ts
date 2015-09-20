@@ -17,6 +17,7 @@ module CartCtrl {
     constructor() {
       var vm = this;
       vm.ctrlName = 'CartCtrl';
+
     }
   }
 
