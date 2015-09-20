@@ -13,30 +13,30 @@ module User {
       return 'User';
     }
 
-    // TODO add node.js/express on server side. Can this be automated with yeoman?
+    // TODO add node.js/express on server side.
 
     GetAll() {
-      return this.$http.get('/api/users').then(this.handleSuccess, this.handleError('Error getting all users'));
+      return this.$http.get('/ws/users').then(this.handleSuccess, this.handleError('Error getting all users'));
     }
 
     GetById(id) {
-      return this.$http.get('/api/users/' + id).then(this.handleSuccess, this.handleError('Error getting user by id'));
+      return this.$http.get('/ws/users/' + id).then(this.handleSuccess, this.handleError('Error getting user by id'));
     }
 
     GetByUsername(username) {
-      return this.$http.get('/api/users/' + username).then(this.handleSuccess, this.handleError('Error getting user by username'));
+      return this.$http.get('/ws/users/' + username).then(this.handleSuccess, this.handleError('Error getting user by username'));
     }
 
     Create(user) {
-      return this.$http.post('/api/users', user).then(this.handleSuccess, this.handleError('Error creating user'));
+      return this.$http.post('/ws/users', user).then(this.handleSuccess, this.handleError('Error creating user'));
     }
 
     Update(user) {
-      return this.$http.put('/api/users/' + user.id, user).then(this.handleSuccess, this.handleError('Error updating user'));
+      return this.$http.put('/ws/users/' + user.id, user).then(this.handleSuccess, this.handleError('Error updating user'));
     }
 
     Delete(id) {
-      return this.$http.delete('/api/users/' + id).then(this.handleSuccess, this.handleError('Error deleting user'));
+      return this.$http.delete('/ws/users/' + id).then(this.handleSuccess, this.handleError('Error deleting user'));
     }
 
     // private functions
@@ -49,8 +49,9 @@ module User {
       return function () {
         return {success: false, message: error};
       };
-
     }
+
+
   }
 
   /**

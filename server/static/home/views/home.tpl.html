@@ -1,0 +1,55 @@
+
+<!-- Update Metatags -->
+<view-title>Willkommen beim Outdoor Photoblog bergauf.ch</view-title>
+<meta view-head name="description" content="Outdoor Photo-Blog zu den Themen Skiouren, Bersteigen, MTB und Reisen" />
+<meta view-head name="keywords" content="Outdoor, Photo, Blog, Skitouren, Bersteigen, MTB, Reisen" />
+<meta view-head property="og:title" content="Willkommen beim Outdoor Photoblog bergauf.ch" />
+<meta view-head property="og:description" content="Outdoor Photo-Blog zu den Themen Skiouren, Bersteigen, MTB und Reisen" />
+
+<h1>Willkommen bei bergauf.ch SPA v0.1</h1>
+
+<div class="row searchbar">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+    <div class="form-group">
+      <label for="fulltext" class="sr-only">Volltextsuche:</label>
+      <input class="form-control" type="text" placeholder="Volltextsuche" ng-model="home.query" id="fulltext" />
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+    <div class="form-group">
+      <label for="activity" class="sr-only">Nach Aktivität filtern:</label>
+      <select class="form-control" id="activity" ng-model="home.activity">
+        <option value="" selected="selected">Alle Aktivitäten</option>
+        <option ng-repeat="activity in home.activities" value="{{activity.name}}">
+          {{activity.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+    <div class="form-group">
+      <label for="country" class="sr-only">Nach Land filtern:</label>
+      <select class="form-control" id="country" ng-model="home.country">
+        <option value="" selected="selected">Alle Länder</option>
+        <option ng-repeat="country in home.countries" value="{{country.code}}">
+          {{country.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+    <!-- ToDo: add slider for alltidue range filter -->
+    <!-- ToDo: layout / styling for filter options -->
+
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div ng-hide="filteredGalleries.length"><p>Keine Bildergalerie gefunden.</p></div>
+    <div ng-hide="filteredGalleries.length < 1"><p>Anzahl Bildergalerien: {{filteredGalleries.length}}</p></div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div ng-repeat="gallery in filteredGalleries = (home.galleries | orderBy:'-date' | filter:home.query | filter:home.activity:true | filter:home.country:true)" class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
+    <gallery-thumbnail gallery="{{gallery}}"></gallery-thumbnail>
+  </div>
+</div>

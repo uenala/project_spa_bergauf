@@ -1,0 +1,45 @@
+.bergauf-gallery {
+  width: 100%;
+  float: left; }
+
+.bergauf-gallery img {
+  width: 100%;
+  height: auto; }
+
+.bergauf-gallery figure {
+  display: inline-block;
+  margin: 0 1% 2% 0;
+  width: 38.5%;
+  position: relative;
+  overflow: hidden;
+  vertical-align: top; }
+
+.bergauf-gallery figcaption {
+  display: none; }
+
+/* Small devices */
+@media screen and (min-width: 640px) {
+  .bergauf-gallery figure {
+    width: 27%; } }
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  .bergauf-gallery figure {
+    width: 22%; } }
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .bergauf-gallery figure {
+    width: 20.5%; } }
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  .bergauf-gallery figure {
+    width: 17%; }
+  .pswp__caption__center {
+    max-width: 600px;
+    text-align: center; } }
+
+/* additional navigation / info after gallery thumbnails */
+.navbar-gallery {
+  padding-bottom: 0px; }

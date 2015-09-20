@@ -23,7 +23,7 @@ module Authentication {
     Login(username: string, password: string , callback: any) {
 
 
-      /* Dummy authentication for testing, uses $timeout to simulate api call
+      /* Dummy authentication for testing
        ----------------------------------------------*/
 
         var response;

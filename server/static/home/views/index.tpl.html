@@ -1,0 +1,27 @@
+<!-- Update Metatags -->
+<view-title>{{home.title}}</view-title>
+<meta view-head name="description" content="Übersicht zu den '{{home.title}}' Fotoalben auf bergauf.ch" />
+<meta view-head name="keywords" content="{{home.title}}, Photoblog, Outdoor, Bergbilder, Bergsteigen, Alpinismus, Reisen" />
+<meta view-head property="og:title" content="{{home.title}}" />
+<meta view-head property="og:description" content="{{home.title}} - Übersicht zu den Fotogalerien" />
+<meta view-head property="og:url" content="http://www.bergauf.ch/#{{home.themeFilter}}" />
+<link view-head rel="canonical" href="http://www.bergauf.ch/#{{home.themeFilter}}" />
+
+<!-- Page Heading -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">{{home.title}}</h1>
+  </div>
+</div>
+<!-- /.row -->
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+    <h2><input class="form-control" type="text" placeholder="Nach Titel filtern" ng-model="home.query.name" /></h2>
+  </div>
+</div>
+
+<div class="row">
+  <div ng-repeat="gallery in home.galleries | orderBy:'-date' | filter:home.query | activity:home.themeFilter" class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
+    <gallery-thumbnail gallery="{{gallery}}"></gallery-thumbnail>
+  </div>
+</div>

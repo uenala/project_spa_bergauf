@@ -3,7 +3,7 @@
 var _ = require('underscore.string')
   , fs = require('fs')
   , path = require('path')
-
+  , del = require('del')
   , bowerDir = JSON.parse(fs.readFileSync('.bowerrc')).directory + path.sep;
 
 module.exports = function (gulp, $, config) {
@@ -240,6 +240,7 @@ module.exports = function (gulp, $, config) {
   });
 
   gulp.task('deleteTemplates', ['copyTemplates'], function (cb) {
+
     // only delete templates in production
     // the templates are injected into the app during prod build
     if (!isProd) {
@@ -262,5 +263,25 @@ module.exports = function (gulp, $, config) {
       });
   });
 
+// Server stuff
+  // delete server deployment directory
+  gulp.task('cleanServerDir', function (cb) {
+    return $.del('../server/static/**/*', {
+      force: true
+    }, cb);
+  });
+
+  gulp.task('copy2nodeServer', ['cleanServerDir'], function(cb) {
+    // copy to node server
+    gulp.src([config.buildDir + '**/*'])
+      .pipe(gulp.dest('../server/static'));
+    cb();
+  });
+
+  // TODO node server start
+
   gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'fonts', 'data']);
+  gulp.task('copy2server', ['copy2nodeServer']);
 };
+
+
