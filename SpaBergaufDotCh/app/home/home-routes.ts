@@ -158,6 +158,11 @@ module home {
         controller: 'RegisterCtrl',
         controllerAs: 'vm'
       })
+      .when('/cart', {
+        templateUrl: 'home/views/cart.tpl.html',
+        controller: 'CartCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/home'
       });
