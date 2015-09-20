@@ -11,6 +11,7 @@ module spaBergaufDotCh {
     .module('spaBergaufDotCh', [
       'ngRoute',
       'viewhead',
+      'ngAnimate',
       'mgcrea.ngStrap',
       'dcbImgFallback',
       'home'
