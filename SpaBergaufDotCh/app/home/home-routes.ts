@@ -161,11 +161,10 @@ module home {
       .when('/cart', {
         templateUrl: 'home/views/cart.tpl.html',
         controller: 'CartCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'cart'
       })
       .otherwise({
         redirectTo: '/home'
       });
   }
-
 }

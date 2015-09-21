@@ -15,8 +15,8 @@ module CartCtrl {
 
     // dependencies are injected via AngularJS $injector
     constructor() {
-      var vm = this;
-      vm.ctrlName = 'CartCtrl';
+      var cart = this;
+      cart.ctrlName = 'CartCtrl';
 
     }
   }
