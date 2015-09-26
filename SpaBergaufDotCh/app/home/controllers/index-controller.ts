@@ -17,7 +17,8 @@ module Home.IndexCtrl {
     public static $inject = ['$log', '$location', '$http', 'Repository', 'theCountries' , 'theActivities'];
 
     // dependencies are injected via AngularJS $injector
-    constructor(private $log : ng.ILogService, private $location : ng.ILocationService,
+    constructor(private $log : ng.ILogService,
+                private $location : ng.ILocationService,
                 private $http : ng.IHttpService,
                 private repository : Home.Services.IRepository,
                 private countries: theCountries.countries,
@@ -25,10 +26,11 @@ module Home.IndexCtrl {
 
       var vm = this;
       vm.ctrlName = 'IndexCtrl';
+      //$log.debug("ctrlName: " + vm.ctrlName);
 
-      vm.galleries = this.repository.getGalleries();
-      vm.themeFilter = this.$location.path();
-      vm.title = this.getTitle(vm.themeFilter);
+      vm.galleries = vm.repository.getGalleries();
+      vm.themeFilter = vm.$location.path();
+      vm.title = vm.getTitle(vm.themeFilter);
 
     }
 

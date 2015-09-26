@@ -21,12 +21,19 @@ module Home.GalleryDetailCtrl {
     // It provides $injector with information about dependencies to be injected into constructor
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
-    public static $inject = ['$routeParams', '$http', 'Repository', '$rootScope', '$window'];
+    public static $inject = ['$log', '$routeParams', '$http', 'Repository', '$rootScope', '$window'];
 
     // dependencies are injected via AngularJS $injector
-    constructor($routeParams : IGalleryRouteParams, private $http : ng.IHttpService, private repository : Home.Services.IRepository, private $rootScope :ng.IRootScopeService, private $window : ng.IWindowService) {
+    constructor(private $log : ng.ILogService,
+                $routeParams : IGalleryRouteParams,
+                private $http : ng.IHttpService,
+                private repository : Home.Services.IRepository,
+                private $rootScope :ng.IRootScopeService,
+                private $window : ng.IWindowService) {
+
       var vm = this;
       vm.ctrlName = 'GalleryDetailCtrl';
+      //$log.debug("ctrlName: " + vm.ctrlName);
 
       vm.gallery = repository.getGallery();
       vm.galleryImages = repository.getGalleryImages();
