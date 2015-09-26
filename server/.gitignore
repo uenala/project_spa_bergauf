@@ -36,3 +36,10 @@ pids
 */app/*.js
 static/*.js
 *.js.map
+
+
+# static
+server/static*
+
+# data
+server/data*
