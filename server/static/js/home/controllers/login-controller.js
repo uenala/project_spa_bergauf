@@ -22,7 +22,7 @@ var Home;
                         if (response.success) {
                             Authentication.SetCredentials(vm.username, vm.password);
                             $location.path('/userhome');
-                            $log.debug("Login success" + vm.username);
+                            $log.debug("Login success for username " + vm.username);
                         }
                         else {
                             Flash.Error(response.message, false);

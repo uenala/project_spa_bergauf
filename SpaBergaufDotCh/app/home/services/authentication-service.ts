@@ -10,10 +10,14 @@ module Authentication {
   }
 
   class Authentication {
-    public static $inject = ['$http', '$cookieStore', '$rootScope', 'UserLocalStorage'
+    public static $inject = ['$http', '$cookieStore', '$rootScope', 'UserLocalStorage', 'User'
     ];
 
-    constructor(private $http: ng.IHttpService, private $cookieStore: any, private $rootScope: any, private UserLocalStorage: Home.Services.IUserLocalStorage) {
+    constructor(private $http: ng.IHttpService,
+                private $cookieStore: any,
+                private $rootScope: any,
+                private UserLocalStorage: Home.Services.IUserLocalStorage,
+                private User: User.IUser) {
     }
 
     get(): string {
@@ -26,16 +30,29 @@ module Authentication {
       /* Dummy authentication for testing
        ----------------------------------------------*/
 
-        var response;
-        this.UserLocalStorage.GetByUsername(username)
-          .then(function (user) {
-            if (user !== null && user.password === password) {
-              response = {success: true};
-            } else {
-              response = {success: false, message: 'Email oder Passwort falsch'};
-            }
-            callback(response);
-          });
+      // LocalStorage-Version
+      //  var response;
+      //  this.UserLocalStorage.GetByUsername(username)
+      //    .then(function (user) {
+      //      if (user !== null && user.password === password) {
+      //        response = {success: true};
+      //      } else {
+      //        response = {success: false, message: 'Email oder Passwort falsch'};
+      //      }
+      //      callback(response);
+      //    });
+
+      // Rest-Version
+      var response;
+      this.User.GetByUsername(username)
+        .then(function (user) {
+          if (user !== null && user.data.password === password) {
+            response = {success: true};
+          } else {
+            response = {success: false, message: 'Email oder Passwort falsch'};
+          }
+          callback(response);
+        });
 
 
       /* Use this for real authentication
@@ -51,7 +68,7 @@ module Authentication {
     SetCredentials(username: string, password: string) {
       var authdata = (username + ':' + password);
 
-      this.$rootScope.globals = {
+      this.$rootScope.globals = { // we can only set in globals, what we have recieved as method params. no firstname.
         currentUser: {
           username: username,
           authdata: authdata
@@ -61,7 +78,6 @@ module Authentication {
       this.$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
       this.$cookieStore.put('globals', this.$rootScope.globals);
     }
-
 
 
     ClearCredentials() {

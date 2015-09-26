@@ -1,12 +1,12 @@
 <div class="jumbotron">
   <div class="container">
     <div class="col-sm-8 col-sm-offset-2">
-      <h1>Hallo {{vm.user.firstName}}!</h1>
+      <h1>Hallo {{vm.user.firstname}}!</h1>
       <p>Sie sind eingeloggt!!</p>
       <h3>ADMIN-Funktion: Alle registrierten Users:</h3>
       <ul>
         <li ng-repeat="user in vm.allUsers">
-          {{user.username}} ({{user.firstName}} {{user.lastName}})
+          {{user.username}} ({{user.firstname}} {{user.lastname}})
           - <a href="#" ng-click="vm.deleteUser(user.id)">User löschen</a>
         </li>
       </ul>

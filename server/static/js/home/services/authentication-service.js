@@ -3,21 +3,34 @@ var Authentication;
 (function (_Authentication) {
     'use strict';
     var Authentication = (function () {
-        function Authentication($http, $cookieStore, $rootScope, UserLocalStorage) {
+        function Authentication($http, $cookieStore, $rootScope, UserLocalStorage, User) {
             this.$http = $http;
             this.$cookieStore = $cookieStore;
             this.$rootScope = $rootScope;
             this.UserLocalStorage = UserLocalStorage;
+            this.User = User;
         }
         Authentication.prototype.get = function () {
             return 'Authentication';
         };
         Authentication.prototype.Login = function (username, password, callback) {
-            /* Dummy authentication for testing, uses $timeout to simulate api call
+            /* Dummy authentication for testing
              ----------------------------------------------*/
+            // LocalStorage-Version
+            //  var response;
+            //  this.UserLocalStorage.GetByUsername(username)
+            //    .then(function (user) {
+            //      if (user !== null && user.password === password) {
+            //        response = {success: true};
+            //      } else {
+            //        response = {success: false, message: 'Email oder Passwort falsch'};
+            //      }
+            //      callback(response);
+            //    });
+            // Rest-Version
             var response;
-            this.UserLocalStorage.GetByUsername(username).then(function (user) {
-                if (user !== null && user.password === password) {
+            this.User.GetByUsername(username).then(function (user) {
+                if (user !== null && user.data.password === password) {
                     response = { success: true };
                 }
                 else {
@@ -48,7 +61,7 @@ var Authentication;
             this.$cookieStore.remove('globals');
             this.$http.defaults.headers.common.Authorization = 'Basic ';
         };
-        Authentication.$inject = ['$http', '$cookieStore', '$rootScope', 'UserLocalStorage'];
+        Authentication.$inject = ['$http', '$cookieStore', '$rootScope', 'UserLocalStorage', 'User'];
         return Authentication;
     })();
     /**

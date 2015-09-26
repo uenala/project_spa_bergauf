@@ -6,6 +6,7 @@ var _ = require('underscore.string')
   , del = require('del')
   , bowerDir = JSON.parse(fs.readFileSync('.bowerrc')).directory + path.sep;
 
+
 module.exports = function (gulp, $, config) {
   var isProd = $.yargs.argv.stage === 'prod';
 
@@ -277,8 +278,6 @@ module.exports = function (gulp, $, config) {
       .pipe(gulp.dest('../server/static'));
     cb();
   });
-
-  // TODO node server start
 
   gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'fonts', 'data']);
   gulp.task('copy2server', ['copy2nodeServer']);

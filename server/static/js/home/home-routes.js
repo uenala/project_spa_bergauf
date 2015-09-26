@@ -137,6 +137,10 @@ var home;
             templateUrl: 'home/views/register.tpl.html',
             controller: 'RegisterCtrl',
             controllerAs: 'vm'
+        }).when('/cart', {
+            templateUrl: 'home/views/cart.tpl.html',
+            controller: 'CartCtrl',
+            controllerAs: 'cart'
         }).otherwise({
             redirectTo: '/home'
         });

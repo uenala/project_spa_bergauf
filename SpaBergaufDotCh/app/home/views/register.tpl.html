@@ -5,15 +5,15 @@
         <h2>Register</h2>
         <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
         <form name="form" ng-submit="vm.register()" role="form">
-          <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-            <label for="firstName">Vorname</label>
-            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">Vorname ist ein Mussfeld</span>
+          <div class="form-group" ng-class="{ 'has-error': form.firstname.$dirty && form.firstname.$error.required }">
+            <label for="firstname">Vorname</label>
+            <input type="text" name="firstname" id="firstname" class="form-control" ng-model="vm.user.firstname" required />
+            <span ng-show="form.firstname.$dirty && form.firstname.$error.required" class="help-block">Vorname ist ein Mussfeld</span>
           </div>
-          <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-            <label for="lastName">Nachname</label>
-            <input type="text" name="lastName" id="lastName" class="form-control" ng-model="vm.user.lastName" required />
-            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Nachname ist ein Mussfeld</span>
+          <div class="form-group" ng-class="{ 'has-error': form.lastname.$dirty && form.lastname.$error.required }">
+            <label for="lastname">Nachname</label>
+            <input type="text" name="lastname" id="lastname" class="form-control" ng-model="vm.user.lastname" required />
+            <span ng-show="form.lastname.$dirty && form.lastname.$error.required" class="help-block">Nachname ist ein Mussfeld</span>
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
             <label for="username">Email</label>

@@ -6,8 +6,9 @@ var Home;
         'use strict';
         var RegisterCtrl = (function () {
             // dependencies are injected via AngularJS $injector
-            function RegisterCtrl(UserLocalStorage, $location, $rootScope, Flash) {
+            function RegisterCtrl(UserLocalStorage, User, $location, $rootScope, Flash) {
                 this.UserLocalStorage = UserLocalStorage;
+                this.User = User;
                 this.$location = $location;
                 this.$rootScope = $rootScope;
                 this.Flash = Flash;
@@ -16,8 +17,9 @@ var Home;
                 vm.register = register;
                 function register() {
                     vm.dataLoading = true;
-                    UserLocalStorage.Create(vm.user).then(function (response) {
-                        if (response.success) {
+                    //UserLocalStorage.Create(vm.user) // Local-Storage-Version
+                    User.Create(vm.user).then(function (response) {
+                        if (response.data) {
                             Flash.Success('Registration erfolgreich, bitte einloggen', true);
                             $location.path('/login');
                         }
@@ -32,7 +34,7 @@ var Home;
             // It provides $injector with information about dependencies to be injected into constructor
             // it is better to have it close to the constructor, because the parameters must match in count and type.
             // See http://docs.angularjs.org/guide/di
-            RegisterCtrl.$inject = ['UserLocalStorage', '$location', '$rootScope', 'Flash'];
+            RegisterCtrl.$inject = ['UserLocalStorage', 'User', '$location', '$rootScope', 'Flash'];
             return RegisterCtrl;
         })();
         /**

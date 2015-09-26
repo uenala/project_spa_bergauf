@@ -34,6 +34,7 @@ module Home.IndexCtrl {
 
     }
 
+
     private getTitle(path:string):string {
       var title;
       switch (path) {

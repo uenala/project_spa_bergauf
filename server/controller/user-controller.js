@@ -130,8 +130,6 @@ module.exports.updateUser = function(req, res) {
             console.log("updated user: " + users[i].username);
             break;
         }
-        res.statusCode = 404;
-        res.send('Error 404: No user found');
     }
 
     fs.writeFile(dataFile, JSON.stringify(users), function(err){

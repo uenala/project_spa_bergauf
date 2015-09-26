@@ -10,7 +10,7 @@ module Home.UserhomeCtrl {
     // It provides $injector with information about dependencies to be injected into constructor
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
-    public static $inject = ['UserLocalStorage', '$rootScope'
+    public static $inject = ['UserLocalStorage', 'User', '$rootScope', '$log'
     ];
 
     user: any;
@@ -19,7 +19,9 @@ module Home.UserhomeCtrl {
 
     // dependencies are injected via AngularJS $injector
     constructor(private UserLocalStorage: Home.Services.IUserLocalStorage,
-                private $rootScope: any) {
+                private User: User.IUser,
+                private $rootScope: any,
+                private $log: ng.ILogService) {
 
       var vm = this;
       vm.ctrlName = 'UserhomeCtrl';
@@ -36,21 +38,27 @@ module Home.UserhomeCtrl {
       }
 
       function loadCurrentUser() {
-        UserLocalStorage.GetByUsername($rootScope.globals.currentUser.username)
+        //UserLocalStorage.GetByUsername($rootScope.globals.currentUser.username) // Local Storage Version
+        User.GetByUsername($rootScope.globals.currentUser.username) // Rest Version
           .then(function (user) {
-            vm.user = user;
+            //vm.user = user; // Local Storage Version
+            vm.user = user.data;
+            $log.debug("loadCurrentUser " + vm.user.username);
           });
       }
 
       function loadAllUsers() {
-        UserLocalStorage.GetAll()
+        //UserLocalStorage.GetAll() // Local Storage Version
+        User.GetAll() // Rest-Version
           .then(function (users) {
-            vm.allUsers = users;
+            //vm.allUsers = users;// Local Storage Version
+            vm.allUsers = users.data;
           });
       }
 
       function deleteUser(id) {
-        UserLocalStorage.Delete(id)
+        //UserLocalStorage.Delete(id) // Local Storage Version
+        User.Delete(id) // Rest-Version
           .then(function () {
             loadAllUsers();
           });
