@@ -1,12 +1,20 @@
-<div class="thumbnail">
-  <div class="index center-block">
-    <div class="header">
-      <a title="Weiter zu der {{galleryObj.name}} Bildergalerie" href="#{{galleryObj.path}}">{{galleryObj.name}}</a>
-      <p class="small">{{galleryObj.country}}<span ng-if="galleryObj.region"> - {{galleryObj.region}}</span></p>
-      <p class="small"><span ng-if="galleryObj.dateStart">{{galleryObj.dateStart | date:'dd.MM. - '}}</span>
-        {{galleryObj.date | date:'dd.MM.yyyy'}}</p>
-    </div>
-    <a href="#{{galleryObj.path}}"><img class="lazy" data-original="/images{{galleryObj.icon}}" alt="" height="120" width="160" /></a>
+<article>
+<div class="media">
+  <div class="media-left">
+    <a href="#{{galleryObj.path}}"><img class="lazy media-object" data-original="/images{{galleryObj.icon}}" alt="" height="120" width="160" /></a>
+  </div>
+  <div class="media-body">
+    <h1 class="media-heading"><a title="Weiter zu der {{galleryObj.name}} Bildergalerie" href="#{{galleryObj.path}}">{{galleryObj.name}}</a></h1>
+    <h2 class="media-heading media-heading--small">
+      <span class="glyphicon glyphicon-globe hidden-xs" aria-hidden="true"></span>
+      {{galleryObj.country}}<span ng-if="galleryObj.region"> - {{galleryObj.region}}</span></h2>
+    <p ng-if="galleryObj.date"><span class="glyphicon glyphicon-calendar hidden-xs" aria-hidden="true"></span>
+      <span ng-if="galleryObj.dateStart">{{galleryObj.dateStart | date:'dd.MM. - '}}</span>
+      {{galleryObj.date | date:'dd.MM.yyyy'}}</p>
+    <p ng-if="galleryObj.activity" class="hidden-xs">
+      <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+      <span ng-repeat="activity in galleryObj.activity">&nbsp;{{activity}}</span>
+    </p>
   </div>
 </div>
-
+</article>

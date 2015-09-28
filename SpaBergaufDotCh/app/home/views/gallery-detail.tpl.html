@@ -27,13 +27,19 @@
               <img ng-src="/images/thumbnails{{galleryDetail.gallery.path}}/{{image.filename}}" fallback-src="{{'/images/thumbnails/placeholder.jpg'}}" itemprop="thumbnail" alt="{{image.alt}}" />
             </a>
             <figcaption itemprop="caption description">{{image.description}}</figcaption>
-            [Buy]
           </figure>
         </div>
       </div>
     </div>
   </div>
 </div>
+<!-- /.row -->
+
+<button type="button" class="btn btn-default"
+        data-trigger="hover"
+        data-title="zip File als Download mit allen Bilder dieser Galerie bestellen"
+        data-placement="bottom" bs-tooltip><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">&nbsp;</span>in den Warenkorb
+</button>
 
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->

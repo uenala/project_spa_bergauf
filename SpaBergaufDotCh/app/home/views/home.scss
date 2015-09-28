@@ -1,5 +1,9 @@
 $font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
+$font-size-normal: 100%;
+$font-size-big: 110%;
+$font-size-bigger: 120%;
+$font-weight-bold: 700;
+$font-weight-normal: 400;
 
 body {
   font-family: $font-family;
@@ -41,9 +45,18 @@ body {
   background-color: #E7E7E7;
 }
 
-.searchbar {
-  padding-top: 20px;
-  padding-bottom: 20px;
+/* search styles */
+.search-hits {
+  padding-top: 0px;
+  font-size: $font-size-big;
+  font-weight: $font-weight-bold;
+}
+
+.search-filter {
+  padding-top: 0px;
+  padding-bottom: 30px;
+  font-size: $font-size-big;
+  font-weight: $font-weight-bold;
 }
 
 /* footer styles */
@@ -77,7 +90,6 @@ p.small {
   margin: 0px;
 }
 
-
 /* social sharing styles */
 a i.fa {
   padding-right: 10px;
@@ -87,15 +99,18 @@ a i.fa {
   padding-right: 10px;
 }
 
+/* aside modal styles */
+.aside {
+  opacity: 0.8;
+  min-width: 400px;
+}
 
+.aside-body .aside-title {
+  padding-bottom: 20px;
+}
 
+/* special media styles */
 @media(max-width:767px) {
-  .media-left, .media-right, .media-body {
-    display: inline;
-  }
-  .media-left, {
-    padding-top: 10px;
-  }
   h1, .h1 {
     font-size: 24px;
   }
@@ -132,7 +147,14 @@ a i.fa {
     min-width: 120px;
   }
 
-}
+  .search-filter {
+    margin-top: 0px;
+  }
 
+  .aside {
+    min-width: 300px;
+  }
+
+}
 
 
