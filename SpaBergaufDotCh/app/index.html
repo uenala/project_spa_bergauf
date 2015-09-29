@@ -116,7 +116,7 @@
         <hr>
         <div class="row">
           <div class="col-lg-12">
-            <p>Copyright © 2015 bergauf.ch&nbsp;&nbsp;&nbsp;&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/images/icons/by-nc-80x15.png" width="80" height="15" /></a></p>
+            <p ng-controller="HomeCtrl as home">Copyright © {{home.currentDate | date:'yyyy'}} bergauf.ch&nbsp;&nbsp;&nbsp;&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/images/icons/by-nc-80x15.png" width="80" height="15" /></a></p>
           </div>
           <!-- /.col-lg-12 -->
         </div>

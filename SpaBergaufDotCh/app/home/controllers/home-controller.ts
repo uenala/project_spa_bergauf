@@ -5,6 +5,7 @@ module HomeCtrl {
   class HomeCtrl {
 
     ctrlName: string;
+    currentDate: Date;
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
@@ -16,6 +17,7 @@ module HomeCtrl {
     constructor() {
       var vm = this;
       vm.ctrlName = 'HomeCtrl';
+      vm.currentDate = new Date();
     }
   }
 
