@@ -46,14 +46,18 @@ body {
 }
 
 /* search styles */
+.search {
+  padding-top: 20px;
+}
+
 .search-hits {
-  padding-top: 0px;
+  padding-top: 10px;
   font-size: $font-size-big;
   font-weight: $font-weight-bold;
 }
 
 .search-filter {
-  padding-top: 0px;
+  padding-top: 10px;
   padding-bottom: 30px;
   font-size: $font-size-big;
   font-weight: $font-weight-bold;
@@ -149,10 +153,12 @@ a i.fa {
 
   .search-filter {
     margin-top: 0px;
+    padding-bottom: 20px;
   }
 
   .aside {
-    min-width: 300px;
+    max-width: 300px;
+    min-width: 200px;
   }
 
 }

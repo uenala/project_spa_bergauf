@@ -11,10 +11,10 @@
     <p ng-if="galleryObj.date"><span class="glyphicon glyphicon-calendar hidden-xs" aria-hidden="true"></span>
       <span ng-if="galleryObj.dateStart">{{galleryObj.dateStart | date:'dd.MM. - '}}</span>
       {{galleryObj.date | date:'dd.MM.yyyy'}}</p>
-    <p ng-if="galleryObj.activity" class="hidden-xs">
+    <h2 ng-if="galleryObj.activity" class="media-heading media-heading--small hidden-xs">
       <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
       <span ng-repeat="activity in galleryObj.activity">&nbsp;{{activity}}</span>
-    </p>
+    </h2>
   </div>
 </div>
 </article>
