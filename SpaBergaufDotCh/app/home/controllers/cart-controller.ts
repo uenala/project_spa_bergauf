@@ -1,4 +1,4 @@
-///<reference path='../../../typings/tsd.d.ts' />
+///<reference path='../../min.references.ts' />
 module CartCtrl {
   'use strict';
 
