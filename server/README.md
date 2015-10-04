@@ -10,7 +10,6 @@ $cd server
 
 # NPM-Dependencies installieren (in package.json definiert)
 $npm i
-```
 
 # Webserver starten
 
