@@ -129,7 +129,7 @@ module.exports.updateUser = function(req, res) {
             users[i].password = req.body.password;
             console.log("updated user: " + users[i].username);
             break;
-        }
+        } // non-matching id's are silently ignored.
     }
 
     fs.writeFile(dataFile, JSON.stringify(users), function(err){

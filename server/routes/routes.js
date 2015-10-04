@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var users = require('../controller/user-controller.js');
-
+var orders = require('../controller/order-controller.js');
 
 // test route to make sure everything is working
 router.get('/ws/', function(req, res) {
@@ -14,5 +14,7 @@ router.post("/ws/users", users.addUser);
 router.put("/ws/users/:id", users.updateUser);
 router.delete("/ws/users/:id", users.deleteUser);
 
+router.get("/ws/orders/:id", orders.getOrdersByUsername); //TODO orders.getOrdersByUsername (by username as id)
+router.post("/ws/orders", orders.addOrder); // TODO orders.addOrder (JSON-Body contains a cart-object)
 
 module.exports = router;
