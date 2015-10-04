@@ -23,7 +23,8 @@ module.exports.getAllUsers = function(req, res) {
 
 // this method covers getting a user by id and by username/email
 module.exports.getUserById = function(req, res) {
-    var users = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+
+    var users = readJsonDataFile();
     var identifier = parseInt(req.params.id); // check for a numeric parameter
     //console.log("id = " + req.params.id);
     //console.log("users.length = " + users.length);
@@ -51,7 +52,7 @@ module.exports.getUserById = function(req, res) {
 // method to add a new user
 module.exports.addUser = function(req, res) {
 
-    var users = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+    var users = readJsonDataFile();
 
     //debug only
     //res.setHeader('Content-Type', 'text/plain');
@@ -101,7 +102,7 @@ module.exports.addUser = function(req, res) {
 // method to update a existing user
 module.exports.updateUser = function(req, res) {
 
-    var users = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+    var users = readJsonDataFile();
     var identifier = parseInt(req.params.id); // should be a numeric parameter
     //console.log("id check param " + req.params.id + ", body " + req.body.id);
 
@@ -144,7 +145,7 @@ module.exports.updateUser = function(req, res) {
 // method to delete a existing user
 module.exports.deleteUser = function(req, res) {
 
-    var users = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+    var users = readJsonDataFile();
     var identifier = parseInt(req.params.id); // should be a numeric parameter
 
     if(isNaN(identifier)){// check for a numeric parameter
@@ -175,6 +176,26 @@ module.exports.deleteUser = function(req, res) {
     res.json(true);
 };
 
+
+// read datafile or initialize with a new empty datafile in case no one exists
+var readJsonDataFile = function(){
+    var users = [];
+    try {
+        users = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+    }
+    catch (error) {
+        // orders.json doesn't exist
+        fs.writeFile(dataFile, '[]', function(err){
+            if (err) {
+                res.end();
+                return console.log("Error creating a new users.json. Root cause: " + err);
+            }
+        });
+        users = [];
+        console.log("creating a new users.json because it didn't already exist.");
+    }
+    return users;
+};
 
 // get matching user by username
 var getMatchingUserByUsername = function (username){

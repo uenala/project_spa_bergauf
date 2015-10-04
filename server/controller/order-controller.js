@@ -2,25 +2,6 @@ var fs = require('fs');
 
 var dataFile = "./data/orders.json";
 
-// this method retrieves all orders from an existing datafile via streaming or creates an empty datafile (& returns empty) if necessary
-module.exports.getAllOrders = function(req, res) {
-    res.writeHead(200, {'Content-Type': 'text/json'});
-    var stream = fs.createReadStream(dataFile);
-    stream.on('open', function() {
-        stream.pipe(res);
-    });
-    stream.on('error', function(err) { // orders.json doesn't exist
-        fs.writeFile(dataFile, '[]', function(err){
-            if (err) {
-                res.end();
-                return console.log("Error creating a new orders.json. Root cause: " + err);
-            }
-        });
-        stream = fs.createReadStream(dataFile).pipe(res);
-        console.log("creating a new orders.json because it didn't already exist.");
-    });
-};
-
 // this method covers getting all orders of a given username
 module.exports.getOrdersByUsername = function(req, res) {
     console.log("username = " + req.params.id);
@@ -57,11 +38,11 @@ module.exports.addOrder = function(req, res) {
     var cart = {
         username : req.body.username,
         ordered : req.body.changed,
-        products : req.body.products,
+        products : req.body.products
     };
 
     // add cart to orders of given username
-    var newOrder = createNewOrder();
+    var newOrder = createNewOrder(cart);
     orders.push(newOrder);
     console.log("try to add new order: " + newOrder.username + "ordered :" + newOrder.ordered);
     fs.writeFile(dataFile, JSON.stringify(orders), function(err){
@@ -97,11 +78,17 @@ var readJsonDataFile = function(){
 var createNewOrder = function (cart){
     var newOrder = {
         username: cart.username,
-        ordered: cart.ordered,
+        ordered: cart.ordered, // TODO use new timestamp instead ?
         processed: "false",
         products: []
     };
-    newOrder.concat(cart.products);
+
+    for (var i = 0; i < cart.products.length; i++){
+        //console.log("in loop, add cart.products[ " + i +" ] to order.");
+        newOrder.products.push(cart.products[i]);
+    }
+
+    return newOrder;
 };
 
 // get matching orders by username
@@ -118,6 +105,7 @@ var getOrdersByUsername = function (username){
     return ordersWithMatchingUsername;
 };
 
+// not used yet
 // get matching order by username and ordered-timestamp
 var getOrderByUsernameAndTimestamp = function (username, timestamp){
     var orders = getOrdersByUsername(username);
