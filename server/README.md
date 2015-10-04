@@ -1,4 +1,4 @@
-# node server / ret backend SpaBergaufDotCh
+# node server / rest backend SpaBergaufDotCh
 
 ## Aufsetzen
 
@@ -12,7 +12,7 @@ $cd server
 $npm i
 ```
 
-## Webserver starten
+# Webserver starten
 
 $node index.js
 
