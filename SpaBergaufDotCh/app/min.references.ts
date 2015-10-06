@@ -8,6 +8,8 @@
 
 ///<reference path='home/data/gallery.ts' />
 ///<reference path='home/data/image.ts' />
+///<reference path='home/data/cart.ts' />
+///<reference path='home/data/product.ts' />
 
 ///<reference path='home/constants/the-activities-constant.ts' />
 ///<reference path='home/constants/the-countries-constant.ts' />

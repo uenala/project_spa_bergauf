@@ -14,7 +14,7 @@ router.post("/ws/users", users.addUser);
 router.put("/ws/users/:id", users.updateUser);
 router.delete("/ws/users/:id", users.deleteUser);
 
-router.get("/ws/orders/:id", orders.getOrdersByUsername); //TODO orders.getOrdersByUsername (by username as id)
-router.post("/ws/orders", orders.addOrder); // TODO orders.addOrder (JSON-Body contains a cart-object)
+router.get("/ws/orders/:id", orders.getOrdersByUsername);
+router.post("/ws/orders", orders.addOrder);
 
 module.exports = router;
