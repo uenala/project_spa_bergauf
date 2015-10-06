@@ -68,14 +68,14 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right pull-right">
-            <li data-match-route="/login.*" ng-if="!globals.currentUser"><a href="#/login" data-bs-collapse-toggle><span class="glyphicon glyphicon-log-in" aria-hidden="true">&nbsp;</span>Anmelden</a></li>
+            <li data-match-route="/login.*" ng-if="!globals.currentUser"><a href="#/login" data-bs-collapse-toggle><i class="fa fa-sign-in fa-fw"></i> Anmelden</a></li>
             <li class="dropdown" data-match-route="/user.*|/cart.*" ng-if="globals.currentUser">
               <a href="" class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="globals.currentUser.username">Benutzer</span> <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li data-match-route="/userhome.*"><a href="#/userhome" data-bs-collapse-toggle><span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>Profil</a></li>
-                <li data-match-route="/cart.*"><a href="#/cart" data-bs-collapse-toggle><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">&nbsp;</span>Warenkorb</a></li>
+                <li data-match-route="/userhome.*"><a href="#/userhome" data-bs-collapse-toggle><i class="fa fa-user fa-fw"></i> Profil</a></li>
+                <li data-match-route="/cart.*"><a href="#/cart" data-bs-collapse-toggle><i class="fa fa-shopping-cart fa-fw"></i> Warenkorb</a></li>
                 <li class="divider"></li>
-                <li><a href="#/login" data-bs-collapse-toggle><span class="glyphicon glyphicon-log-out" aria-hidden="true">&nbsp;</span>Abmelden</a></li>
+                <li><a href="#/login" data-bs-collapse-toggle><i class="fa fa-sign-out fa-fw"></i> Abmelden</a></li>
               </ul>
             </li>
             <li ng-if="globals.currentUser"><a href=""
@@ -83,9 +83,9 @@
                    data-content-template="home/views/cart.tpl.html"
                    data-animation="am-slide-right"
                    bs-aside="aside"
-                   data-container="body"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+                   data-container="body"><i class="fa fa-shopping-cart fa-fw"></i></a>
             </li>
-            <li><a href="#/home" data-bs-collapse-toggle><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+            <li><a href="#/home" data-bs-collapse-toggle><i class="fa fa-search fa-fw"></i></a></li>
           </ul>
 
         </div><!-- /.navbar-collapse -->
