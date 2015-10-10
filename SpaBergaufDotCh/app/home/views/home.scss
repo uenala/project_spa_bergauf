@@ -52,6 +52,7 @@ body {
 
 .search-hits {
   padding-top: 10px;
+  padding-bottom: 30px;
   font-size: $font-size-big;
   font-weight: $font-weight-bold;
 }
@@ -147,6 +148,10 @@ a i.fa {
   .list-inline > li {
     padding-bottom: 10px;
     min-width: 100%;
+  }
+
+  .search-hits {
+    padding-bottom: 0px;
   }
 
   .search-filter {
