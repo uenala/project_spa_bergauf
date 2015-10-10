@@ -10,11 +10,11 @@ router.get('/ws/', function(req, res) {
 
 router.get("/ws/users", users.getAllUsers);
 router.get("/ws/users/:id", users.getUserById);
-router.post("/ws/users", users.addUser);
+router.post("/ws/users", users.addUser); // User-Data in JSON-Body
 router.put("/ws/users/:id", users.updateUser);
 router.delete("/ws/users/:id", users.deleteUser);
 
 router.get("/ws/orders/:id", orders.getOrdersByUsername);
-router.post("/ws/orders", orders.addOrder);
+router.post("/ws/orders", orders.addOrder); // Order-Data in JSON-Body
 
 module.exports = router;
