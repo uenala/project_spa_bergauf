@@ -63,6 +63,10 @@ body {
   font-weight: $font-weight-bold;
 }
 
+.list-inline > li {
+  padding-right: 10px;
+}
+
 /* footer styles */
 footer {
   padding-top: 50px;
@@ -96,10 +100,6 @@ p.small {
 
 /* social sharing styles */
 a i.fa {
-  padding-right: 10px;
-}
-
-.list-social-icons li {
   padding-right: 10px;
 }
 
@@ -144,11 +144,9 @@ a i.fa {
   .breadcrumb li.active {
     max-width: 250px;
   }
-
-  .list-social-icons li {
-    padding-bottom: 15px;
-    padding-right: 0px;
-    min-width: 120px;
+  .list-inline > li {
+    padding-bottom: 10px;
+    min-width: 100%;
   }
 
   .search-filter {
