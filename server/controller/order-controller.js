@@ -19,7 +19,7 @@ module.exports.getOrdersByUsername = function(req, res) {
     res.send('Error 404: No orders found');
 };
 
-// method to add a new order
+// method to add a new order, reads the cart-data in the JSON-Body
 module.exports.addOrder = function(req, res) {
     var orders = readJsonDataFile();
 
@@ -74,7 +74,7 @@ var readJsonDataFile = function(){
     return orders;
 };
 
-// create a new order-object fro a given cart-object
+// create a new order-object from a given cart-object
 var createNewOrder = function (cart){
     var newOrder = {
         username: cart.username,
