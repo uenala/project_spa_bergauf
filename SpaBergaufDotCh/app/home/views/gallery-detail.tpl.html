@@ -17,14 +17,15 @@
     <i class="fa fa-globe fa-fw fa-lg"></i>{{galleryDetail.gallery.country}}
     <span ng-if="galleryDetail.gallery.region"> - {{galleryDetail.gallery.region}}</span>
   </li>
-  <li ng-if="galleryDetail.gallery.activity">
-    <i class="fa fa-tags fa-fw fa-lg"></i>
-    <span ng-repeat="activity in galleryDetail.gallery.activity">&nbsp;{{activity}}</span>
-  </li>
   <li ng-if="galleryDetail.gallery.date">
     <i class="fa fa-calendar fa-fw fa-lg"></i>
     <span ng-if="galleryDetail.gallery.dateStart">{{galleryDetail.gallery.dateStart | date:'dd.MM. - '}}</span>
     {{galleryDetail.gallery.date | date:'dd.MM.yyyy'}}
+  </li>
+  <li ng-if="galleryDetail.gallery.activity">
+    <ul class="list-inline">
+      <li ng-repeat="activity in galleryDetail.gallery.activity"><i class="fa fa-tag fa-fw fa-lg"></i>{{activity}}</li>
+    </ul>
   </li>
 </ul>
 
