@@ -16,6 +16,7 @@
 
 ///<reference path='home/directives/gallery-thumbnail-directive.ts' />
 ///<reference path='home/directives/lazy-directive.ts' />
+///<reference path='home/directives/photoswipe-directive.ts' />
 
 ///<reference path='home/filters/activity-filter.ts' />
 
