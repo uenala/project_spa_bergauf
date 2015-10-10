@@ -28,6 +28,9 @@
     },
     "sinon/sinon.d.ts": {
       "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "photoswipe/photoswipe.d.ts": {
+      "commit": "4356af494c045299110677b21e62000957e7a72e"
     }
   }
 }
