@@ -66,9 +66,10 @@ module Home.Services {
 
 
     getGallery():Home.Data.IGallery {
+
       var i=0;
       for (i; i<this.galleryData.length; i++) {
-        if (this.galleryData[i].path === this.$location.path()) {
+        if (this.galleryData[i].path === this.getGalleryId()) {
           break;
         }
       }
@@ -81,13 +82,24 @@ module Home.Services {
 
       var i=0;
       for (i; i<this.galleryData.length; i++) {
-        if (this.galleryData[i].path === this.$location.path()) {
+        if (this.galleryData[i].path === this.getGalleryId()) {
           this.imagesData = this.galleryData[i].images;
           break;
         }
       }
 
       return this.imagesData;
+    }
+
+
+    private getGalleryId(): String {
+
+      // use gallery id's without photoswipe parameters &gid=1&pid=2
+      var id = this.$location.path().indexOf('&') > 0 ?
+        this.$location.path().slice(0,this.$location.path().indexOf('&')) : this.$location.path();
+
+      return id;
+
     }
 
   }
