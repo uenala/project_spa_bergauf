@@ -3,7 +3,7 @@
   <ul>
     <li ng-repeat="product in cart.products">
       {{product.path}}
-      - <a href="#" ng-click="vm.deleteProduct(product)">Produkt löschen</a>
+      - <a href="#" ng-click="cart.deleteProduct(product)">Produkt löschen</a>
     </li>
   </ul>
   <p>&nbsp;</p>
