@@ -12,9 +12,10 @@ module Home.GalleryDetailCtrl {
     galleryLabel: string;
     gallery: Home.Data.IGallery;
     galleryImages: Array<Home.Data.IImage>;
-    metaTitle: String;
-    metaDescription: String;
-    metaKeywords: String;
+    metaTitle: string;
+    metaDescription: string;
+    metaKeywords: string;
+    isGallery: boolean;
 
 
     // $inject annotation.
@@ -33,18 +34,22 @@ module Home.GalleryDetailCtrl {
 
       var vm = this;
       vm.ctrlName = 'GalleryDetailCtrl';
-      //$log.debug("ctrlName: " + vm.ctrlName);
 
       vm.gallery = repository.getGallery();
-      vm.galleryImages = repository.getGalleryImages();
-      vm.galleryLabel = $routeParams.galleryLabel;
+      vm.isGallery = (typeof(vm.gallery) === "object") ? true : false;
+      //vm.$log.debug("isGallery: " + vm.isGallery);
 
-      // ToDo: Validate values, e.g not every gallery has an altitudeLabel
-      vm.metaTitle = vm.gallery.activity[0] + " " + vm.gallery.name + ' ' + vm.gallery.altitudeLabel +
-        ' (' + vm.gallery.country + " " + vm.gallery.region +  ')';
-      // ToDo: create gallery type dependent descriptions and keywords
-      vm.metaDescription = 'Fotoalbum ' + vm.gallery.name;
-      vm.metaKeywords = vm.gallery.name + ", " + vm.gallery.region + ", " + vm.gallery.activity[0] + ', Photoblog';
+      if (vm.isGallery) {
+        vm.galleryImages = repository.getGalleryImages();
+        vm.galleryLabel = $routeParams.galleryLabel;
+
+        // ToDo: Validate values, e.g not every gallery has an altitudeLabel
+        vm.metaTitle = vm.gallery.activity[0] + " " + vm.gallery.name + ' ' + vm.gallery.altitudeLabel +
+          ' (' + vm.gallery.country + " " + vm.gallery.region +  ')';
+        // ToDo: create gallery type dependent descriptions and keywords
+        vm.metaDescription = 'Fotoalbum ' + vm.gallery.name;
+        vm.metaKeywords = vm.gallery.name + ", " + vm.gallery.region + ", " + vm.gallery.activity[0] + ', Photoblog';
+      }
 
     }
   }

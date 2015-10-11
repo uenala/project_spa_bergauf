@@ -1,5 +1,9 @@
+<!-- check for a valid gallery -->
+<span ng-switch="galleryDetail.isGallery">
+  <span ng-switch-when="true">
+
 <!-- Update Metatags -->
-<view-title>{{galleryDetail.metaTitle}}</view-title>
+<view-title ng-bind="galleryDetail.metaTitle"></view-title>
 <meta view-head name="description" content="{{galleryDetail.metaDescription}}" />
 <meta view-head name="keywords" content="{{galleryDetail.metaKeywords}}" />
 <meta view-head property="og:title" content="{{galleryDetail.metaTitle}}" />
@@ -23,7 +27,7 @@
     {{galleryDetail.gallery.date | date:'dd.MM.yyyy'}}
   </li>
   <li ng-if="galleryDetail.gallery.activity">
-    <ul class="list-inline">
+    <ul class="list-inline list-inline_tags">
       <li ng-repeat="activity in galleryDetail.gallery.activity"><i class="fa fa-tag fa-fw fa-lg"></i>{{activity}}</li>
     </ul>
   </li>
@@ -114,3 +118,15 @@
   </div>
 
 </div>
+
+
+  </span>
+  <!-- display 'gallery not found' error for non valid url's -->
+  <span ng-switch-default>
+    <div class="jumbotron">
+      <h1>Keine Bildergalerie gefunden.</h1>
+      <h2>Versuche es mit einer Suche auf der Startseite.</h2>
+      <p><a class="btn btn-primary btn-lg" href="/#/home" role="button">Zurück zur Startseite</a></p>
+    </div>
+  </span>
+</span>
