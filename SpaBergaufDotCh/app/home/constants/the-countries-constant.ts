@@ -9,7 +9,7 @@ module theCountries {
     {name: 'Frankreich', "code": 'FR'},
     {name: 'Marokko', code: 'MA'},
     {name: 'Grönland', "code": 'GL'},
-    {name: 'Argentina', code: 'AR'},
+    {name: 'Argentinien', code: 'AR'},
     {name: 'Brasilien', code: 'BR'},
     {name: 'Kuba', "code": 'CU'},
     {name: 'Oman', code: 'OM'},
