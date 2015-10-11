@@ -1,7 +1,7 @@
-<div class="col-sm-8 col-sm-offset-2">
-  <h4>Dein Warenkorb: {{vm.user.username}}</h4>
+<div ng-controller="CartCtrl as cart" class="col-sm-8 col-sm-offset-2">
+  <h4>Dein Warenkorb: {{cart.user.username}}</h4>
   <ul>
-    <li ng-repeat="product in vm.products">
+    <li ng-repeat="product in cart.products">
       {{product.path}}
       - <a href="#" ng-click="vm.deleteProduct(product)">Produkt löschen</a>
     </li>
