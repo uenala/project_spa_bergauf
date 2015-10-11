@@ -1,8 +1,12 @@
-<div ng-controller="CartCtrl as cart">
-
-<h4>Dein Warenkorb ist leer.</h4>
-<p>Hello {{cart.ctrlName}}</p>
-
-
+<div class="col-sm-8 col-sm-offset-2">
+  <h4>Dein Warenkorb: {{vm.user.username}}</h4>
+  <ul>
+    <li ng-repeat="product in vm.products">
+      {{product.path}}
+      - <a href="#" ng-click="vm.deleteProduct(product)">Produkt löschen</a>
+    </li>
+  </ul>
+  <p>&nbsp;</p>
+  <p><a href="#" class="btn btn-primary">Checkout</a></p>
 </div>
 

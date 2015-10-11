@@ -34,7 +34,7 @@ module Home.Services {
 
     getCart(): Home.Data.ICart { // needed to checkout
       var products = this.$cookieStore.get(this.cartCookie); // read cookie
-      var cart: Home.Data.ICart;
+      var cart: Home.Data.ICart = {username: "", changed: 0, products: [{path: "/12345"},{path: "/67890"}]}; // TODO clean debug paths
 
       cart.username = this.$rootScope.globals.currentUser.username;
       cart.changed = new Date().getTime();
