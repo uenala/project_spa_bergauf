@@ -46,21 +46,27 @@
             <li data-match-route="/skitouren$"><a href="#/skitouren" data-bs-collapse-toggle>Skitouren</a></li>
             <li data-match-route="/bergtouren$"><a href="#/bergtouren" data-bs-collapse-toggle>Bergtouren</a></li>
             <li class="dropdown" data-match-route="/exped.*">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">Reisen <b class="caret"></b></a>
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Reisen <i class="fa fa-caret-down fa-fw"></i></a>
               <ul class="dropdown-menu">
-                <li data-match-route="/exped/reise-nach-kuba"><a href="#/exped/reise-nach-kuba" data-bs-collapse-toggle>Kuba</a></li>
-                <li class="divider"></li>
+                <li data-match-route="/exped/reise-nach-kuba">
+                  <a href="#/exped/reise-nach-kuba" data-bs-collapse-toggle>Kuba</a>
+                </li>
+                <li role="separator" class="divider"></li>
                 <li role="presentation" class="dropdown-header">Ski-Reisen</li>
-                <li data-match-route="/exped/skitouren-im-iran"><a href="#/exped/skitouren-im-iran" data-bs-collapse-toggle>Damavand (Iran)</a></li>
-                <li class="divider"></li>
+                <li data-match-route="/exped/skitouren-im-iran">
+                  <a href="#/exped/skitouren-im-iran" data-bs-collapse-toggle>Damavand (Iran)</a>
+                </li>
+                <li role="separator" class="divider"></li>
                 <li role="presentation" class="dropdown-header">MTB-Reisen</li>
-                <li data-match-route="/exped/mtb-reise-ladakh"><a href="#/exped/mtb-reise-ladakh" data-bs-collapse-toggle>Ladakh</a></li>
-                <li class="divider"></li>
+                <li data-match-route="/exped/mtb-reise-ladakh">
+                  <a href="#/exped/mtb-reise-ladakh" data-bs-collapse-toggle>Ladakh</a>
+                </li>
+                <li role="separator" class="divider"></li>
                 <li data-bs-collapse-toggle><a href="#/exped">Alle Reisen</a></li>
               </ul>
             </li>
             <li class="dropdown" data-match-route="/contact|/impressum">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">Extras <b class="caret"></b></a>
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Extras <i class="fa fa-caret-down fa-fw"></i></a>
               <ul class="dropdown-menu">
                 <li data-match-route="/impressum.*"><a href="#/impressum" data-bs-collapse-toggle>Impressum</a></li>
               </ul>
@@ -68,13 +74,15 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right pull-right">
-            <li data-match-route="/login.*" ng-if="!globals.currentUser"><a href="#/login" data-bs-collapse-toggle><i class="fa fa-sign-in fa-fw"></i> Anmelden</a></li>
+            <li data-match-route="/login.*" ng-if="!globals.currentUser"><a href="#/login" data-bs-collapse-toggle>
+              <i class="fa fa-sign-in fa-fw"></i> Anmelden</a></li>
             <li class="dropdown" data-match-route="/user.*|/cart.*" ng-if="globals.currentUser">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="globals.currentUser.username">Benutzer</span> <b class="caret"></b></a>
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down fa-fw"></i></a>
               <ul class="dropdown-menu">
-                <li data-match-route="/userhome.*"><a href="#/userhome" data-bs-collapse-toggle><i class="fa fa-user fa-fw"></i> Profil</a></li>
-                <li data-match-route="/cart.*"><a href="#/cart" data-bs-collapse-toggle><i class="fa fa-shopping-cart fa-fw"></i> Warenkorb</a></li>
-                <li class="divider"></li>
+                <li data-match-route="/userhome.*"><a href="#/userhome" data-bs-collapse-toggle>
+                  <i class="fa fa-user fa-fw"></i> <span ng-bind="globals.currentUser.username">Profil</span></a></li>
+                <li role="separator" class="divider"></li>
                 <li><a href="#/login" data-bs-collapse-toggle><i class="fa fa-sign-out fa-fw"></i> Abmelden</a></li>
               </ul>
             </li>
@@ -83,9 +91,9 @@
                    data-content-template="home/views/cart.tpl.html"
                    data-animation="am-slide-right"
                    bs-aside="aside"
-                   data-container="body"><i class="fa fa-shopping-cart fa-fw"></i></a>
+                   data-container="body"><i class="fa fa-shopping-cart fa-fw"></i> <span class="hidden-sm">Warenkorb</span></a>
             </li>
-            <li><a href="#/home" data-bs-collapse-toggle><i class="fa fa-search fa-fw"></i></a></li>
+            <li><a href="#/home" data-bs-collapse-toggle><i class="fa fa-search fa-fw"></i> <span class="hidden-sm">Suche</span></a></li>
           </ul>
 
         </div><!-- /.navbar-collapse -->
