@@ -50,9 +50,8 @@ module User {
     }
 
     // private functions
-
     private handleSuccess(data) {
-      return data;  //TODO return data and success, because register-controller checks for success
+      return data;
     }
 
     private handleError(error) {

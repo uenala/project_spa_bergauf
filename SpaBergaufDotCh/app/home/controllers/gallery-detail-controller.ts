@@ -16,13 +16,14 @@ module Home.GalleryDetailCtrl {
     metaDescription: string;
     metaKeywords: string;
     isGallery: boolean;
+    addToCart: any;
 
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
-    public static $inject = ['$log', '$routeParams', '$http', 'Repository', '$rootScope', '$window'];
+    public static $inject = ['$log', '$routeParams', '$http', 'Repository', '$rootScope', '$window', 'CartService'];
 
     // dependencies are injected via AngularJS $injector
     constructor(private $log : ng.ILogService,
@@ -30,14 +31,16 @@ module Home.GalleryDetailCtrl {
                 private $http : ng.IHttpService,
                 private repository : Home.Services.IRepository,
                 private $rootScope :ng.IRootScopeService,
-                private $window : ng.IWindowService) {
+                private $window : ng.IWindowService,
+                private CartService: Home.Services.ICartService) {
 
       var vm = this;
       vm.ctrlName = 'GalleryDetailCtrl';
 
       vm.gallery = repository.getGallery();
-      vm.isGallery = (typeof(vm.gallery) === "object") ? true : false;
+      vm.isGallery = (typeof(vm.gallery) === "object");
       //vm.$log.debug("isGallery: " + vm.isGallery);
+      vm.addToCart = addToCart;
 
       if (vm.isGallery) {
         vm.galleryImages = repository.getGalleryImages();
@@ -49,6 +52,11 @@ module Home.GalleryDetailCtrl {
         // ToDo: create gallery type dependent descriptions and keywords
         vm.metaDescription = 'Fotoalbum ' + vm.gallery.name;
         vm.metaKeywords = vm.gallery.name + ", " + vm.gallery.region + ", " + vm.gallery.activity[0] + ', Photoblog';
+      }
+
+      function addToCart() {
+        vm.$log.debug("galleryDetailController.addToCart: " + vm.gallery.path);
+        CartService.addProduct({path: vm.gallery.path});
       }
 
     }

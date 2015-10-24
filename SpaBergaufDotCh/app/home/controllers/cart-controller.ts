@@ -6,9 +6,10 @@ module Home.CartCtrl {
 
     ctrlName: string;
     user: any;
-    deleteProduct: any;
+    deleteProduct: any; // points to the function, makes it a public function.
     cart: Home.Data.ICart;
     products: Array<Home.Data.IProduct>;
+    checkout: any;
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
@@ -24,12 +25,13 @@ module Home.CartCtrl {
                 private User: User.IUser,
                 private $rootScope: any,
                 private $log: ng.ILogService) {
-      var vm = this;
+      var vm = this; // initialize class variables
       vm.ctrlName = 'CartCtrl';
       vm.user = null;
       vm.cart = null;
       vm.products = [];
-      vm.deleteProduct = deleteProduct;
+      vm.deleteProduct = deleteProduct; // points to the function, makes it a public function.
+      vm.checkout = checkout;
 
       loadCurrentUser();
       this.getCart();
@@ -43,22 +45,35 @@ module Home.CartCtrl {
       }
 
       function deleteProduct(product) {
-        CartService.removeProduct(product)
-          .then(function () {
-            this.getCart();
+        this.CartService.removeProduct(product)
+          .then(function (products) {
+            vm.products = products.data;
           });
+      }
+
+      function checkout() {
+        if (vm.products.length > 0) {
+          this.CartService.checkout(vm.cart)
+          .then(function () {
+              CartService.emptyCart();
+              this.getCart();
+          });}
       }
 
     }
 
     private getCart():void {
-     this.cart = this.CartService.getCart();
-      for (var i=0; i < this.cart.products.length; i++) {
+     this.cart = this.CartService.getCart(); // get cart-object
+      for (var i=0; i < this.cart.products.length; i++) { // get all product in cart-object
         this.products.push(this.cart.products[i]);
       }
       this.$log.debug("cart-controller:getCart " + this.cart.username);
     }
+
+
   }
+
+
 
 
   /**

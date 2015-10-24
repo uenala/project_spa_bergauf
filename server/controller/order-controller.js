@@ -21,6 +21,7 @@ module.exports.getOrdersByUsername = function(req, res) {
 
 // method to add a new order, reads the cart-data in the JSON-Body
 module.exports.addOrder = function(req, res) {
+    console.log("addOrder called");
     var orders = readJsonDataFile();
 
     //debug only
@@ -44,7 +45,7 @@ module.exports.addOrder = function(req, res) {
     // add cart to orders of given username
     var newOrder = createNewOrder(cart);
     orders.push(newOrder);
-    console.log("try to add new order: " + newOrder.username + "ordered :" + newOrder.ordered);
+    console.log("try to add new order: " + newOrder.username + " ordered at:" + newOrder.ordered);
     fs.writeFile(dataFile, JSON.stringify(orders), function(err){
         if (err) {
             res.end();
@@ -105,7 +106,7 @@ var getOrdersByUsername = function (username){
     return ordersWithMatchingUsername;
 };
 
-// not used yet
+// not used yet.. just wait ;-)
 // get matching order by username and ordered-timestamp
 var getOrderByUsernameAndTimestamp = function (username, timestamp){
     var orders = getOrdersByUsername(username);

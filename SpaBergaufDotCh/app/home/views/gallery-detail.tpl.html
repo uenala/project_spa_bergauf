@@ -1,5 +1,5 @@
 <!-- check for a valid gallery -->
-<span ng-switch="galleryDetail.isGallery">
+<span ng-switch="galleryDetail.isGallery" ng-controller="GalleryDetailCtrl as galleryCtrl">
   <span ng-switch-when="true">
 
 <!-- Update Metatags -->
@@ -52,7 +52,7 @@
 <!-- /.row -->
 <span class="photoswipe"></span>
 
-<button type="button" class="btn btn-primary"
+<button type="button" class="btn btn-primary" ng-click="galleryCtrl.addToCart()"
         data-trigger="hover"
         data-title="zip File als Download mit allen Bilder dieser Galerie bestellen"
         data-placement="bottom" bs-tooltip><i class="fa fa-shopping-cart fa-fw fa-lg"></i> in den Warenkorb
