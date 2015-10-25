@@ -24,18 +24,18 @@ module activity {
         //console.log('Filter type:' + theme);
         // skitouren and bergtouren index have different filters
         if (theme === '/skitouren') {
-          if (gallery.activity.indexOf('Skitour') >= 0) {
+          if (gallery.activity.indexOf('skitour') >= 0) {
             temp.push(gallery);
           }
         } else if (theme === '/bergtouren') {
           // ToDo: how to read values from theActivities.activities constant.
           //console.log('constant: ' + theActivities.activities);
-          if (gallery.activity.indexOf('Bergtour') >= 0 ||
-            gallery.activity.indexOf('Hochtour') >= 0 ||
-            gallery.activity.indexOf('Klettertour') >= 0 ||
-            gallery.activity.indexOf('Bike & Hike') >= 0 ||
-            gallery.activity.indexOf('Alpinwanderung') >= 0 ||
-            gallery.activity.indexOf('Wanderung') >= 0
+          if (gallery.activity.indexOf('bergtour') >= 0 ||
+            gallery.activity.indexOf('hochtour') >= 0 ||
+            gallery.activity.indexOf('klettertour') >= 0 ||
+            gallery.activity.indexOf('bike-and-hike') >= 0 ||
+            gallery.activity.indexOf('alpinwanderung') >= 0 ||
+            gallery.activity.indexOf('wanderung') >= 0
           ) {
             temp.push(gallery);
           }

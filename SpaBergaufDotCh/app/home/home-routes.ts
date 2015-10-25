@@ -18,6 +18,36 @@ module home {
           }]
         }
       })
+      .when('/bildergalerien-nach-laender/:countryId', {
+        templateUrl: 'home/views/home.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
+      })
+      .when('/bildergalerien-nach-region/:regionId', {
+        templateUrl: 'home/views/home.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
+      })
+      .when('/bildergalerien-nach-outdoor-aktivitaet/:activityId', {
+        templateUrl: 'home/views/home.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
+      })
       .when('/impressum', {
         templateUrl: 'home/views/impressum.tpl.html',
         controller: 'DefaultCtrl',

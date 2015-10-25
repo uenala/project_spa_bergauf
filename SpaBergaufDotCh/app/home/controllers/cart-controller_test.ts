@@ -13,8 +13,8 @@ describe('CartCtrl', function () {
     ctrl = $controller('CartCtrl');
   }));
 
-  it('should have ctrlName as CartCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('CartCtrl');
-  });
+//  it('should have ctrlName as CartCtrl', function () {
+//    expect(ctrl.ctrlName).toEqual('CartCtrl');
+//  });
 
 });

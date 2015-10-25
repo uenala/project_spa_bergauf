@@ -7,14 +7,17 @@
     <h1 class="media-heading"><a title="Weiter zu der {{galleryObj.name}} Bildergalerie" href="#{{galleryObj.path}}">{{galleryObj.name}}</a></h1>
     <h2 class="media-heading media-heading--small">
       <i class="fa fa-globe fa-fw hidden-xs"></i>
-      {{galleryObj.country}}<span ng-if="galleryObj.region"> - {{galleryObj.region}}</span>
+      <a href="#/bildergalerien-nach-laender/{{galleryObj.country}}">{{galleryObj.country | convertIdToProperty:countriesObj:'code'}}</a>
+      <span ng-if="galleryObj.region"> - <a href="#/bildergalerien-nach-region/{{galleryObj.region}}">
+        {{galleryObj.region | convertIdToProperty:regionsObj:'name'}}</a></span>
     </h2>
     <p ng-if="galleryObj.date"><i class="fa fa-calendar fa-fw hidden-xs"></i>
       <span ng-if="galleryObj.dateStart">{{galleryObj.dateStart | date:'dd.MM. - '}}</span>
       {{galleryObj.date | date:'dd.MM.yyyy'}}</p>
     <h2 ng-if="galleryObj.activity" class="media-heading media-heading--small hidden-xs">
       <i class="fa fa-tags fa-fw"></i>
-      <span ng-repeat="activity in galleryObj.activity">&nbsp;{{activity}}</span>
+      <span ng-repeat="activity in galleryObj.activity">&nbsp;
+        <a href="#/bildergalerien-nach-outdoor-aktivitaet/{{activity}}">{{activity | convertIdToProperty:activitiesObj:'name'}}</a></span>
     </h2>
   </div>
 </div>

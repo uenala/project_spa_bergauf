@@ -12,46 +12,41 @@
 
 .bergauf-gallery figure {
   display: inline-block;
-  margin: 0 2% 2% 0;
-  width: 41.5%;
   position: relative;
   overflow: hidden;
   vertical-align: top;
+  margin: 0 2% 2% 0;
+  width: 41.5%;
+  /* Small devices */
+  @media screen and (min-width: 640px) {
+    width: 27.0%;
+  }
+  /* Small devices (tablets, 768px and up) */
+  @media screen and (min-width: 768px) {
+    width: 22.0%;
+  }
+  /* Medium devices (desktops, 992px and up) */
+  @media screen and (min-width: 992px) {
+    width: 20.5%;
+  }
+  /* Large devices (large desktops, 1200px and up) */
+  @media screen and (min-width: 1200px) {
+    width: 17.0%;
+  }
 }
 
 .bergauf-gallery figcaption {
   display: none;
 }
 
-/* Small devices */
-@media screen and (min-width: 640px) {
-  .bergauf-gallery figure {
-    width: 27.0%;
-  }
-}
-
-/* Small devices (tablets, 768px and up) */
-@media screen and (min-width: 768px) {
-  .bergauf-gallery figure {
-    width: 22.0%;
-  }
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) {
-  .bergauf-gallery figure {
-    width: 20.5%;
-  }
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media screen and (min-width: 1200px) {
-  .bergauf-gallery figure {
-    width: 17.0%;
-  }
-  .pswp__caption__center {
-    max-width: 600px;
+/* photoswipe ui overlay */
+.pswp__caption__center {
+  text-align: left;
+  max-width: 420px;
+  /* Large devices (large desktops, 1200px and up) */
+  @media screen and (min-width: 1200px) {
     text-align: center;
+    max-width: 600px;
   }
 }
 

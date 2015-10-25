@@ -7,11 +7,24 @@ $font-weight-normal: 400;
 
 .media {
   min-height: 160px;
+  @media (max-width: 767px) {
+    min-height: 80px;
+  }
 }
 
 .media-body, .media-left, .media-right {
   display: table-cell;
   vertical-align: top;
+}
+
+.media-left {
+  width: 160px;
+  height: 120px;
+  @media(max-width: 767px) {
+      width: 80px;
+      height: 60px;
+    }
+
 }
 
 .media-body {
@@ -20,30 +33,16 @@ $font-weight-normal: 400;
 }
 
 .media-heading {
-  font-size: $font-size-bigger;
   font-weight: $font-weight-bold;
+  font-size: $font-size-bigger;
   margin: 0 0 10px;
+  @media (max-width: 767px) {
+    font-size: $font-size-big;
+    margin: 0 0 5px;
+  }
 }
 
 .media-heading--small {
   font-size: $font-size-normal;
   font-weight: $font-weight-normal;
-}
-
-@media(max-width: 767px) {
-
-  .media {
-    min-height: 80px;
-  }
-
-  .media-left img, {
-    width: 80px;
-    height: 60px;
-  }
-
-  .media-heading {
-    font-size: $font-size-big;
-    margin: 0 0 5px;
-  }
-
 }

@@ -12,20 +12,20 @@
           <h4 class="aside-title">Anzahl Bildergalerien: <span class="label label-default">{{filteredGalleries.length}}</span></h4>
           <div class="form-group">
             <label for="fulltext" class="sr-only">Volltextsuche:</label>
-            <input class="form-control" type="text" placeholder="Volltextsuche" ng-model="home.query" id="fulltext" />
+            <input class="form-control" type="text" placeholder="Volltextsuche" ng-model="home.query" id="fulltext"/>
           </div>
           <div class="form-group">
             <label for="activity" class="sr-only">Nach Aktivität filtern:</label>
-            <select class="form-control" id="activity" ng-model="home.activity">
-              <option value="" selected="selected">Alle Aktivitäten</option>
-              <option ng-repeat="activity in home.activities" value="{{activity.name}}">{{activity.name}}</option>
+            <select class="form-control" id="activity" ng-model="home.activity"
+                    ng-options="activity.id as activity.name for activity in home.activities">
+              <option value="">Alle Aktivitäten</option>
             </select>
           </div>
           <div class="form-group">
             <label for="country" class="sr-only">Nach Land filtern:</label>
-            <select class="form-control" id="country" ng-model="home.country">
-              <option value="" selected="selected">Alle Länder</option>
-              <option ng-repeat="country in home.countries" value="{{country.code}}">{{country.name}}</option>
+            <select class="form-control" id="country" ng-model="home.country"
+                    ng-options="country.id as country.name for country in home.countries">
+              <option value="">Alle Länder</option>
             </select>
           </div>
         </div>
