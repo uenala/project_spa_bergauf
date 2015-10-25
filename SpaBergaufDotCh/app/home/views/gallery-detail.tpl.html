@@ -57,7 +57,7 @@
 <!-- /.row -->
 <span class="photoswipe"></span>
 
-<button type="button" class="btn btn-primary" ng-click="galleryCtrl.addToCart()"
+<button type="button" class="btn btn-primary" ng-click="galleryCtrl.addToCart()" ng-disabled="!globals.currentUser"
         data-trigger="hover"
         data-title="zip File als Download mit allen Bilder dieser Galerie bestellen"
         data-placement="bottom" bs-tooltip><i class="fa fa-shopping-cart fa-fw fa-lg"></i> in den Warenkorb
