@@ -48,15 +48,7 @@ module Home.CartCtrl {
       }
 
       function deleteProduct(product) {
-        this.CartService.removeProduct(product)
-          .then(function (response) {
-            if (response.data) {
-              vm.products = response.data;
-            } else {
-              Flash.Error(response.message, false);
-              vm.dataLoading = false;
-            }
-          });
+        vm.products =  this.CartService.removeProduct(product);
       }
 
       function checkout() {
@@ -65,7 +57,7 @@ module Home.CartCtrl {
           this.CartService.checkout(vm.cart)
             .then(function (response) {
               if (response.data) {
-                Flash.Success('Bestellung erfolgreich versandt.', true);
+                Flash.Success('Ihre Bestellung wurde erfolgreich versandt.', true);
                 CartService.emptyCart();
                 this.getCart();
                 $location.path('/index');

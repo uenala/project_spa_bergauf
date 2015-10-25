@@ -5,7 +5,7 @@ module Home.Services {
   export interface ICartService { // declare public accessible functions and variables
     get(): string;
     getCart(): Home.Data.ICart;
-    addProduct(product: Home.Data.IProduct): void;
+    addProduct(product: Home.Data.IProduct): Array<Home.Data.IProduct>;
     removeProduct(product: Home.Data.IProduct): Array<Home.Data.IProduct>;
     getNumberOfProducts(): number;
     emptyCart(): any;
@@ -50,7 +50,7 @@ module Home.Services {
     }
 
     // add a product to the cartCookie
-    addProduct(product): void {
+    addProduct(product): Array<Home.Data.IProduct> {
       this.$log.debug("CartService.addProduct called: " + product.path);
       var products = this.$cookieStore.get(this.cartCookie); // read cookie
 
@@ -59,6 +59,7 @@ module Home.Services {
       });
 
       this.$cookieStore.put(this.cartCookie, products);
+      return products;
     }
 
     // remove a product from the cartCookie

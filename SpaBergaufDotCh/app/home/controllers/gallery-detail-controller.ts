@@ -32,7 +32,8 @@ module Home.GalleryDetailCtrl {
       'CartService',
       'theCountries' ,
       'theRegions' ,
-      'theActivities'];
+      'theActivities',
+      'Flash'];
 
     // dependencies are injected via AngularJS $injector
     constructor(private $log : ng.ILogService,
@@ -44,7 +45,8 @@ module Home.GalleryDetailCtrl {
                 private CartService: Home.Services.ICartService,
                 private countries: theCountries.countries,
                 private regions: theRegions.regions,
-                private activities: theActivities.activities) {
+                private activities: theActivities.activities,
+                private Flash: Flash.IFlashService) {
 
       var vm = this;
       vm.ctrlName = 'GalleryDetailCtrl';
@@ -68,7 +70,8 @@ module Home.GalleryDetailCtrl {
 
       function addToCart() {
         vm.$log.debug("galleryDetailController.addToCart: " + vm.gallery.path);
-        CartService.addProduct({path: vm.gallery.path});
+        this.CartService.addProduct({path: vm.gallery.path});
+        Flash.Success('Gallerie wurde zum Warenkorb hinzugefügt.', true);
       }
 
     }
