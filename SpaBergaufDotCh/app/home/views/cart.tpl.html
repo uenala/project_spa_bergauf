@@ -4,12 +4,12 @@
     <div class="aside-content" ng-controller="CartCtrl as cart">
       <div class="aside-header" ng-show="title">
         <button type="button" class="close" ng-click="$hide()"><i class="fa fa-times"></i></button>
-        <h4 class="aside-title ng-binding" ng-bind="title">Warenkorb</h4>
+        <h4 class="aside-title ng-binding" ng-bind="title">Dein Warenkorb</h4>
       </div>
 
       <div class="aside-body">
         <div class="col-xs-*">
-          <h4>Dein Warenkorb: {{cart.user.username}}</h4>
+          <p><i class="fa fa-user fa-lg"></i> {{cart.user.username}}</p>
           <ul class="list-unstyled">
             <li class="cart-item" ng-repeat="product in cart.products">
               <a href="" ng-click="cart.deleteProduct(product);"><i class="fa fa-trash"></i></a>
