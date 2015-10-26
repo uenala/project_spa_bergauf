@@ -4,6 +4,10 @@ $font-size-big: 110%;
 $font-size-bigger: 120%;
 $font-weight-bold: 700;
 $font-weight-normal: 400;
+$img-width-normal: 160px;
+$img-width-small: 80px;
+$img-height-normal: 120px;
+$img-height-small: 60px;
 
 .media {
   min-height: 160px;
@@ -18,12 +22,22 @@ $font-weight-normal: 400;
 }
 
 .media-left {
-  width: 160px;
-  height: 120px;
+  width: $img-width-normal;
+  height: $img-height-normal;
   @media(max-width: 767px) {
-      width: 80px;
-      height: 60px;
+      width: $img-width-small;
+      height: $img-height-small;
     }
+
+}
+
+.media-object {
+  width: $img-width-normal;
+  height: $img-height-normal;
+  @media(max-width: 767px) {
+    width: $img-width-small;
+    height: $img-height-small;
+  }
 
 }
 

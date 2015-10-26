@@ -176,7 +176,12 @@ module home {
       .when('/userhome', {
         templateUrl: 'home/views/userhome.tpl.html',
         controller: 'UserhomeCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }]
+        }
       })
       .when('/login', {
         templateUrl: 'home/views/login.tpl.html',

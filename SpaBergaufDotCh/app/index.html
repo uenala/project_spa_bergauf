@@ -86,12 +86,14 @@
                 <li><a href="#/login" data-bs-collapse-toggle><i class="fa fa-sign-out fa-fw"></i> Abmelden</a></li>
               </ul>
             </li>
-            <li ng-if="globals.currentUser"><a href=""
-                   data-title="Warenkorb"
-                   data-content-template="home/views/cart.tpl.html"
-                   data-animation="am-slide-right"
-                   bs-aside="aside"
-                   data-container="body"><i class="fa fa-shopping-cart fa-fw"></i> <span class="hidden-sm">Warenkorb</span></a>
+            <li ng-if="globals.currentUser">
+              <a href=""
+                 data-title="Warenkorb"
+                 data-template-url="home/views/cart.tpl.html"
+                 data-animation="am-slide-right"
+                 bs-aside="aside"
+                 data-container="body">
+                <i class="fa fa-shopping-cart fa-fw"></i><span class="hidden-sm">Warenkorb</span></a>
             </li>
             <li><a href="#/home" data-bs-collapse-toggle><i class="fa fa-search fa-fw"></i> <span class="hidden-sm">Suche</span></a></li>
           </ul>

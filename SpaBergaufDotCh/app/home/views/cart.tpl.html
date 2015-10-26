@@ -1,7 +1,7 @@
-<div class="aside ng-scope right am-slide-right aside-cart" tabindex="-1" role="dialog" style="display: block;">
+<div class="aside aside-cart ng-scope right am-slide-right" tabindex="-1" role="dialog" style="display: block;">
   <div class="aside-dialog">
 
-    <div ng-controller="CartCtrl as cart" class="aside-content">
+    <div class="aside-content" ng-controller="CartCtrl as cart">
       <div class="aside-header" ng-show="title">
         <button type="button" class="close" ng-click="$hide()"><i class="fa fa-times"></i></button>
         <h4 class="aside-title ng-binding" ng-bind="title">Warenkorb</h4>
@@ -10,18 +10,16 @@
       <div class="aside-body">
         <div class="col-xs-*">
           <h4>Dein Warenkorb: {{cart.user.username}}</h4>
-          <ul>
-            <li ng-repeat="product in cart.products">
-              {{product.path}}
-              - <a href="#" ng-click="cart.deleteProduct(product);">Produkt löschen</a>
+          <ul class="list-unstyled">
+            <li class="cart-item" ng-repeat="product in cart.products">
+              <a href="" ng-click="cart.deleteProduct(product);"><i class="fa fa-trash"></i></a>
+              <gallery-item path="{{product.path}}"></gallery-item>
             </li>
           </ul>
         </div>
         <div class="col-xs-* text-right">
-          <a href="#" class="btn btn-primary" ng-disabled="vm.dataLoading || cart.products.length <1" ng-click="cart.checkout();$hide()">Checkout</a>
-
+          <a href="" class="btn btn-primary" ng-disabled="vm.dataLoading || cart.products.length <1" ng-click="cart.checkout();$hide()">Checkout</a>
         </div>
-
       </div>
 
       <div class="aside-footer">

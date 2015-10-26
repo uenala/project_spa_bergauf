@@ -122,11 +122,10 @@ a i.fa {
 .aside {
   opacity: 0.8;
   min-width: 400px;
-}
-
-/* aside modal for carts */
-.aside-cart {
-  opacity: 1.0;
+  @media(max-width:767px) {
+    max-width: 300px;
+    min-width: 200px;
+  }
 }
 
 .aside-body .aside-title {
@@ -164,11 +163,6 @@ a i.fa {
 
   .list-inline_tags > li {
     min-width: 50%;
-  }
-
-  .aside {
-    max-width: 300px;
-    min-width: 200px;
   }
 
 }

@@ -6,6 +6,7 @@ module Home.Services {
     loadGalleryData() : ng.IPromise<Home.Data.IGallery>;
     getGalleries() : Array<Home.Data.IGallery>;
     getGallery() : Home.Data.IGallery;
+    getGalleryFromPath() : Home.Data.IGallery;
     getGalleryImages() : Array<Home.Data.IImage>;
   }
 
@@ -67,16 +68,20 @@ module Home.Services {
 
     getGallery():Home.Data.IGallery {
 
+      return this.getGalleryFromPath(this.getGalleryId());
+    }
+
+    getGalleryFromPath(path:String):Home.Data.IGallery {
+
       var i=0;
       for (i; i<this.galleryData.length; i++) {
-        if (this.galleryData[i].path === this.getGalleryId()) {
+        if (this.galleryData[i].path === path) {
           break;
         }
       }
 
       return this.galleryData[i];
     }
-
 
     getGalleryImages():Array<Home.Data.IImage> {
 

@@ -71,7 +71,7 @@ module Home.GalleryDetailCtrl {
       function addToCart() {
         vm.$log.debug("galleryDetailController.addToCart: " + vm.gallery.path);
         this.CartService.addProduct({path: vm.gallery.path});
-        Flash.Success('Gallerie wurde zum Warenkorb hinzugefügt.', true);
+        Flash.Success('Die Bildgalerie wurde zum Warenkorb hinzugefügt.', true);
       }
 
     }
