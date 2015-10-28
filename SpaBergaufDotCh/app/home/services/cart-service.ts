@@ -54,9 +54,15 @@ module Home.Services {
       this.$log.debug("CartService.addProduct called: " + product.path);
       var products = this.$cookieStore.get(this.cartCookie); // read cookie
 
-      products.push({ // add product
-        path: product.path
-      });
+      if(!this.contains(products, product)) {
+
+        products.push({ // add product
+          path: product.path
+        });
+
+      } else {
+        this.$log.debug("CartService.addProduct " + product.path + " is already in cart.");
+      }
 
       this.$cookieStore.put(this.cartCookie, products);
       return products;
@@ -108,6 +114,16 @@ module Home.Services {
         return {success: false, message: error};
       };
     }
+
+    contains(array : Array<Home.Data.IProduct>, elem: Home.Data.IProduct): boolean{
+      var len = array.length;
+      for(var i = 0 ; i < len;i++)
+      {
+        if(array[i].path == elem.path){
+          return true;}
+      }
+      return false;
+  }
 
   }
 
