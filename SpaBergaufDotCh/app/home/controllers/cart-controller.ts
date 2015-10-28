@@ -57,7 +57,7 @@ module Home.CartCtrl {
           this.CartService.checkout(vm.cart)
             .then(function (response) {
               if (response.data) {
-                Flash.Success('Ihre Bestellung wurde erfolgreich versandt.', true);
+                Flash.Success('Ihre Bestellung wurde erfolgreich versandt.', false);
                 CartService.emptyCart();
                 this.getCart();
                 $location.path('/index');
@@ -88,7 +88,7 @@ module Home.CartCtrl {
    * @ngdoc object
    * @name home.controller:CartCtrl
    *
-   * @description
+   * @descriptionme
    *
    */
   angular
