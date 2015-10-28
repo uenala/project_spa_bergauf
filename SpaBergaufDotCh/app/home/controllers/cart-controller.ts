@@ -88,7 +88,7 @@ module Home.CartCtrl {
    * @ngdoc object
    * @name home.controller:CartCtrl
    *
-   * @description
+   * @descriptionme
    *
    */
   angular
