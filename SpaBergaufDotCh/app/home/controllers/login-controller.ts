@@ -4,13 +4,17 @@ module Home.LoginCtrl {
 
   class LoginCtrl {
 
-    ctrlName: string
+    ctrlName: string;
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
-    public static $inject = ['$location', 'Authentication', 'Flash', '$log'
+    public static $inject = [
+      '$location',
+      'Authentication',
+      '$log',
+      'Logger'
     ];
 
     login: any;
@@ -22,9 +26,8 @@ module Home.LoginCtrl {
     // dependencies are injected via AngularJS $injector
     constructor( private $location: ng.ILocationService,
                  private Authentication: Authentication.IAuthentication,
-                 private Flash: Flash.IFlashService,
-                 private $log: ng.ILogService
-    ) {
+                 private $log: ng.ILogService,
+                 private logger : Logger.ILoggerService) {
 
       var vm = this;
       vm.ctrlName = 'LoginCtrl';
@@ -44,7 +47,7 @@ module Home.LoginCtrl {
             $location.path('/userhome');
             $log.debug("Login success for username " + vm.username);
             } else {
-            Flash.Error(response.message, false);
+            logger.logError(response.message, 'empty', this, true);
             vm.dataLoading = false;
           }
         });

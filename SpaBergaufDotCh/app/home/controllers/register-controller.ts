@@ -4,13 +4,18 @@ module Home.RegisterCtrl {
 
   class RegisterCtrl {
 
-    ctrlName: string
+    ctrlName: string;
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
-    public static $inject = ['UserLocalStorage', 'User', '$location', '$rootScope', 'Flash'
+    public static $inject = [
+      'UserLocalStorage',
+      'User',
+      '$location',
+      '$rootScope',
+      'Logger'
     ];
 
     register: any;
@@ -22,7 +27,7 @@ module Home.RegisterCtrl {
                 private User: User.IUser,
                 private $location: ng.ILocationService,
                 private $rootScope: any,
-                private Flash: Flash.IFlashService) {
+                private logger : Logger.ILoggerService) {
 
       var vm = this;
       vm.ctrlName = 'RegisterCtrl';
@@ -35,10 +40,10 @@ module Home.RegisterCtrl {
          User.Create(vm.user) // Rest-Version
           .then(function (response) {
             if (response.data) {
-              Flash.Success('Registration erfolgreich, bitte einloggen', true);
+              logger.logSuccess('Registration erfolgreich, bitte einloggen', 'empty', this, true);
               $location.path('/login');
             } else {
-              Flash.Error(response.message, false);
+              logger.logError(response.message, 'empty', this, true);
               vm.dataLoading = false;
             }
           });

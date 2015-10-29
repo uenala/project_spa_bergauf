@@ -29,6 +29,12 @@
     "sinon/sinon.d.ts": {
       "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
     },
+    "toastr/toastr.d.ts": {
+      "commit": "2520bce9a8a71b66e67487cbd5b33fec880b0c55"
+    },
+    "moment/moment.d.ts": {
+      "commit": "f3244190e20af6901e865f4cc58127d19216baa1"
+    },
     "photoswipe/photoswipe.d.ts": {
       "commit": "4356af494c045299110677b21e62000957e7a72e"
     }

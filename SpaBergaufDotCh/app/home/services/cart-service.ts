@@ -14,7 +14,12 @@ module Home.Services {
   // service to handle a shopping cart's data in a cookie on the client side.
   class CartService {
 
-    public static $inject = ['$cookieStore', '$rootScope', '$log', '$http'
+    public static $inject = [
+      '$cookieStore',
+      '$rootScope',
+      '$log',
+      '$http',
+      'Logger'
     ];
 
     private baseurl: string = "http://localhost:3003";
@@ -25,7 +30,8 @@ module Home.Services {
     constructor(private $cookieStore: any,
                 private $rootScope: any,
                 private $log: ng.ILogService,
-                private $http: ng.IHttpService) {
+                private $http: ng.IHttpService,
+                private logger : Logger.ILoggerService) {
 
       // initialize cookie if necessary
       if(! (this.$cookieStore.get(this.cartCookie) instanceof Array)) {
@@ -59,8 +65,10 @@ module Home.Services {
         products.push({ // add product
           path: product.path
         });
+        this.logger.logSuccess('Diese Bildergalerie wurde zum Warenkorb hinzugefügt.', 'empty', this, true);
 
       } else {
+        this.logger.logWarning('Diese Bildergalerie ist schon im Warenkorb.', 'empty', this, true);
         this.$log.debug("CartService.addProduct " + product.path + " is already in cart.");
       }
 

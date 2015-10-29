@@ -16,7 +16,13 @@ module Home.CartCtrl {
     // It provides $injector with information about dependencies to be injected into constructor
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
-    public static $inject = [ 'CartService', 'User', '$rootScope', '$log', 'Flash', '$location'
+    public static $inject = [
+      'CartService',
+      'User',
+      '$rootScope',
+      '$log',
+      '$location',
+      'Logger'
     ];
 
 
@@ -26,8 +32,8 @@ module Home.CartCtrl {
                 private User: User.IUser,
                 private $rootScope: any,
                 private $log: ng.ILogService,
-                private Flash: Flash.IFlashService,
-                private $location: ng.ILocationService) {
+                private $location: ng.ILocationService,
+                private logger : Logger.ILoggerService) {
       var vm = this; // initialize class variables
       vm.ctrlName = 'CartCtrl';
       vm.user = null;
@@ -57,12 +63,12 @@ module Home.CartCtrl {
           this.CartService.checkout(vm.cart)
             .then(function (response) {
               if (response.data) {
-                Flash.Success('Ihre Bestellung wurde erfolgreich versandt.', false);
+                logger.logSuccess('Ihre Bestellung wurde erfolgreich versandt.', 'empty', this, true);
                 CartService.emptyCart();
                 this.getCart();
                 $location.path('/index');
               } else {
-                Flash.Error(response.message, false);
+                logger.logError(response.message, 'empty', this, true);
                 vm.dataLoading = false;
               }
             });}

@@ -23,7 +23,8 @@ module Home.GalleryDetailCtrl {
     // It provides $injector with information about dependencies to be injected into constructor
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
-    public static $inject = ['$log',
+    public static $inject = [
+      '$log',
       '$routeParams',
       '$http',
       'Repository',
@@ -32,8 +33,7 @@ module Home.GalleryDetailCtrl {
       'CartService',
       'theCountries' ,
       'theRegions' ,
-      'theActivities',
-      'Flash'];
+      'theActivities'];
 
     // dependencies are injected via AngularJS $injector
     constructor(private $log : ng.ILogService,
@@ -45,8 +45,7 @@ module Home.GalleryDetailCtrl {
                 private CartService: Home.Services.ICartService,
                 private countries: theCountries.countries,
                 private regions: theRegions.regions,
-                private activities: theActivities.activities,
-                private Flash: Flash.IFlashService) {
+                private activities: theActivities.activities) {
 
       var vm = this;
       vm.ctrlName = 'GalleryDetailCtrl';
@@ -71,7 +70,6 @@ module Home.GalleryDetailCtrl {
       function addToCart() {
         vm.$log.debug("galleryDetailController.addToCart: " + vm.gallery.path);
         this.CartService.addProduct({path: vm.gallery.path});
-        Flash.Success('Die Bildgalerie wurde zum Warenkorb hinzugefügt.', false);
       }
 
     }
