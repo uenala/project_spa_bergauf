@@ -1,7 +1,6 @@
 /// <reference path="../typings/tsd.d.ts"/>
 
 ///<reference path='home/services/authentication-service.ts' />
-///<reference path='home/services/flash-service.ts' />
 ///<reference path='home/services/repository-service.ts' />
 ///<reference path='home/services/user-local-storage-service.ts' />
 ///<reference path='home/services/user-service.ts' />

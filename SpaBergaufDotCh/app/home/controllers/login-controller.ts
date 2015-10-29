@@ -47,6 +47,7 @@ module Home.LoginCtrl {
             $location.path('/userhome');
             $log.debug("Login success for username " + vm.username);
             } else {
+            $log.debug(response.message + " " + vm.username);
             logger.logError(response.message, 'empty', this, true);
             vm.dataLoading = false;
           }

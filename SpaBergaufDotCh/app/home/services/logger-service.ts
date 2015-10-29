@@ -88,10 +88,6 @@ module Logger {
       write(source, message, data);
 
       if (showToast) {
-        message = message;
-      }
-
-      if (showToast) {
         if (toastType === 'error') {
           toastr.error(message);
         } else if (toastType === 'warning') {
@@ -102,11 +98,7 @@ module Logger {
           toastr.info(message);
         }
       }
-/*
-      if ((<any>window).cordova) {
-        console.log(message);
-      }
-*/
+
     }
 
   }

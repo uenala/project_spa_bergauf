@@ -154,23 +154,28 @@ module.exports.deleteUser = function(req, res) {
     }
 
     // delete user
+    var match = false;
     for (var i = 0; i < users.length; i++) {
-        var user = users[i];
-        if (user.id == identifier) {
-            var deletedUsername = user.username; // save username for logging
+        //console.log("checking existing user " + users[i].id + " against requested id " + identifier);
+        if (users[i].id == identifier) {
+            var deletedUsername = users[i].username; // save username for logging
             users.splice(i, 1);
             console.log(JSON.stringify(users));
+            match = true;
             break;
         }
+    }
+    if (!match) {
+        console.log("Error deleting user " + identifier);
         res.statusCode = 404;
-        res.send('Error 404: No user found');
+        return res.send('Error 404: No user found');
     }
 
     console.log("deleted user id: " + identifier + ", " + deletedUsername);
     fs.writeFile(dataFile, JSON.stringify(users), function(err){
         if (err) {
             res.end();
-            return console.log("Error deleting user! Root cause: " + err);
+            return console.log("Error writing users.json! Root cause: " + err);
         }
     });
     res.json(true);

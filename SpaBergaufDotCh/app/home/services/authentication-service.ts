@@ -27,9 +27,6 @@ module Authentication {
     Login(username: string, password: string , callback: any) {
 
 
-      /* Dummy authentication for testing
-       ----------------------------------------------*/
-
       // LocalStorage-Version
       //  var response;
       //  this.UserLocalStorage.GetByUsername(username)
@@ -46,7 +43,7 @@ module Authentication {
       var response;
       this.User.GetByUsername(username)
         .then(function (user) {
-          if (user !== null && user.data.password === password) {
+          if (user.data && user.data.password === password) {
             response = {success: true};
           } else {
             response = {success: false, message: 'Email oder Passwort falsch'};
@@ -55,7 +52,7 @@ module Authentication {
         });
 
 
-      /* Use this for real authentication
+      /* Use something like this for more secure authentication
        ----------------------------------------------*/
       //$http.post('/api/authenticate', { username: username, password: password })
       //    .success(function (response) {
