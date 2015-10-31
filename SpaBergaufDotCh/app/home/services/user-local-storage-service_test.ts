@@ -6,7 +6,7 @@
 describe('UserLocalStorage', function () {
   var service;
 
-  beforeEach(module('home'));
+  beforeEach(angular.mock.module('home'));
 
   beforeEach(inject(function (UserLocalStorage) {
     service = UserLocalStorage;
