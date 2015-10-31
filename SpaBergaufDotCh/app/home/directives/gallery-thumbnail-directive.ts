@@ -21,31 +21,21 @@ module GalleryThumbnail {
 
   interface IGalleryThumbnailController {
     // specify exposed controller methods and properties here
-    getCountries(): any;
-    getRegions(): any;
-    getActivities(): any;
+    getTags(): any;
+
   }
 
   class galleryThumbnailController implements IGalleryThumbnailController {
 
-    public static $inject = ['theCountries', 'theRegions', 'theActivities'];
-    constructor(private countries: theCountries.countries,
-                private regions: theRegions.regions,
-                private activities: theActivities.activities) {
+    public static $inject = ['Tagging'];
+    constructor(private tagging: Home.Services.ITagging) {
       // countries and activities are now properties of the controller
     }
 
-    getCountries(): any {
-      return this.countries;
+    getTags(): any {
+      return this.tagging.getTags();
     }
 
-    getRegions(): any {
-      return this.regions;
-    }
-
-    getActivities(): any {
-      return this.activities;
-    }
 
   }
 
@@ -74,9 +64,7 @@ module GalleryThumbnail {
 
         });
 
-        scope.countriesObj = controller.getCountries();
-        scope.regionsObj = controller.getRegions();
-        scope.activitiesObj = controller.getActivities();
+        scope.tagsObj = controller.getTags();
 
       }
     };

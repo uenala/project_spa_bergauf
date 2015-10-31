@@ -17,6 +17,7 @@ module Home.GalleryDetailCtrl {
     metaKeywords: string;
     isGallery: boolean;
     addToCart: any;
+    tags: any;
 
 
     // $inject annotation.
@@ -31,9 +32,7 @@ module Home.GalleryDetailCtrl {
       '$rootScope',
       '$window',
       'CartService',
-      'theCountries' ,
-      'theRegions' ,
-      'theActivities'];
+      'Tagging'];
 
     // dependencies are injected via AngularJS $injector
     constructor(private $log : ng.ILogService,
@@ -43,13 +42,12 @@ module Home.GalleryDetailCtrl {
                 private $rootScope :ng.IRootScopeService,
                 private $window : ng.IWindowService,
                 private CartService: Home.Services.ICartService,
-                private countries: theCountries.countries,
-                private regions: theRegions.regions,
-                private activities: theActivities.activities) {
+                private tagging: Home.Services.ITagging) {
 
       var vm = this;
       vm.ctrlName = 'GalleryDetailCtrl';
 
+      vm.tags = tagging.getTags();
       vm.gallery = repository.getGallery();
       vm.isGallery = (typeof(vm.gallery) === "object");
       //vm.$log.debug("isGallery: " + vm.isGallery);

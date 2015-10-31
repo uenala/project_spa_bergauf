@@ -17,14 +17,14 @@
           <div class="form-group">
             <label for="activity" class="sr-only">Nach Aktivität filtern:</label>
             <select class="form-control" id="activity" ng-model="home.activity"
-                    ng-options="activity.id as activity.name for activity in home.activities">
+                    ng-options="activity.id as activity.name for activity in home.activityTags">
               <option value="">Alle Aktivitäten</option>
             </select>
           </div>
           <div class="form-group">
             <label for="country" class="sr-only">Nach Land filtern:</label>
             <select class="form-control" id="country" ng-model="home.country"
-                    ng-options="country.id as country.name for country in home.countries">
+                    ng-options="country.id as country.name for country in home.countryTags">
               <option value="">Alle Länder</option>
             </select>
           </div>

@@ -15,6 +15,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -25,6 +28,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -35,6 +41,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -45,6 +54,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -60,6 +72,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -70,6 +85,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -80,6 +98,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -90,6 +111,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -100,6 +124,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -110,6 +137,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -120,6 +150,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -130,6 +163,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -140,6 +176,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -150,6 +189,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -160,6 +202,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -170,6 +215,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })
@@ -180,6 +228,9 @@ module home {
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
           }]
         }
       })

@@ -28,8 +28,6 @@ module activity {
             temp.push(gallery);
           }
         } else if (theme === '/bergtouren') {
-          // ToDo: how to read values from theActivities.activities constant.
-          //console.log('constant: ' + theActivities.activities);
           if (gallery.activity.indexOf('bergtour') >= 0 ||
             gallery.activity.indexOf('hochtour') >= 0 ||
             gallery.activity.indexOf('klettertour') >= 0 ||

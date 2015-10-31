@@ -18,6 +18,10 @@ module Home.IndexCtrl {
     activity: string;
     themeFilter: string;
     title: string;
+    countryTags : Array<Home.Data.ITag>;
+    regionTags : Array<Home.Data.ITag>;
+    activityTags : Array<Home.Data.ITag>;
+    tags : Array<Array<Home.Data.ITag>>;
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
@@ -29,9 +33,7 @@ module Home.IndexCtrl {
       '$routeParams',
       '$http',
       'Repository',
-      'theCountries' ,
-      'theRegions' ,
-      'theActivities'];
+      'Tagging'];
 
     // dependencies are injected via AngularJS $injector
     constructor(private $log : ng.ILogService,
@@ -39,9 +41,7 @@ module Home.IndexCtrl {
                 private $routeParams: IRouteParams,
                 private $http : ng.IHttpService,
                 private repository : Home.Services.IRepository,
-                private countries: theCountries.countries,
-                private regions: theRegions.regions,
-                private activities: theActivities.activities) {
+                private tagging : Home.Services.ITagging) {
 
       var vm = this;
       vm.ctrlName = 'IndexCtrl';
@@ -53,6 +53,11 @@ module Home.IndexCtrl {
       vm.country = $routeParams.countryId;
       vm.region = $routeParams.regionId;
       vm.activity = $routeParams.activityId;
+
+      vm.tags = vm.tagging.getTags();
+      vm.countryTags = vm.tagging.getCountryTags();
+      vm.regionTags = vm.tagging.getRegionTags();
+      vm.activityTags = vm.tagging.getActivityTags();
 
     }
 
