@@ -24,8 +24,8 @@ module Home.Services {
 
     private baseurl: string = "http://localhost:3003";
 
-    // the name of the cookie holding the cart-data
-    private cartCookie: any = 'cartCookie';
+    // the prefix of the cookie holding the cart-data
+    private cartCookiePrefix: String = 'cartCookie';
 
     constructor(private $cookieStore: any,
                 private $rootScope: any,
@@ -33,16 +33,11 @@ module Home.Services {
                 private $http: ng.IHttpService,
                 private logger : Logger.ILoggerService) {
 
-      // initialize cookie if necessary
-      if(! (this.$cookieStore.get(this.cartCookie) instanceof Array)) {
-        this.$cookieStore.put(this.cartCookie, []);
-      }
-
     }
 
     // read cartCookie into a cart-object that can be submitted to the server during checkout.
     getCart(): Home.Data.ICart {
-      var products = this.$cookieStore.get(this.cartCookie); // read cookie
+      var products = this.readCartCookie();
       var cart: Home.Data.ICart = {username: "", changed: 0, products: []};
 
       cart.username = this.$rootScope.globals.currentUser.username;
@@ -58,7 +53,7 @@ module Home.Services {
     // add a product to the cartCookie
     addProduct(product): Array<Home.Data.IProduct> {
       this.$log.debug("CartService.addProduct called: " + product.path);
-      var products = this.$cookieStore.get(this.cartCookie); // read cookie
+      var products = this.readCartCookie();
 
       if(!this.contains(products, product)) {
 
@@ -72,14 +67,14 @@ module Home.Services {
         this.$log.debug("CartService.addProduct " + product.path + " is already in cart.");
       }
 
-      this.$cookieStore.put(this.cartCookie, products);
+      this.writeCartCookie(products);
       return products;
     }
 
     // remove a product from the cartCookie
     removeProduct(product): Array<Home.Data.IProduct> {
       this.$log.debug("CartService.removeProduct called: " + product.path);
-      var products = this.$cookieStore.get(this.cartCookie); // read cookie
+      var products = this.readCartCookie();
 
       for (var i=0; i < products.length; i++) { // remove product
         if (product.path == products[i].path) {
@@ -87,17 +82,18 @@ module Home.Services {
           this.$log.debug("CartService.removeProduct: " + product.path);
         }
       }
-      this.$cookieStore.put(this.cartCookie, products); // write back cookie
+      this.writeCartCookie(products); // write back cookie
       return products;
     }
 
     getNumberOfProducts(): number {
-      var products = this.$cookieStore.get(this.cartCookie); // read cookie
+      var products = this.readCartCookie();
       return products.length + 1;
     }
 
     emptyCart(): void {
-      this.$cookieStore.put(this.cartCookie, []);
+      var cartCookieName: string = this.cartCookiePrefix + this.$rootScope.globals.currentUser.username;
+      this.$cookieStore.put(cartCookieName, []);
       this.$log.debug("CartService.emptyCart called");
     }
 
@@ -132,6 +128,20 @@ module Home.Services {
       }
       return false;
   }
+
+    readCartCookie(): Array<Home.Data.IProduct> {
+      var cartCookieName: string = this.cartCookiePrefix + this.$rootScope.globals.currentUser.username;
+      if(!(this.$cookieStore.get(cartCookieName) instanceof Array)) {
+        this.$cookieStore.put(cartCookieName, []);
+      }
+      var products = this.$cookieStore.get(cartCookieName); // read cookie
+      return products;
+    }
+
+    writeCartCookie(products: Array<Home.Data.IProduct>): void {
+      var cartCookieName: string = this.cartCookiePrefix + this.$rootScope.globals.currentUser.username;
+      this.$cookieStore.put(cartCookieName, products);
+    }
 
   }
 

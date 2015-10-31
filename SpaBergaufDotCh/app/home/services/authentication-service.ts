@@ -78,6 +78,11 @@ module Authentication {
 
 
     ClearCredentials() {
+
+      if(this.$rootScope.globals && this.$rootScope.globals.currentUser) {
+        this.$cookieStore.remove('cartCookie'+ this.$rootScope.globals.currentUser.username);
+      }
+
       this.$rootScope.globals = {};
       this.$cookieStore.remove('globals');
       this.$http.defaults.headers.common.Authorization = 'Basic ';

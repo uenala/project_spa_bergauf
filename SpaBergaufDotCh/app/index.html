@@ -83,7 +83,7 @@
                 <li data-match-route="/userhome.*"><a href="#/userhome" data-bs-collapse-toggle>
                   <i class="fa fa-user fa-fw"></i> <span ng-bind="globals.currentUser.username">Profil</span></a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#/login" data-bs-collapse-toggle><i class="fa fa-sign-out fa-fw"></i> Abmelden</a></li>
+                <li ng-controller="HomeCtrl as home"><a href="#/login" data-bs-collapse-toggle ng-click="home.logout();"><i class="fa fa-sign-out fa-fw"></i> Abmelden</a></li>
               </ul>
             </li>
             <li ng-if="globals.currentUser">
