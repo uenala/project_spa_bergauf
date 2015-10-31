@@ -6,7 +6,7 @@
 describe('DefaultCtrl', function () {
   var ctrl;
 
-  beforeEach(module('home'));
+  beforeEach(angular.mock.module('home'));
 
   beforeEach(inject(function ($rootScope, $controller) {
     ctrl = $controller('DefaultCtrl');

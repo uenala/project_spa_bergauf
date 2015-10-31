@@ -19,9 +19,9 @@
 <ul class="list-inline">
   <li ng-if="galleryDetail.gallery.country">
     <i class="fa fa-globe fa-fw fa-lg"></i>
-    <a href="#/bildergalerien-nach-laender/{{galleryDetail.gallery.country}}">{{galleryDetail.gallery.country | convertIdToProperty:galleryDetail.countries:name}}</a>
+    <a href="#/bildergalerien-nach-laender/{{galleryDetail.gallery.country}}">{{galleryDetail.gallery.country | convertIdToProperty:galleryDetail.tags:'countries':'name'}}</a>
     <span ng-if="galleryDetail.gallery.region"> - <a href="#/bildergalerien-nach-region/{{galleryDetail.gallery.region}}">
-      {{galleryDetail.gallery.region | convertIdToProperty:galleryDetail.regions:name}}</a></span>
+      {{galleryDetail.gallery.region | convertIdToProperty:galleryDetail.tags:'regions':'name'}}</a></span>
   </li>
   <li ng-if="galleryDetail.gallery.date">
     <i class="fa fa-calendar fa-fw fa-lg"></i>
@@ -32,7 +32,7 @@
     <ul class="list-inline list-inline_tags">
       <li ng-repeat="activity in galleryDetail.gallery.activity">
         <i class="fa fa-tag fa-fw fa-lg"></i>
-        <a href="#/bildergalerien-nach-outdoor-aktivitaet/{{activity}}">{{activity | convertIdToProperty:galleryDetail.activities:'name'}}</a>
+        <a href="#/bildergalerien-nach-outdoor-aktivitaet/{{activity}}">{{activity | convertIdToProperty:galleryDetail.tags:'activities':'name'}}</a>
       </li>
     </ul>
   </li>

@@ -29,9 +29,9 @@
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
     <p class="search-filter" ng-if="home.query || home.activity || home.country  || home.region">
       Suchfilter:
-      {{home.query}} {{home.activity | convertIdToProperty:home.activities:'name'}}
-      {{home.country | convertIdToProperty:home.countries:'name'}}
-      {{home.region | convertIdToProperty:home.regions:'name'}}
+      {{home.query}} {{home.activity | convertIdToProperty:home.tags:'activities':'name'}}
+      {{home.country | convertIdToProperty:home.tags:'countries':'name'}}
+      {{home.region | convertIdToProperty:home.tags:'regions':'name'}}
     </p>
   </div>
 </div>

@@ -1,4 +1,4 @@
-///<reference path='../../../typings/tsd.d.ts' />
+///<reference path='../../min.references.ts' />
 module convertIdToProperty {
   'use strict';
 
@@ -9,6 +9,9 @@ module convertIdToProperty {
   * @description
   *
   * @param {String} input The id to filter
+  * @param {Array} input The tags
+  * @param {String} input The tag namespace
+  * @param {String} input The tag property
   * @returns {String} The filtered id
   *
   */
@@ -17,14 +20,25 @@ module convertIdToProperty {
     .filter('convertIdToProperty', convertIdToProperty);
 
   function convertIdToProperty() {
-    return function (id, countries, property) {
-      var name = property? property : 'name';
-      if (countries) {
-      for (var i=0; i<countries.length; i++) {
-        if (id === countries[i].id) {
-          return countries[i][name];
-        }
+    return function (id, tags, namespace, property) {
+      var propName = property? property : 'name';
+      var namespaceId = 0;
+
+      switch (namespace) {
+        case 'countries':
+          namespaceId = 0; break;
+        case 'regions':
+          namespaceId = 1; break;
+        case 'activities':
+          namespaceId = 2; break;
       }
+
+      if (tags && tags[namespaceId]) {
+        for (var i=0; i<tags[namespaceId].length; i++) {
+          if (id === tags[namespaceId][i].id) {
+            return tags[namespaceId][i][propName];
+          }
+        }
       }
 
       return id;

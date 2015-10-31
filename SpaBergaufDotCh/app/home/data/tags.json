@@ -1,0 +1,305 @@
+{
+  "countries": [
+    {
+      "name": "Schweiz",
+      "code": "CH",
+      "id": "schweiz"
+    },
+    {
+      "name": "Öestereich",
+      "code": "A",
+      "id": "oestereich"
+    },
+    {
+      "name": "Italien",
+      "code": "IT",
+      "id": "italien"
+    },
+    {
+      "name": "Frankreich",
+      "code": "FR",
+      "id": "frankreich"
+    },
+    {
+      "name": "Marokko",
+      "code": "MA",
+      "id": "marokko"
+    },
+    {
+      "name": "Grönland",
+      "code": "GL",
+      "id": "groenland"
+    },
+    {
+      "name": "Argentinien",
+      "code": "AR",
+      "id": "argentinien"
+    },
+    {
+      "name": "Brasilien",
+      "code": "BR",
+      "id": "brasilien"
+    },
+    {
+      "name": "Kuba",
+      "code": "CU",
+      "id": "kuba"
+    },
+    {
+      "name": "Oman",
+      "code": "OM",
+      "id": "oman"
+    },
+    {
+      "name": "Iran",
+      "code": "IR",
+      "id": "iran"
+    },
+    {
+      "name": "Indien",
+      "code": "IN",
+      "id": "indien"
+    },
+    {
+      "name": "Nepal",
+      "code": "NP",
+      "id": "nepal"
+    },
+    {
+      "name": "Myanmar",
+      "code": "MM",
+      "id": "myanmar"
+    },
+    {
+      "name": "Japan",
+      "code": "JP",
+      "id": "japan"
+    },
+    {
+      "name": "Kap Verde",
+      "code": "CV",
+      "id": "kap-verde"
+    }
+  ],
+  "regions": [
+    {
+      "name": "Trient",
+      "id": "trient"
+    },
+    {
+      "name": "Glarner Alpen",
+      "id": "glarner-alpen"
+    },
+    {
+      "name": "Binntal",
+      "id": "binntal"
+    },
+    {
+      "name": "Arolla",
+      "id": "arolla"
+    },
+    {
+      "name": "Maderanertal",
+      "id": "maderanertal"
+    },
+    {
+      "name": "Urbachtal",
+      "id": "urbachtal"
+    },
+    {
+      "name": "Göscheneralp",
+      "id": "goescheneralp"
+    },
+    {
+      "name": "Matt",
+      "id": "matt"
+    },
+    {
+      "name": "Klöntal",
+      "id": "kloental"
+    },
+    {
+      "name": "Sihltal",
+      "id": "sihltal"
+    },
+    {
+      "name": "Engelberg",
+      "id": "engelberg"
+    },
+    {
+      "name": "Mathon",
+      "id": "mathon"
+    },
+    {
+      "name": "Maienfeld",
+      "id": "maienfeld"
+    },
+    {
+      "name": "Lavin",
+      "id": "lavin"
+    },
+    {
+      "name": "Zermatt",
+      "id": "zermatt"
+    },
+    {
+      "name": "Filisur",
+      "id": "filisur"
+    },
+    {
+      "name": "Erstfeld / Arni",
+      "id": "erstfeld-arni"
+    },
+    {
+      "name": "Meiental",
+      "id": "meiental"
+    },
+    {
+      "name": "Lötschental",
+      "id": "loetschental"
+    },
+    {
+      "name": "Wartau",
+      "id": "wartau"
+    },
+    {
+      "name": "Rosengarten, Dolomiten",
+      "id": "rosengarten-dolomiten"
+    },
+    {
+      "name": "Marmolada",
+      "id": "marmolada"
+    },
+    {
+      "name": "Val de Mesdi",
+      "id": "val-de-mesdi"
+    },
+    {
+      "name": "Campill",
+      "id": "campill"
+    },
+    {
+      "name": "Fanesalm",
+      "id": "fanesalm"
+    },
+    {
+      "name": "Rosenlaui",
+      "id": "rosenlaui"
+    },
+    {
+      "name": "Stubaier Alpen",
+      "id": "stubaier-alpen"
+    },
+    {
+      "name": "Walensee",
+      "id": "walensee"
+    },
+    {
+      "name": "Bivio",
+      "id": "bivio"
+    },
+    {
+      "name": "Glarus Süd",
+      "id": "glarus-sued"
+    },
+    {
+      "name": "Zardkouh",
+      "id": "zardkouh"
+    },
+    {
+      "name": "Isfahan",
+      "id": "isfahan"
+    },
+    {
+      "name": "Alborz",
+      "id": "alborz"
+    },
+    {
+      "name": "Teheran",
+      "id": "teheran"
+    },
+    {
+      "name": "Havanna",
+      "id": "havanna"
+    },
+    {
+      "name": "Las Terrazas",
+      "id": "las-terrazas"
+    },
+    {
+      "name": "Vinales Tal",
+      "id": "vinales-tal"
+    },
+    {
+      "name": "Cayo Levisa",
+      "id": "cayo-levisa"
+    },
+    {
+      "name": "Trinidad",
+      "id": "trinidad"
+    },
+    {
+      "name": "Santiago de Cuba",
+      "id": "santiago-de-cuba"
+    },
+    {
+      "name": "Baracoa",
+      "id": "baracoa"
+    },
+    {
+      "name": "Ladakh",
+      "id": "ladakh"
+    },
+    {
+      "name": "Delhi",
+      "id": "delhi"
+    },
+    {
+      "name": "Amazonas",
+      "id": "amazonas"
+    }
+  ],
+  "activities": [
+    {
+      "name": "Skitour",
+      "id": "skitour"
+    },
+    {
+      "name": "Bergtour",
+      "id": "bergtour"
+    },
+    {
+      "name": "Hochtour",
+      "id": "hochtour"
+    },
+    {
+      "name": "Klettertour",
+      "id": "klettertour"
+    },
+    {
+      "name": "Alpinwanderung",
+      "id": "alpinwanderung"
+    },
+    {
+      "name": "Wanderung",
+      "id": "wanderung"
+    },
+    {
+      "name": "Bike & Hike",
+      "id": "bike-and-hike"
+    },
+    {
+      "name": "MTB",
+      "id": "mtb"
+    },
+    {
+      "name": "Rennvelo",
+      "id": "rennvelo"
+    },
+    {
+      "name": "Reise",
+      "id": "reise"
+    }
+  ]
+}
+

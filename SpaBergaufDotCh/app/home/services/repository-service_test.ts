@@ -6,7 +6,7 @@
 describe('Repository', function () {
   var service;
 
-  beforeEach(module('home'));
+  beforeEach(angular.mock.module('home'));
 
   beforeEach(inject(function (Repository) {
     service = Repository;
