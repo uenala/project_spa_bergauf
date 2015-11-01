@@ -15,6 +15,8 @@ module HomeCtrl {
     public static $inject = [
       '$location',
       'Authentication',
+      '$cookieStore',
+      '$rootScope',
       '$log',
       'Logger'
     ];
@@ -22,6 +24,8 @@ module HomeCtrl {
     // dependencies are injected via AngularJS $injector
     constructor(private $location: ng.ILocationService,
                 private Authentication: Authentication.IAuthentication,
+                private $cookieStore: any,
+                private $rootScope: any,
                 private $log: ng.ILogService,
                 private logger : Logger.ILoggerService) {
       var vm = this;
@@ -29,15 +33,14 @@ module HomeCtrl {
       vm.currentDate = new Date();
       vm.logout = logout;
 
+      $rootScope.globals = this.$cookieStore.get('globals'); //read globals back from cookie as rootscope get's cleared on refresh!
+
       function logout(): void {
         Authentication.ClearCredentials();
         $log.debug("logout called");
         logger.logWarning("logged out ", 'empty', this, true);
         $location.path('/login');
       }
-
-
-
 
     }
   }
