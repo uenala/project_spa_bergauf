@@ -65,7 +65,6 @@ module Home.CartCtrl {
               if (response.data) {
                 logger.logSuccess('Ihre Bestellung wurde erfolgreich versandt.', 'empty', this, true);
                 CartService.emptyCart();
-                this.getCart();
                 $location.path('/index');
               } else {
                 logger.logError(response.message, 'empty', this, true);

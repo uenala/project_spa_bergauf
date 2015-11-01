@@ -14,6 +14,7 @@ module Home.UserhomeCtrl {
       'UserLocalStorage',
       'User',
       '$rootScope',
+      '$location',
       '$log'
     ];
 
@@ -25,6 +26,7 @@ module Home.UserhomeCtrl {
     constructor(private UserLocalStorage: Home.Services.IUserLocalStorage,
                 private User: User.IUser,
                 private $rootScope: any,
+                private $location: ng.ILocationService,
                 private $log: ng.ILogService) {
 
       var vm = this;
@@ -34,9 +36,14 @@ module Home.UserhomeCtrl {
       vm.allUsers = [];
       vm.deleteUser = deleteUser;
 
+
+
       initController();
 
       function initController() {
+        if (!$rootScope.globals || !$rootScope.globals.currentUser) { // only allow logged in users
+          return $location.path('/login');
+        }
         loadCurrentUser();
         loadAllUsers();
       }
