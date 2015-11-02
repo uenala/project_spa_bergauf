@@ -32,7 +32,8 @@ module Home.GalleryDetailCtrl {
       '$rootScope',
       '$window',
       'CartService',
-      'Tagging'];
+      'Tagging',
+      '$q'];
 
     // dependencies are injected via AngularJS $injector
     constructor(private $log : ng.ILogService,
@@ -42,7 +43,9 @@ module Home.GalleryDetailCtrl {
                 private $rootScope :ng.IRootScopeService,
                 private $window : ng.IWindowService,
                 private CartService: Home.Services.ICartService,
-                private tagging: Home.Services.ITagging) {
+                private tagging: Home.Services.ITagging,
+                private $q : ng.IQService
+    ) {
 
       var vm = this;
       vm.ctrlName = 'GalleryDetailCtrl';
@@ -54,7 +57,7 @@ module Home.GalleryDetailCtrl {
       vm.addToCart = addToCart;
 
       if (vm.isGallery) {
-        vm.galleryImages = repository.getGalleryImages();
+        vm.loadImages();
         vm.galleryLabel = $routeParams.galleryLabel;
 
         // ToDo: Validate values, e.g not every gallery has an altitudeLabel
@@ -71,6 +74,28 @@ module Home.GalleryDetailCtrl {
       }
 
     }
+
+    // load image details from pics.json file for each gallery
+    private loadImages() : ng.IPromise<any> {
+      var deferred = this.$q.defer();
+      var log = this.$log;
+      if (!this.galleryImages) {
+        var picsfile = '/images/' + this.gallery.path + '/pics.json';
+        this.$http.get(picsfile).then((data) => {
+          var pics = [];
+          angular.forEach(data.data, function(pic) {
+            pics.push(pic);
+          });
+          this.galleryImages = <Array<Home.Data.IImage>> pics;
+          deferred.resolve(this.galleryImages);
+        });
+      } else {
+        deferred.resolve(this.galleryImages);
+      }
+      return deferred.promise;
+    }
+
+
   }
 
 

@@ -50,6 +50,24 @@
             <figcaption itemprop="caption description">{{image.description}}</figcaption>
           </figure>
         </div>
+
+        <!-- ToDo: remove this fallback whenever all images are available -->
+        <div ng-if="!galleryDetail.galleryImages" class="bergauf-gallery center-block" itemscope itemtype="http://schema.org/ImageGallery">
+          <figure itemscope itemtype="http://schema.org/ImageObject">
+            <a href="/images/placeholder.jpg" itemprop="contentUrl" data-size="600x400">
+              <img src="/images/thumbnails/placeholder.jpg" itemprop="thumbnail" alt="Platzhalter Bild 1" />
+            </a>
+            <figcaption itemprop="caption description">Platzhalter für die Bildbeschreibung Bild 1</figcaption>
+          </figure>
+          <figure itemscope itemtype="http://schema.org/ImageObject">
+            <a href="/images/placeholder.jpg" itemprop="contentUrl" data-size="600x400">
+              <img src="/images/thumbnails/placeholder.jpg" itemprop="thumbnail" alt="Platzhalter Bild 2" />
+            </a>
+            <figcaption itemprop="caption description">Platzhalter für die Bildbeschreibung Bild 2</figcaption>
+          </figure>
+        </div>
+        <!-- end tmp. fallback -->
+
       </div>
     </div>
   </div>

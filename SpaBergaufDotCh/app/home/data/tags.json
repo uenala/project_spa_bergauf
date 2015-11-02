@@ -1,4 +1,58 @@
 {
+  "activities": [
+    {
+      "name": "Skitour",
+      "id": "skitour"
+    },
+    {
+      "name": "Bergtour",
+      "id": "bergtour"
+    },
+    {
+      "name": "Hochtour",
+      "id": "hochtour"
+    },
+    {
+      "name": "Klettertour",
+      "id": "klettertour"
+    },
+    {
+      "name": "Alpinwanderung",
+      "id": "alpinwanderung"
+    },
+    {
+      "name": "Wanderung",
+      "id": "wanderung"
+    },
+    {
+      "name": "Bike & Hike",
+      "id": "bike-and-hike"
+    },
+    {
+      "name": "MTB",
+      "id": "mtb"
+    },
+    {
+      "name": "Rennvelo",
+      "id": "rennvelo"
+    },
+    {
+      "name": "Reise",
+      "id": "reise"
+    },
+    {
+      "name": "Ski-Expedition",
+      "id": "ski-expedition"
+    },
+    {
+      "name": "Expedition",
+      "id": "expedition"
+    },
+    {
+      "name": "Trekking",
+      "id": "trekking"
+    }
+  ],
   "countries": [
     {
       "name": "Schweiz",
@@ -6,9 +60,9 @@
       "id": "schweiz"
     },
     {
-      "name": "Öestereich",
+      "name": "Österreich",
       "code": "A",
-      "id": "oestereich"
+      "id": "oesterreich"
     },
     {
       "name": "Italien",
@@ -71,9 +125,9 @@
       "id": "myanmar"
     },
     {
-      "name": "Japan",
-      "code": "JP",
-      "id": "japan"
+      "name": "Tansania",
+      "code": "EAT",
+      "id": "tansania"
     },
     {
       "name": "Kap Verde",
@@ -83,222 +137,468 @@
   ],
   "regions": [
     {
-      "name": "Trient",
-      "id": "trient"
+      "name": "Alborz",
+      "id": "alborz"
     },
     {
-      "name": "Glarner Alpen",
-      "id": "glarner-alpen"
+      "name": "Altiplano",
+      "id": "altiplano"
     },
     {
-      "name": "Binntal",
-      "id": "binntal"
+      "name": "Amazonas",
+      "id": "amazonas"
+    },
+    {
+      "name": "Andermatt",
+      "id": "andermatt"
+    },
+    {
+      "name": "Arni",
+      "id": "arni"
     },
     {
       "name": "Arolla",
       "id": "arolla"
     },
     {
-      "name": "Maderanertal",
-      "id": "maderanertal"
+      "name": "Arusha",
+      "id": "arusha"
     },
     {
-      "name": "Urbachtal",
-      "id": "urbachtal"
+      "name": "Avers",
+      "id": "avers"
     },
     {
-      "name": "Göscheneralp",
-      "id": "goescheneralp"
+      "name": "Bagan",
+      "id": "bagan"
     },
     {
-      "name": "Matt",
-      "id": "matt"
+      "name": "Baltschieder",
+      "id": "baltschieder"
     },
     {
-      "name": "Klöntal",
-      "id": "kloental"
-    },
-    {
-      "name": "Sihltal",
-      "id": "sihltal"
-    },
-    {
-      "name": "Engelberg",
-      "id": "engelberg"
-    },
-    {
-      "name": "Mathon",
-      "id": "mathon"
-    },
-    {
-      "name": "Maienfeld",
-      "id": "maienfeld"
-    },
-    {
-      "name": "Lavin",
-      "id": "lavin"
-    },
-    {
-      "name": "Zermatt",
-      "id": "zermatt"
-    },
-    {
-      "name": "Filisur",
-      "id": "filisur"
-    },
-    {
-      "name": "Erstfeld / Arni",
-      "id": "erstfeld-arni"
-    },
-    {
-      "name": "Meiental",
-      "id": "meiental"
-    },
-    {
-      "name": "Lötschental",
-      "id": "loetschental"
-    },
-    {
-      "name": "Wartau",
-      "id": "wartau"
-    },
-    {
-      "name": "Rosengarten, Dolomiten",
-      "id": "rosengarten-dolomiten"
-    },
-    {
-      "name": "Marmolada",
-      "id": "marmolada"
-    },
-    {
-      "name": "Val de Mesdi",
-      "id": "val-de-mesdi"
-    },
-    {
-      "name": "Campill",
-      "id": "campill"
-    },
-    {
-      "name": "Fanesalm",
-      "id": "fanesalm"
-    },
-    {
-      "name": "Rosenlaui",
-      "id": "rosenlaui"
-    },
-    {
-      "name": "Stubaier Alpen",
-      "id": "stubaier-alpen"
-    },
-    {
-      "name": "Walensee",
-      "id": "walensee"
-    },
-    {
-      "name": "Bivio",
-      "id": "bivio"
-    },
-    {
-      "name": "Glarus Süd",
-      "id": "glarus-sued"
-    },
-    {
-      "name": "Zardkouh",
-      "id": "zardkouh"
-    },
-    {
-      "name": "Isfahan",
-      "id": "isfahan"
-    },
-    {
-      "name": "Alborz",
-      "id": "alborz"
-    },
-    {
-      "name": "Teheran",
-      "id": "teheran"
-    },
-    {
-      "name": "Havanna",
-      "id": "havanna"
-    },
-    {
-      "name": "Las Terrazas",
-      "id": "las-terrazas"
-    },
-    {
-      "name": "Vinales Tal",
-      "id": "vinales-tal"
-    },
-    {
-      "name": "Cayo Levisa",
-      "id": "cayo-levisa"
-    },
-    {
-      "name": "Trinidad",
-      "id": "trinidad"
-    },
-    {
-      "name": "Santiago de Cuba",
-      "id": "santiago-de-cuba"
+      "name": "Bannalp",
+      "id": "bannalp"
     },
     {
       "name": "Baracoa",
       "id": "baracoa"
     },
     {
+      "name": "Bedrettotal",
+      "id": "bedrettotal"
+    },
+    {
+      "name": "Bergün",
+      "id": "berguen"
+    },
+    {
+      "name": "Binntal",
+      "id": "binntal"
+    },
+    {
+      "name": "Bisistal",
+      "id": "bisistal"
+    },
+    {
+      "name": "Bivio",
+      "id": "bivio"
+    },
+    {
+      "name": "Buenos Aires",
+      "id": "buenos-aires"
+    },
+    {
+      "name": "Campill",
+      "id": "campill"
+    },
+    {
+      "name": "Cayo Levisa",
+      "id": "cayo-levisa"
+    },
+    {
+      "name": "Damüls",
+      "id": "damuels"
+    },
+    {
+      "name": "Engelberg",
+      "id": "engelberg"
+    },
+    {
+      "name": "Engiadina Bassa",
+      "id": "engiadina-bassa"
+    },
+    {
+      "name": "Erg Chebbi",
+      "id": "erg-chebbi"
+    },
+    {
+      "name": "Fanesalm",
+      "id": "fanesalm"
+    },
+    {
+      "name": "Fieschertal",
+      "id": "fieschertal"
+    },
+    {
+      "name": "Filisur",
+      "id": "filisur"
+    },
+    {
+      "name": "Flims",
+      "id": "flims"
+    },
+    {
+      "name": "Forno",
+      "id": "forno"
+    },
+    {
+      "name": "Gauli",
+      "id": "gauli"
+    },
+    {
+      "name": "Glarner Alpen",
+      "id": "glarner-alpen"
+    },
+    {
+      "name": "Glarus Süd",
+      "id": "glarus-sued"
+    },
+    {
+      "name": "Göscheneralp",
+      "id": "goescheneralp"
+    },
+    {
+      "name": "Grabs",
+      "id": "grabs"
+    },
+    {
+      "name": "Gran Paradiso",
+      "id": "gran-paradiso"
+    },
+    {
+      "name": "Grosstal",
+      "id": "grosstal"
+    },
+    {
+      "name": "Havanna",
+      "id": "havanna"
+    },
+    {
+      "name": "Himalaya",
+      "id": "himalaya"
+    },
+    {
+      "name": "Hoch Ybrig",
+      "id": "hoch-ybrig"
+    },
+    {
+      "name": "Hoher Atlas",
+      "id": "hoher-atlas"
+    },
+    {
+      "name": "Hsipaw",
+      "id": "hsipaw"
+    },
+    {
+      "name": "Iguazu",
+      "id": "iguazu"
+    },
+    {
+      "name": "Inle Lake",
+      "id": "inle-lake"
+    },
+    {
+      "name": "Isfahan",
+      "id": "isfahan"
+    },
+    {
+      "name": "Kalifornien",
+      "id": "kalifornien"
+    },
+    {
+      "name": "Kandersteg",
+      "id": "kandersteg"
+    },
+    {
+      "name": "Klöntal",
+      "id": "kloental"
+    },
+    {
       "name": "Ladakh",
       "id": "ladakh"
     },
     {
-      "name": "Delhi",
-      "id": "delhi"
+      "name": "Las Terrazas",
+      "id": "las-terrazas"
     },
     {
-      "name": "Amazonas",
-      "id": "amazonas"
-    }
-  ],
-  "activities": [
-    {
-      "name": "Skitour",
-      "id": "skitour"
+      "name": "Lavin",
+      "id": "lavin"
     },
     {
-      "name": "Bergtour",
-      "id": "bergtour"
+      "name": "Lenk",
+      "id": "lenk"
     },
     {
-      "name": "Hochtour",
-      "id": "hochtour"
+      "name": "London",
+      "id": "london"
     },
     {
-      "name": "Klettertour",
-      "id": "klettertour"
+      "name": "Lukmanier",
+      "id": "lukmanier"
     },
     {
-      "name": "Alpinwanderung",
-      "id": "alpinwanderung"
+      "name": "Maderanertal",
+      "id": "maderanertal"
     },
     {
-      "name": "Wanderung",
-      "id": "wanderung"
+      "name": "Maienfeld",
+      "id": "maienfeld"
     },
     {
-      "name": "Bike & Hike",
-      "id": "bike-and-hike"
+      "name": "Mandalay",
+      "id": "mandalay"
     },
     {
-      "name": "MTB",
-      "id": "mtb"
+      "name": "Marmolada",
+      "id": "marmolada"
     },
     {
-      "name": "Rennvelo",
-      "id": "rennvelo"
+      "name": "Marrakesch",
+      "id": "marrakesch"
     },
     {
-      "name": "Reise",
-      "id": "reise"
+      "name": "Mathon",
+      "id": "mathon"
+    },
+    {
+      "name": "Matt",
+      "id": "matt"
+    },
+    {
+      "name": "Maymyo",
+      "id": "maymyo"
+    },
+    {
+      "name": "Meiental",
+      "id": "meiental"
+    },
+    {
+      "name": "Mels",
+      "id": "mels"
+    },
+    {
+      "name": "Mischabel",
+      "id": "mischabel"
+    },
+    {
+      "name": "Morteratsch",
+      "id": "morteratsch"
+    },
+    {
+      "name": "Muotatal",
+      "id": "muotatal"
+    },
+    {
+      "name": "Murgsee",
+      "id": "murgsee"
+    },
+    {
+      "name": "Muscat",
+      "id": "muscat"
+    },
+    {
+      "name": "Nadelgrat",
+      "id": "nadelgrat"
+    },
+    {
+      "name": "Namshan",
+      "id": "namshan"
+    },
+    {
+      "name": "Nevada",
+      "id": "nevada"
+    },
+    {
+      "name": "Ngapali",
+      "id": "ngapali"
+    },
+    {
+      "name": "Nizwa",
+      "id": "nizwa"
+    },
+    {
+      "name": "Ortler Alpen",
+      "id": "ortler-alpen"
+    },
+    {
+      "name": "Ost-Kuba",
+      "id": "ost-kuba"
+    },
+    {
+      "name": "Ostgrönland",
+      "id": "ostgroenland"
+    },
+    {
+      "name": "Pindaya",
+      "id": "pindaya"
+    },
+    {
+      "name": "Prättigau",
+      "id": "praettigau"
+    },
+    {
+      "name": "Preda Bergün Albula",
+      "id": "preda-berguen-albula"
+    },
+    {
+      "name": "Pyay",
+      "id": "pyay"
+    },
+    {
+      "name": "Realp",
+      "id": "realp"
+    },
+    {
+      "name": "Riemenstalden",
+      "id": "riemenstalden"
+    },
+    {
+      "name": "Rosenlaui",
+      "id": "rosenlaui"
+    },
+    {
+      "name": "Saas Grund",
+      "id": "saas-grund"
+    },
+    {
+      "name": "Safiental",
+      "id": "safiental"
+    },
+    {
+      "name": "Santiago",
+      "id": "santiago"
+    },
+    {
+      "name": "Santiago de Ccuba",
+      "id": "santiago-de-cuba"
+    },
+    {
+      "name": "Santo Antão",
+      "id": "santo-antao"
+    },
+    {
+      "name": "São Vicente",
+      "id": "sao-vicente"
+    },
+    {
+      "name": "Schächental",
+      "id": "schaechental"
+    },
+    {
+      "name": "Scuol",
+      "id": "scuol"
+    },
+    {
+      "name": "Sihltal",
+      "id": "sihltal"
+    },
+    {
+      "name": "Silvretta",
+      "id": "silvretta"
+    },
+    {
+      "name": "Splügen",
+      "id": "spluegen"
+    },
+    {
+      "name": "St. Antönien",
+      "id": "st-antoenien"
+    },
+    {
+      "name": "St. Niklaus",
+      "id": "st-niklaus"
+    },
+    {
+      "name": "Stubaier Alpen",
+      "id": "stubaier-alpen"
+    },
+    {
+      "name": "Täschalp",
+      "id": "taeschalp"
+    },
+    {
+      "name": "Taunggyi",
+      "id": "taunggyi"
+    },
+    {
+      "name": "Teheran",
+      "id": "teheran"
+    },
+    {
+      "name": "Tirol",
+      "id": "tirol"
+    },
+    {
+      "name": "Toggenburg",
+      "id": "toggenburg"
+    },
+    {
+      "name": "Trient",
+      "id": "trient"
+    },
+    {
+      "name": "Trinidad",
+      "id": "trinidad"
+    },
+    {
+      "name": "Urbachtal",
+      "id": "urbachtal"
+    },
+    {
+      "name": "Val de Mesdi",
+      "id": "val-de-mesdi"
+    },
+    {
+      "name": "Val Müstair",
+      "id": "val-muestair"
+    },
+    {
+      "name": "Val Roseg",
+      "id": "val-roseg"
+    },
+    {
+      "name": "Vals",
+      "id": "vals"
+    },
+    {
+      "name": "Vinales Tal",
+      "id": "vinales-tal"
+    },
+    {
+      "name": "Voralp",
+      "id": "voralp"
+    },
+    {
+      "name": "Wägital",
+      "id": "waegital"
+    },
+    {
+      "name": "Wartau",
+      "id": "wartau"
+    },
+    {
+      "name": "Yangon",
+      "id": "yangon"
+    },
+    {
+      "name": "Zardkouh",
+      "id": "zardkouh"
+    },
+    {
+      "name": "Zermatt",
+      "id": "zermatt"
     }
   ]
 }

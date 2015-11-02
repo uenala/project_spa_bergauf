@@ -22,15 +22,17 @@ module convertIdToProperty {
   function convertIdToProperty() {
     return function (id, tags, namespace, property) {
       var propName = property? property : 'name';
-      var namespaceId = 0;
+      var namespaceId = 1;
 
+      // ToDo: add Constants for namespace indexes, e.g NAMESPACE.COUNTRIES = 1
       switch (namespace) {
-        case 'countries':
-          namespaceId = 0; break;
-        case 'regions':
-          namespaceId = 1; break;
         case 'activities':
+          namespaceId = 0; break;
+        case 'countries':
+          namespaceId = 1; break;
+        case 'regions':
           namespaceId = 2; break;
+
       }
 
       if (tags && tags[namespaceId]) {

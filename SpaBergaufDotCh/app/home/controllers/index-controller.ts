@@ -61,6 +61,7 @@ module Home.IndexCtrl {
 
     }
 
+    // ToDo: content shouldn't be in a controller
     private getTitle(path:string):string {
       var title;
       switch (path) {
@@ -70,14 +71,32 @@ module Home.IndexCtrl {
         case '/skitouren':
           title = 'Skitouren';
           break;
+        case '/exped/reise-nach-cabo-verde':
+          title = 'Kapverden 2015 - Inseln São Vicente, Santo Antão und Santiago';
+          break;
         case '/exped/reise-nach-kuba':
           title = 'Kuba 2013 - Unterwegs in Kuba';
+          break;
+        case '/exped/reise-nach-myanmar':
+          title = 'Burma 2012 - eine Reise durch Myanmar';
+          break;
+        case '/exped/oman':
+          title = 'Oman';
           break;
         case '/exped/skitouren-im-iran':
           title = "Iran 2015 - Skitouren im Iran";
           break;
+        case '/exped/eastgreenland06':
+          title = "Skitouren Ost-Grönland - Karale Ski-Haute Route (Bergwelt)";
+          break;
+        case '/exped/maroc04':
+          title = "Marokko";
+          break;
         case '/exped/mtb-reise-ladakh':
           title = 'Himalaya - Ladakh das kleine Tibet (bike adventure tours Bikereise)';
+          break;
+        case '/exped/altiplano':
+          title = 'Altiplano Argentina - Bikeabenteuer in Nordargentinien (bike adventure tours Bikereise)';
           break;
         case '/exped':
           title = 'Reisen';

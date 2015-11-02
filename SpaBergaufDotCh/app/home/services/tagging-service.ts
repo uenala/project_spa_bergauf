@@ -55,15 +55,16 @@ module Home.Services {
       return this.allTags[i];
     }
 
-    getCountryTags(): Array<Home.Data.ITag> {
+    // ToDo: add Constants for namespace indexes, e.g NAMESPACE.COUNTRIES = 1
+    getActivityTags(): Array<Home.Data.ITag> {
       return this.getTagsByNamespace(0);
     }
 
-    getRegionTags(): Array<Home.Data.ITag> {
+    getCountryTags(): Array<Home.Data.ITag> {
       return this.getTagsByNamespace(1);
     }
 
-    getActivityTags(): Array<Home.Data.ITag> {
+    getRegionTags(): Array<Home.Data.ITag> {
       return this.getTagsByNamespace(2);
     }
 

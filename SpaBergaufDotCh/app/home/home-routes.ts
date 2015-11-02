@@ -130,23 +130,10 @@ module home {
           }]
         }
       })
-      .when('/exped/skitouren-im-iran', {
+      .when('/exped/reise-nach-cabo-verde', {
         templateUrl: 'home/views/index.tpl.html',
         controller: 'IndexCtrl',
         controllerAs: 'home',
-        resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
-            return Repository.loadGalleryData();
-          }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
-            return Tagging.loadAllTags();
-          }]
-        }
-      })
-      .when('/exped/skitouren-im-iran/:galleryLabel', {
-        templateUrl: 'home/views/gallery-detail.tpl.html',
-        controller: 'GalleryDetailCtrl',
-        controllerAs: 'galleryDetail',
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
@@ -169,10 +156,62 @@ module home {
           }]
         }
       })
-      .when('/exped/reise-nach-kuba/:galleryLabel', {
-        templateUrl: 'home/views/gallery-detail.tpl.html',
-        controller: 'GalleryDetailCtrl',
-        controllerAs: 'galleryDetail',
+      .when('/exped/reise-nach-myanmar', {
+        templateUrl: 'home/views/index.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
+          }]
+        }
+      })
+      .when('/exped/oman', {
+        templateUrl: 'home/views/index.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
+          }]
+        }
+      })
+      .when('/exped/skitouren-im-iran', {
+        templateUrl: 'home/views/index.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
+          }]
+        }
+      })
+      .when('/exped/eastgreenland06', {
+        templateUrl: 'home/views/index.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
+          }]
+        }
+      })
+      .when('/exped/maroc04', {
+        templateUrl: 'home/views/index.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
@@ -195,7 +234,20 @@ module home {
           }]
         }
       })
-      .when('/exped/mtb-reise-ladakh/:galleryLabel', {
+      .when('/exped/altiplano', {
+        templateUrl: 'home/views/index.tpl.html',
+        controller: 'IndexCtrl',
+        controllerAs: 'home',
+        resolve: {
+          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+            return Repository.loadGalleryData();
+          }],
+          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+            return Tagging.loadAllTags();
+          }]
+        }
+      })
+      .when('/exped/:galleryParent/:galleryLabel', {
         templateUrl: 'home/views/gallery-detail.tpl.html',
         controller: 'GalleryDetailCtrl',
         controllerAs: 'galleryDetail',

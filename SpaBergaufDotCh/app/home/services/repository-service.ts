@@ -23,7 +23,7 @@ module Home.Services {
     //ToDo: either one master json or for each type a data set, e.g. loadSkitourenGalleryData
     loadGalleryData() : ng.IPromise<Home.Data.IGallery> {
       var deferred = this.$q.defer();
-      var jsonfile = '/data/master.json';
+      var jsonfile = '/data/galleries.json';
 
       if (!this.galleryData) {
         this.$http.get(jsonfile).then((data) => {
@@ -36,14 +36,14 @@ module Home.Services {
             // loop through galleries
             angular.forEach(data.galleries, function(galleries) {
               //console.log(galleries);
-              if (galleries.images) {
+              if (galleries.activity) {
                 gdata.push(galleries);
               }
 
               // loop through additional travel galleries
               angular.forEach(galleries.galleries, function(galleries) {
                 //console.log(galleries);
-                if (galleries.images) {
+                if (galleries.activity) {
                   gdata.push(galleries);
                 }
               });
@@ -81,19 +81,6 @@ module Home.Services {
       }
 
       return this.galleryData[i];
-    }
-
-    getGalleryImages():Array<Home.Data.IImage> {
-
-      var i=0;
-      for (i; i<this.galleryData.length; i++) {
-        if (this.galleryData[i].path === this.getGalleryId()) {
-          this.imagesData = this.galleryData[i].images;
-          break;
-        }
-      }
-
-      return this.imagesData;
     }
 
 
