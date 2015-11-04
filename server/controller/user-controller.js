@@ -1,6 +1,7 @@
 var fs = require('fs');
 
 var dataFile = "./data/users.json";
+var adminFile = "./data/admins.json";
 
 // this method retrieves all users from an existing datafile via streaming or creates an empty datafile (& returns empty) if necessary
 module.exports.getAllUsers = function(req, res) {
@@ -24,7 +25,7 @@ module.exports.getAllUsers = function(req, res) {
 // this method covers getting a user by id and by username/email
 module.exports.getUserById = function(req, res) {
 
-    var users = readJsonDataFile();
+    var users = readJsonDataFile(dataFile);
     var identifier = parseInt(req.params.id); // check for a numeric parameter
     //console.log("id = " + req.params.id);
     //console.log("users.length = " + users.length);
@@ -52,7 +53,7 @@ module.exports.getUserById = function(req, res) {
 // method to add a new user
 module.exports.addUser = function(req, res) {
 
-    var users = readJsonDataFile();
+    var users = readJsonDataFile(dataFile);
 
     //debug only
     //res.setHeader('Content-Type', 'text/plain');
@@ -102,7 +103,7 @@ module.exports.addUser = function(req, res) {
 // method to update a existing user
 module.exports.updateUser = function(req, res) {
 
-    var users = readJsonDataFile();
+    var users = readJsonDataFile(dataFile);
     var identifier = parseInt(req.params.id); // should be a numeric parameter
     //console.log("id check param " + req.params.id + ", body " + req.body.id);
 
@@ -145,7 +146,7 @@ module.exports.updateUser = function(req, res) {
 // method to delete a existing user
 module.exports.deleteUser = function(req, res) {
 
-    var users = readJsonDataFile();
+    var users = readJsonDataFile(dataFile);
     var identifier = parseInt(req.params.id); // should be a numeric parameter
 
     if(isNaN(identifier)){// check for a numeric parameter
@@ -182,22 +183,42 @@ module.exports.deleteUser = function(req, res) {
 };
 
 
+// this method returns true if the user is an admin user by username/email
+module.exports.getAdminUserByUsername = function(req, res) {
+
+    var admins = readJsonDataFile(adminFile);
+    var username = req.params.id;
+    //console.log("try to retrieve an admin user by username/email " + username + " as identifier");
+    for (var i = 0; i < admins.length; i++){
+        if(admins[i].username == username){
+            res.statusCode = 200;
+            return res.send(username + ' is admin');
+        }
+    }
+    res.statusCode = 404;
+    return res.send('Error 404: No user with matching username found');
+
+};
+
+
+
 // read datafile or initialize with a new empty datafile in case no one exists
-var readJsonDataFile = function(){
+var readJsonDataFile = function(filepath){
+    //console.log("entering readJsonDataFile " + filepath );
     var users = [];
     try {
-        users = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+        users = JSON.parse(fs.readFileSync(filepath, 'utf8'));
     }
     catch (error) {
-        // orders.json doesn't exist
-        fs.writeFile(dataFile, '[]', function(err){
+        // json doesn't exist in filepath
+        fs.writeFile(filepath, '[]', function(err){
             if (err) {
                 res.end();
-                return console.log("Error creating a new users.json. Root cause: " + err);
+                return console.log("Error creating a new json " + filepath + " . Root cause: " + err);
             }
         });
         users = [];
-        console.log("creating a new users.json because it didn't already exist.");
+        console.log("creating a new json " + filepath + " because it didn't already exist.");
     }
     return users;
 };
@@ -213,6 +234,7 @@ var getMatchingUserByUsername = function (username){
         }
     }
 };
+
 
 // get matching user by id
 var getMatchingUserById = function (id){

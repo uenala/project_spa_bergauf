@@ -14,6 +14,8 @@ router.post("/ws/users", users.addUser); // User-Data in JSON-Body
 router.put("/ws/users/:id", users.updateUser);
 router.delete("/ws/users/:id", users.deleteUser);
 
+router.get("/ws/admins/:id", users.getAdminUserByUsername);
+
 router.get("/ws/orders/:id", orders.getOrdersByUsername);
 router.post("/ws/orders", orders.addOrder); // Order-Data in JSON-Body
 

@@ -46,7 +46,7 @@ module Home.CartCtrl {
       this.getCart();
 
       function loadCurrentUser() {
-        User.GetByUsername($rootScope.globals.currentUser.username) // Rest Version
+        User.getByUsername($rootScope.globals.currentUser.username) // Rest Version
           .then(function (user) {
             vm.user = user.data;
             $log.debug("cart controller:loadCurrentUser " + vm.user.firstname);
@@ -65,7 +65,6 @@ module Home.CartCtrl {
               if (response.data) {
                 logger.logSuccess('Ihre Bestellung wurde erfolgreich versandt.', 'empty', this, true);
                 CartService.emptyCart();
-                $location.path('/index');
               } else {
                 logger.logError(response.message, 'empty', this, true);
                 vm.dataLoading = false;

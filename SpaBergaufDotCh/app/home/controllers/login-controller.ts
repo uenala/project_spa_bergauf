@@ -36,14 +36,14 @@ module Home.LoginCtrl {
 
 
         // reset login status
-        Authentication.ClearCredentials();
+        Authentication.clearCredentials();
 
 
       function login() {
         vm.dataLoading = true;
-        Authentication.Login(vm.username, vm.password, function (response) { // function (response) is a callback-function
+        Authentication.login(vm.username, vm.password, function (response) { // function (response) is a callback-function
           if (response.success) {
-            Authentication.SetCredentials(vm.username, vm.password);
+            Authentication.setCredentials(vm.username, vm.password);
             $location.path('/userhome');
             $log.debug("Login success for username " + vm.username);
             } else {
