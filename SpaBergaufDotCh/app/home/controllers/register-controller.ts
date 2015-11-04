@@ -37,7 +37,7 @@ module Home.RegisterCtrl {
       function register() {
         vm.dataLoading = true;
         //UserLocalStorage.Create(vm.user) // Local-Storage-Version
-         User.Create(vm.user) // Rest-Version
+         User.create(vm.user) // Rest-Version
           .then(function (response) {
             if (response.data) {
               logger.logSuccess('Registration erfolgreich, bitte einloggen', 'empty', this, true);

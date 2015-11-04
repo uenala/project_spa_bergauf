@@ -5,6 +5,7 @@ module Home.UserhomeCtrl {
   class UserhomeCtrl {
 
     ctrlName: string;
+    admin: boolean;
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
@@ -35,6 +36,7 @@ module Home.UserhomeCtrl {
       vm.user = null;
       vm.allUsers = [];
       vm.deleteUser = deleteUser;
+      vm.admin = false;
 
 
 
@@ -50,17 +52,18 @@ module Home.UserhomeCtrl {
 
       function loadCurrentUser() {
         //UserLocalStorage.GetByUsername($rootScope.globals.currentUser.username) // Local Storage Version
-        User.GetByUsername($rootScope.globals.currentUser.username) // Rest Version
+        User.getByUsername($rootScope.globals.currentUser.username) // Rest Version
           .then(function (user) {
             //vm.user = user; // Local Storage Version
             vm.user = user.data;
             $log.debug("loadCurrentUser " + vm.user.username);
           });
+        isAdminUser();
       }
 
       function loadAllUsers() {
         //UserLocalStorage.GetAll() // Local Storage Version
-        User.GetAll() // Rest-Version
+        User.getAll() // Rest-Version
           .then(function (users) {
             //vm.allUsers = users;// Local Storage Version
             vm.allUsers = users.data;
@@ -69,11 +72,27 @@ module Home.UserhomeCtrl {
 
       function deleteUser(id) {
         //UserLocalStorage.Delete(id) // Local Storage Version
-        User.Delete(id) // Rest-Version
+        User.delete(id) // Rest-Version
           .then(function () {
             loadAllUsers();
           });
       }
+
+      function isAdminUser() {
+        $log.debug("isAdminUser " + $rootScope.globals.currentUser.username);
+          User.isAdmin($rootScope.globals.currentUser.username)
+            .then(function (response) {
+              if (response.data) {
+                $log.debug("isAdminUser: " + response.data);
+                vm.admin = true;
+              } else {
+                $log.debug("noAdminUser!");
+                vm.admin = false;
+              }
+            });
+        }
+
+
     }
   }
 

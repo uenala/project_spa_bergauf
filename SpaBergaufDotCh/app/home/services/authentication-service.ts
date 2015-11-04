@@ -4,19 +4,20 @@ module Authentication {
 
   export interface IAuthentication {
     get():string;
-    Login(username: string, password: string , callback: any): any;
-    SetCredentials(username: string, password: string): any;
-    ClearCredentials(): void;
+    login(username: string, password: string , callback: any): any;
+    setCredentials(username: string, password: string): any;
+    clearCredentials(): void;
+    isAdmin(username: string): boolean;
   }
 
   class Authentication {
-    public static $inject = ['$http', '$cookieStore', '$rootScope', 'UserLocalStorage', 'User'
+    public static $inject = ['$http', '$cookieStore', '$rootScope', 'User'
     ];
 
     constructor(private $http: ng.IHttpService,
                 private $cookieStore: any,
                 private $rootScope: any,
-                private UserLocalStorage: Home.Services.IUserLocalStorage,
+                //private UserLocalStorage: Home.Services.IUserLocalStorage,
                 private User: User.IUser) {
     }
 
@@ -24,7 +25,7 @@ module Authentication {
       return 'Authentication';
     }
 
-    Login(username: string, password: string , callback: any) {
+    login(username: string, password: string , callback: any) {
 
 
       // LocalStorage-Version
@@ -41,7 +42,7 @@ module Authentication {
 
       // Rest-Version
       var response;
-      this.User.GetByUsername(username)
+      this.User.getByUsername(username)
         .then(function (user) {
           if (user.data && user.data.password === password) {
             response = {success: true};
@@ -62,7 +63,7 @@ module Authentication {
     }
 
 
-    SetCredentials(username: string, password: string) {
+    setCredentials(username: string, password: string) {
       var authdata = (username + ':' + password);
 
       this.$rootScope.globals = { // we can only set in globals, what we have recieved as method params. no firstname.
@@ -77,7 +78,7 @@ module Authentication {
     }
 
 
-    ClearCredentials() {
+    clearCredentials() {
 
       if(this.$rootScope.globals && this.$rootScope.globals.currentUser) {
         this.$cookieStore.remove('cartCookie'+ this.$rootScope.globals.currentUser.username);
@@ -87,6 +88,7 @@ module Authentication {
       this.$cookieStore.remove('globals');
       this.$http.defaults.headers.common.Authorization = 'Basic ';
     }
+
   }
 
   /**

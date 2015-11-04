@@ -4,12 +4,13 @@ module User {
 
   export interface IUser {
     get():string;
-    GetAll(): any;
-    GetById(id): any;
-    GetByUsername(username): any;
-    Create(user): any;
-    Update(user): any;
-    Delete(id): any;
+    getAll(): any;
+    getById(id): any;
+    getByUsername(username): any;
+    create(user): any;
+    update(user): any;
+    delete(id): any;
+    isAdmin(username): any;
   }
 
   class User {
@@ -25,29 +26,35 @@ module User {
       return 'User';
     }
 
-    GetAll() {
+    getAll() {
       return this.$http.get(this.baseurl + '/ws/users').then(this.handleSuccess, this.handleError('Die Liste mit allen Benutzern konnten nicht gefunden werden.'));
     }
 
-    GetById(id) {
+    getById(id) {
       return this.$http.get(this.baseurl + '/ws/users/' + id).then(this.handleSuccess, this.handleError('Der Benutzer "' + id + '" konnte nicht gefunden werden.'));
     }
 
-    GetByUsername(username) {
+    getByUsername(username) {
       return this.$http.get(this.baseurl + '/ws/users/' + username).then(this.handleSuccess, this.handleError('Der Benutzername "' + username + '" konnte nicht gefunden werden.'));
     }
 
-    Create(user) {
+    create(user) {
       return this.$http.post(this.baseurl + '/ws/users', user).then(this.handleSuccess, this.handleError('Fehler beim Erstellen des Benutzers.'));
     }
 
-    Update(user) {
+    update(user) {
       return this.$http.put(this.baseurl + '/ws/users/' + user.id, user).then(this.handleSuccess, this.handleError('Fehler beim Anpassen des Benutzers.'));
     }
 
-    Delete(id) {
+    delete(id) {
       return this.$http.delete(this.baseurl + '/ws/users/' + id).then(this.handleSuccess, this.handleError('Der Benutzer "' + id + '" konnte nicht gelöscht werden.'));
     }
+
+    isAdmin(username) {
+      return this.$http.get(this.baseurl + '/ws/admins/' + username).then(this.handleSuccess, this.handleError('Der Benutzername "' + username + '" konnte nicht gefunden werden.'));
+    }
+
+
 
     // private functions
     private handleSuccess(data) {

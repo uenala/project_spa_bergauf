@@ -36,7 +36,7 @@ module HomeCtrl {
       $rootScope.globals = this.$cookieStore.get('globals'); //read globals back from cookie as rootscope get's cleared on refresh!
 
       function logout(): void {
-        Authentication.ClearCredentials();
+        Authentication.clearCredentials();
         $log.debug("logout called");
         logger.logWarning("logged out ", 'empty', this, true);
         $location.path('/login');

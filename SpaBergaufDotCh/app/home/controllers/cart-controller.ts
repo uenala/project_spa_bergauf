@@ -46,7 +46,7 @@ module Home.CartCtrl {
       this.getCart();
 
       function loadCurrentUser() {
-        User.GetByUsername($rootScope.globals.currentUser.username) // Rest Version
+        User.getByUsername($rootScope.globals.currentUser.username) // Rest Version
           .then(function (user) {
             vm.user = user.data;
             $log.debug("cart controller:loadCurrentUser " + vm.user.firstname);
