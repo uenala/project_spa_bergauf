@@ -16,19 +16,24 @@ module Home.UserhomeCtrl {
       'User',
       '$rootScope',
       '$location',
-      '$log'
+      '$log',
+      'CartService'
     ];
 
     user: any;
     allUsers: any;
     deleteUser: any;
+    allOrders: Array<Home.Data.IOrder>;
+    userOrder: Array<Home.Data.IOrder>;
+    getOrdersByUsername: any;
 
     // dependencies are injected via AngularJS $injector
     constructor(private UserLocalStorage: Home.Services.IUserLocalStorage,
                 private User: User.IUser,
                 private $rootScope: any,
                 private $location: ng.ILocationService,
-                private $log: ng.ILogService) {
+                private $log: ng.ILogService,
+                private CartService: Home.Services.ICartService) {
 
       var vm = this;
       vm.ctrlName = 'UserhomeCtrl';
@@ -37,7 +42,9 @@ module Home.UserhomeCtrl {
       vm.allUsers = [];
       vm.deleteUser = deleteUser;
       vm.admin = false;
-
+      vm.allOrders = [];
+      vm.userOrder = [];
+      vm.getOrdersByUsername= getOrdersByUsername;
 
 
       initController();
@@ -47,35 +54,40 @@ module Home.UserhomeCtrl {
           return $location.path('/login');
         }
         loadCurrentUser();
-        loadAllUsers();
       }
 
       function loadCurrentUser() {
         //UserLocalStorage.GetByUsername($rootScope.globals.currentUser.username) // Local Storage Version
-        User.getByUsername($rootScope.globals.currentUser.username) // Rest Version
+        User.getByUsername($rootScope.globals.currentUser.username) // Rest-Version, async call! wait for result with .then()
           .then(function (user) {
             //vm.user = user; // Local Storage Version
             vm.user = user.data;
             $log.debug("loadCurrentUser " + vm.user.username);
+            getOrdersByUsername(vm.user.username);
           });
         isAdminUser();
       }
 
       function loadAllUsers() {
-        //UserLocalStorage.GetAll() // Local Storage Version
-        User.getAll() // Rest-Version
-          .then(function (users) {
-            //vm.allUsers = users;// Local Storage Version
-            vm.allUsers = users.data;
-          });
+        if (vm.admin) {
+          //UserLocalStorage.GetAll() // Local Storage Version
+          User.getAll() // Rest-Version, async call! wait for result with .then()
+            .then(function (users) {
+              //vm.allUsers = users;// Local Storage Version
+              vm.allUsers = users.data;
+              loadAllOrders();
+            });
+        }
       }
 
       function deleteUser(id) {
-        //UserLocalStorage.Delete(id) // Local Storage Version
-        User.delete(id) // Rest-Version
-          .then(function () {
-            loadAllUsers();
-          });
+        if (vm.admin) {
+          //UserLocalStorage.Delete(id) // Local Storage Version
+          User.delete(id) // Rest-Version, async call! wait for result with .then()
+            .then(function () { // async call! wait for result with .then()
+              loadAllUsers();
+            });
+        }
       }
 
       function isAdminUser() {
@@ -85,12 +97,31 @@ module Home.UserhomeCtrl {
               if (response.data) {
                 $log.debug("isAdminUser: " + response.data);
                 vm.admin = true;
+                loadAllUsers();
               } else {
                 $log.debug("noAdminUser!");
                 vm.admin = false;
               }
             });
         }
+
+      function loadAllOrders(): any {
+        if (vm.admin) {
+          CartService.getAllOrders() // async call! wait for result with .then()
+            .then( function (orders) {
+              $log.debug("cart-controller:loadAllOrders");
+              vm.allOrders.push(orders.data);
+            });
+        }
+      }
+
+      function getOrdersByUsername(username): any {
+        CartService.getOrdersByUsername(username)
+          .then(function (orders) {
+              $log.debug("cart-controller:getOrdersByUsername for " + username);
+              vm.userOrder.push(orders.data);
+          });
+      }
 
 
     }

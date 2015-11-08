@@ -13,6 +13,7 @@
 ///<reference path='home/data/cart.ts' />
 ///<reference path='home/data/product.ts' />
 ///<reference path='home/data/tag.ts' />
+///<reference path='home/data/order.ts' />
 
 ///<reference path='home/directives/gallery-thumbnail-directive.ts' />
 ///<reference path='home/directives/lazy-directive.ts' />

@@ -8,7 +8,10 @@ module Home.Services {
     addProduct(product: Home.Data.IProduct): Array<Home.Data.IProduct>;
     removeProduct(product: Home.Data.IProduct): Array<Home.Data.IProduct>;
     getNumberOfProducts(): number;
-    emptyCart(): any;
+    emptyCart(): void;
+    checkout(cart: Home.Data.ICart): any;
+    getOrdersByUsername(username: string): any;
+    getAllOrders():any;
   }
 
   // service to handle a shopping cart's data in a cookie on the client side.
@@ -101,6 +104,14 @@ module Home.Services {
       this.$log.debug("CartService.checkout called");
         return this.$http.post(this.baseurl + '/ws/orders', cart).then(this.handleSuccess, this.handleError('Error creating new order'));
 
+    }
+
+    getOrdersByUsername(username: string): any{
+      return this.$http.get(this.baseurl + '/ws/orders/' + username).then(this.handleSuccess, this.handleError('Es gab Probleme mit dem Benutzernamen "' + username + '" beim Suchen von Orders.'));
+    }
+
+    getAllOrders(): any{
+      return this.$http.get(this.baseurl + '/ws/orders/').then(this.handleSuccess, this.handleError('Es gab Probleme beim Suchen von allen Orders.'));
     }
 
     get(): string { // return the name of this service
