@@ -22,6 +22,7 @@ module Home.IndexCtrl {
     regionTags : Array<Home.Data.ITag>;
     activityTags : Array<Home.Data.ITag>;
     tags : Array<Array<Home.Data.ITag>>;
+    orderby : string;
 
     // $inject annotation.
     // It provides $injector with information about dependencies to be injected into constructor
@@ -58,6 +59,8 @@ module Home.IndexCtrl {
       vm.countryTags = vm.tagging.getCountryTags();
       vm.regionTags = vm.tagging.getRegionTags();
       vm.activityTags = vm.tagging.getActivityTags();
+      // change sort order for travel indices
+      vm.orderby = vm.themeFilter.indexOf('/exped/')<0 ? '-date' : 'date';
 
     }
 
