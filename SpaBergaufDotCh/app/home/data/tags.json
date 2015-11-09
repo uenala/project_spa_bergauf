@@ -1,6 +1,10 @@
 {
   "activities": [
     {
+      "name": "Alle Aktivitäten",
+      "id": ""
+    },
+    {
       "name": "Skitour",
       "id": "skitour"
     },
@@ -54,6 +58,11 @@
     }
   ],
   "countries": [
+    {
+      "name": "Alle Länder",
+      "code": "",
+      "id": ""
+    },
     {
       "name": "Schweiz",
       "code": "CH",
