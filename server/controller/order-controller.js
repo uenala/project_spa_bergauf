@@ -19,6 +19,23 @@ module.exports.getOrdersByUsername = function(req, res) {
     res.send('Error 404: No orders found');
 };
 
+// this method covers getting all orders
+module.exports.getAllOrders = function(req, res) {
+    console.log("try to retrieve all orders");
+
+    if(getAllOrders()){
+        return res.json(getAllOrders());
+    } else {
+        res.statusCode = 404;
+        return res.send('Error 404: No orders found');
+    }
+
+    // finally
+    res.statusCode = 404;
+    res.send('Error 404: No orders found');
+};
+
+
 // method to add a new order, reads the cart-data in the JSON-Body
 module.exports.addOrder = function(req, res) {
     console.log("addOrder called");
@@ -79,7 +96,7 @@ var readJsonDataFile = function(){
 var createNewOrder = function (cart){
     var newOrder = {
         username: cart.username,
-        ordered: cart.ordered, // TODO use new timestamp instead ?
+        ordered: cart.ordered,
         processed: "false",
         products: []
     };
@@ -106,23 +123,30 @@ var getOrdersByUsername = function (username){
     return ordersWithMatchingUsername;
 };
 
-// not used yet.. just wait ;-)
-// get matching order by username and ordered-timestamp
-var getOrderByUsernameAndTimestamp = function (username, timestamp){
-    var orders = getOrdersByUsername(username);
 
-    if(timestamp < 1442819557000) { // timestamp is older than this code ;-)
-        return;
-    }
-
-    for (var i = 0; i < orders.length; i++) {
-        var order = orders[i];
-        console.log("in loop, order.ordered = " + order.ordered + " looking for timestamp: " + timestamp);
-        if (order.ordered == timestamp) {
-            return order;
-        }
-    }
+// get matching orders by username
+var getAllOrders = function (){
+    var orders = readJsonDataFile();
+    return orders;
 };
+
+// // not used yet..
+// // get matching order by username and ordered-timestamp
+//var getOrderByUsernameAndTimestamp = function (username, timestamp){
+//    var orders = getOrdersByUsername(username);
+//
+//    if(timestamp < 1442819557000) { // timestamp is older than this code ;-)
+//        return;
+//    }
+//
+//    for (var i = 0; i < orders.length; i++) {
+//        var order = orders[i];
+//        console.log("in loop, order.ordered = " + order.ordered + " looking for timestamp: " + timestamp);
+//        if (order.ordered == timestamp) {
+//            return order;
+//        }
+//    }
+//};
 
 
 

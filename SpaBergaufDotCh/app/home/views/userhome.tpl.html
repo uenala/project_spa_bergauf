@@ -3,14 +3,41 @@
     <div class="col-sm-8 col-sm-offset-2">
       <h1>Hallo {{vm.user.firstname}}!</h1>
       <p>Sie sind eingeloggt!!</p>
+      <h3>Ihre offenen Bestellungen:</h3>
+      <div ng-repeat="myuserorders in vm.userOrder">
+        <ul>
+          <li ng-repeat="myorder in myuserorders | filter:{processed:false}">
+             Bestellt um {{myorder.ordered | date:'yyyy-MM-dd HH:mm:ss Z'}} :
+            <ul>
+              <li ng-repeat="myproduct in myorder.products">
+                {{myproduct.path}}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
       <div ng-if="vm.admin">
-        <h3>ADMIN-Funktion: Alle registrierten Users:</h3>
+        <h3>ADMIN-Funktion: Alle registrierten User:</h3>
         <ul>
           <li ng-repeat="user in vm.allUsers">
             {{user.username}} ({{user.firstname}} {{user.lastname}})
             - <a href="#" ng-click="vm.deleteUser(user.id)">User löschen</a>
           </li>
         </ul>
+        <h3>ADMIN-Funktion: Alle Orders:</h3>
+        <div ng-repeat="userorders in vm.allOrders">
+          <ul>
+            <li ng-repeat="oneorder in userorders">
+              {{oneorder.username}} um {{oneorder.ordered | date:'yyyy-MM-dd HH:mm:ss Z' }} :
+                <ul>
+                  <li ng-repeat="oneproduct in oneorder.products">
+                    {{oneproduct.path}}
+                  </li>
+                </ul>
+              verarbeitet: {{oneorder.processed}}
+            </li>
+          </ul>
+        </div>
       </div>
       <p>&nbsp;</p>
       <p><a href="#/login" class="btn btn-primary">Logout</a></p>
