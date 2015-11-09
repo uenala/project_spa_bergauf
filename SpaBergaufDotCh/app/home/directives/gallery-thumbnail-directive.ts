@@ -19,8 +19,13 @@ module GalleryThumbnail {
   *
   */
 
+  interface IGalleryScope extends angular.IScope {
+    galleryObj: Array<Home.Data.IGallery>;
+    tagsObj: Array<Home.Data.ITag>;
+  }
+
   interface IGalleryThumbnailController {
-    // specify exposed controller methods and properties here
+    // specify exposed controller methods and properties
     getTags(): any;
 
   }
@@ -29,13 +34,12 @@ module GalleryThumbnail {
 
     public static $inject = ['Tagging'];
     constructor(private tagging: Home.Services.ITagging) {
-      // countries and activities are now properties of the controller
+      // countries, regions and activities are now properties of the controller
     }
 
     getTags(): any {
       return this.tagging.getTags();
     }
-
 
   }
 
@@ -55,7 +59,7 @@ module GalleryThumbnail {
       controllerAs: 'galleryThumbnail',
       controller: galleryThumbnailController,
 
-      link: function (scope: ng.IScope, element: JQuery, attrs: any, controller: IGalleryThumbnailController) {
+      link: function (scope: IGalleryScope, element: JQuery, attrs: any, controller: IGalleryThumbnailController) {
         /*jshint unused:false */
         /*eslint "no-unused-vars": [2, {"args": "none"}]*/
 

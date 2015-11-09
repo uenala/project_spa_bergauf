@@ -19,6 +19,10 @@ module GalleryItem {
    *
    */
 
+  interface IGalleryScope extends angular.IScope {
+    galleryObj: Home.Data.IGallery;
+  }
+
   interface IGalleryItemController {
     // specify exposed controller methods and properties here
     getGallery(path): Home.Data.IGallery;
@@ -56,7 +60,7 @@ module GalleryItem {
       controllerAs: 'galleryItem',
       controller: galleryItemController,
 
-      link: function (scope: ng.IScope, element: JQuery, attrs: any, controller: IGalleryItemController) {
+      link: function (scope: IGalleryScope, element: JQuery, attrs: any, controller: IGalleryItemController) {
         /*jshint unused:false */
         /*eslint "no-unused-vars": [2, {"args": "none"}]*/
 

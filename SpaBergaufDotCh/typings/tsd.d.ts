@@ -9,3 +9,4 @@
 /// <reference path="photoswipe/photoswipe.d.ts" />
 /// <reference path="moment/moment.d.ts" />
 /// <reference path="toastr/toastr.d.ts" />
+/// <reference path="custom.d.ts" />

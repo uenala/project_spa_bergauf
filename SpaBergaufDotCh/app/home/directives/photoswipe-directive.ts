@@ -126,7 +126,7 @@ module PhotoSwipe {
 
               if(index >= 0) {
                 // open PhotoSwipe if valid index found
-                openPhotoSwipe( index, clickedGallery );
+                openPhotoSwipe( index, clickedGallery, false );
               }
               return false;
             };
