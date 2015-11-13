@@ -3,7 +3,7 @@ module Home.Services {
   'use strict';
 
   export interface ITagging {
-
+    get(): string;
     loadAllTags() : any;
     getTags() : Array<Array<Home.Data.ITag>>;
     getCountryTags() : Array<Home.Data.ITag>;
