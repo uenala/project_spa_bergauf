@@ -3,12 +3,12 @@ module Home.Services {
   'use strict';
 
   export interface ITagging {
+
     loadAllTags() : any;
     getTags() : Array<Array<Home.Data.ITag>>;
     getCountryTags() : Array<Home.Data.ITag>;
     getRegionTags() : Array<Home.Data.ITag>;
     getActivityTags() : Array<Home.Data.ITag>;
-
   }
 
   class Tagging {
@@ -24,6 +24,7 @@ module Home.Services {
     get(): string {
       return 'Tagging';
     }
+
 
     loadAllTags() : ng.IPromise<any> {
       var deferred = this.$q.defer();
@@ -47,25 +48,30 @@ module Home.Services {
       return deferred.promise;
     }
 
+
     getTags(): Array<Array<Home.Data.ITag>> {
       return this.allTags;
     }
 
-    getTagsByNamespace(i:number): Array<Home.Data.ITag> {
-      return this.allTags[i];
-    }
 
     // ToDo: add Constants for namespace indexes, e.g NAMESPACE.COUNTRIES = 1
     getActivityTags(): Array<Home.Data.ITag> {
       return this.getTagsByNamespace(0);
     }
 
+
     getCountryTags(): Array<Home.Data.ITag> {
       return this.getTagsByNamespace(1);
     }
 
+
     getRegionTags(): Array<Home.Data.ITag> {
       return this.getTagsByNamespace(2);
+    }
+
+
+    private getTagsByNamespace(i:number): Array<Home.Data.ITag> {
+      return this.allTags[i];
     }
 
 

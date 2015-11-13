@@ -7,7 +7,6 @@ module Home.Services {
     getGalleries() : Array<Home.Data.IGallery>;
     getGallery() : Home.Data.IGallery;
     getGalleryFromPath() : Home.Data.IGallery;
-    getGalleryImages() : Array<Home.Data.IImage>;
   }
 
   class Repository {
@@ -20,7 +19,6 @@ module Home.Services {
                 private $location : ng.ILocationService) {
     }
 
-    //ToDo: either one master json or for each type a data set, e.g. loadSkitourenGalleryData
     loadGalleryData() : ng.IPromise<Home.Data.IGallery> {
       var deferred = this.$q.defer();
       var jsonfile = '/data/galleries.json';
@@ -70,6 +68,7 @@ module Home.Services {
 
       return this.getGalleryFromPath(this.getGalleryId());
     }
+
 
     getGalleryFromPath(path:String):Home.Data.IGallery {
 
