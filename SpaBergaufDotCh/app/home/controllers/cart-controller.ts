@@ -33,7 +33,7 @@ module Home.CartCtrl {
                 private $rootScope: any,
                 private $log: ng.ILogService,
                 private $location: ng.ILocationService,
-                private logger : Logger.ILoggerService) {
+                private Logger : Logger.ILoggerService) {
       var vm = this; // initialize class variables
       vm.ctrlName = 'CartCtrl';
       vm.user = null;
@@ -63,10 +63,10 @@ module Home.CartCtrl {
           this.CartService.checkout(vm.cart)
             .then(function (response) {
               if (response.data) {
-                logger.logSuccess('Ihre Bestellung wurde erfolgreich versandt.', 'empty', this, true);
+                Logger.logSuccess('Ihre Bestellung wurde erfolgreich versandt.', 'empty', this, true);
                 CartService.emptyCart();
               } else {
-                logger.logError(response.message, 'empty', this, true);
+                Logger.logError(response.message, 'empty', this, true);
                 vm.dataLoading = false;
               }
             });}

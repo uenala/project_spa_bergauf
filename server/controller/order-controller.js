@@ -55,7 +55,7 @@ module.exports.addOrder = function(req, res) {
 
     var cart = {
         username : req.body.username,
-        ordered : req.body.changed,
+        ordered : new Date().getTime(),
         products : req.body.products
     };
 
@@ -67,6 +67,36 @@ module.exports.addOrder = function(req, res) {
         if (err) {
             res.end();
             return console.log("Error creating users.json with new user! Root cause: " + err);
+        }
+    });
+    res.json(true);
+};
+
+module.exports.markOrderProcessed = function(req, res) {
+    console.log("markOrderProcessed called");
+    var orders = readJsonDataFile();
+    var orderedTimestamp = req.params.id;
+    var match = false;
+
+    for (var i = 0; i < orders.length; i++){
+        if(orders[i].ordered == orderedTimestamp){
+            orders[i].processed = true;
+            console.log(JSON.stringify(orders[i]));
+            match = true;
+            break;
+        }
+    }
+    if (!match) {
+        console.log("No matching order for timestamp " + orderedTimestamp + " found!");
+        res.statusCode = 404;
+        return res.send('Error 404: No matching order found');
+    }
+
+    console.log("order with timestamp: " + orderedTimestamp + " marked as processed.");
+    fs.writeFile(dataFile, JSON.stringify(orders), function(err){
+        if (err) {
+            res.end();
+            return console.log("Error writing orders.json! Root cause: " + err);
         }
     });
     res.json(true);

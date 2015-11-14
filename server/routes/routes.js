@@ -19,5 +19,7 @@ router.get("/ws/admins/:id", users.getAdminUserByUsername);
 router.get("/ws/orders", orders.getAllOrders);
 router.get("/ws/orders/:id", orders.getOrdersByUsername);
 router.post("/ws/orders", orders.addOrder); // Order-Data submitted in JSON-Body
+router.put("/ws/orders/:id", orders.markOrderProcessed);
+
 
 module.exports = router;

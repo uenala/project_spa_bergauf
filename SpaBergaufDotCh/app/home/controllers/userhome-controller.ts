@@ -17,7 +17,8 @@ module Home.UserhomeCtrl {
       '$rootScope',
       '$location',
       '$log',
-      'CartService'
+      'CartService',
+      'Logger'
     ];
 
     user: any;
@@ -26,6 +27,8 @@ module Home.UserhomeCtrl {
     allOrders: Array<Home.Data.IOrder>;
     userOrder: Array<Home.Data.IOrder>;
     getOrdersByUsername: any;
+    markOrderProcessed: any;
+
 
     // dependencies are injected via AngularJS $injector
     constructor(private UserLocalStorage: Home.Services.IUserLocalStorage,
@@ -33,7 +36,8 @@ module Home.UserhomeCtrl {
                 private $rootScope: any,
                 private $location: ng.ILocationService,
                 private $log: ng.ILogService,
-                private CartService: Home.Services.ICartService) {
+                private CartService: Home.Services.ICartService,
+                private Logger : Logger.ILoggerService) {
 
       var vm = this;
       vm.ctrlName = 'UserhomeCtrl';
@@ -44,7 +48,8 @@ module Home.UserhomeCtrl {
       vm.admin = false;
       vm.allOrders = [];
       vm.userOrder = [];
-      vm.getOrdersByUsername= getOrdersByUsername;
+      vm.getOrdersByUsername = getOrdersByUsername;
+      vm.markOrderProcessed = markOrderProcessed;
 
 
       initController();
@@ -83,9 +88,13 @@ module Home.UserhomeCtrl {
       function deleteUser(id) {
         if (vm.admin) {
           //UserLocalStorage.Delete(id) // Local Storage Version
-          User.delete(id) // Rest-Version, async call! wait for result with .then()
-            .then(function () { // async call! wait for result with .then()
-              loadAllUsers();
+          User.delete(id) // Rest-Version, async call!
+            .then(function (response) { // wait for result with .then() and toast if successful
+              if (response.data) {
+                Logger.logSuccess('Der User wurde gelöscht', 'empty', this, true);
+              } else {
+                Logger.logError(response.message, 'empty', this, true);
+              }
             });
         }
       }
@@ -121,6 +130,20 @@ module Home.UserhomeCtrl {
               $log.debug("cart-controller:getOrdersByUsername for " + username);
               vm.userOrder.push(orders.data);
           });
+      }
+
+      function markOrderProcessed(ordered) {
+        if (vm.admin) {
+          CartService.markOrderProcessed(ordered) // Rest-Version, async call!
+            .then(function (response) { // wait for result with .then() and toast if successful
+              if (response.data) {
+                Logger.logSuccess('Die Bestellung wurde als verarbeitet markiert.', 'empty', this, true);
+                //loadAllOrders();
+              } else {
+                Logger.logError(response.message, 'empty', this, true);
+              }
+            });
+        }
       }
 
 

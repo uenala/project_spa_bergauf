@@ -27,14 +27,15 @@
         <h3>ADMIN-Funktion: Alle Orders:</h3>
         <div ng-repeat="userorders in vm.allOrders">
           <ul>
-            <li ng-repeat="oneorder in userorders">
+            <li ng-repeat="oneorder in userorders | filter:{processed:false}">
               {{oneorder.username}} um {{oneorder.ordered | date:'yyyy-MM-dd HH:mm:ss Z' }} :
                 <ul>
                   <li ng-repeat="oneproduct in oneorder.products">
                     {{oneproduct.path}}
                   </li>
                 </ul>
-              verarbeitet: {{oneorder.processed}}
+              verarbeitet: {{oneorder.processed}}<br>
+              <a href="#" ng-click="vm.markOrderProcessed(oneorder.ordered)">Bestellung als verarbeitet markieren.</a>
             </li>
           </ul>
         </div>
