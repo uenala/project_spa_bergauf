@@ -4,14 +4,14 @@
 'use strict';
 
 describe('activity', function () {
+
+  var repository;
+
   beforeEach(angular.mock.module('home'));
 
-  it("should initialize correctly", inject(function ($filter) {
-    expect($filter('activity')).toBeDefined();
-  }));
-
-  it('should return 0 or 1 galleries', inject(function ($filter) {
-    var galleries = [{
+  beforeEach(inject(function(Repository){
+    repository = Repository;
+    repository.galleries = [{
       "name": "Aiguille du Tour","navTitle": "",
       "altitude": 3540, "altitudeLabel": "3540 m",
       "map": {"x": 93500.97, "y": 568689.75, "zoom": 7},
@@ -34,16 +34,25 @@ describe('activity', function () {
       "country": "schweiz","region": "meiental"
     }];
 
-    var skitourenFilter = $filter('activity')(galleries, '/skitouren');
-    expect(skitourenFilter.length).toBe(1);
-
-    var bergtourenFilter = $filter('activity')(galleries, '/bergtouren');
-    expect(bergtourenFilter.length).toBe(1);
-
-    var expedFilter = $filter('activity')(galleries, '/exped');
-    expect(expedFilter.length).toBe(0);
-
   }));
 
+  it("should initialize correctly", inject(function ($filter) {
+    expect($filter('activity')).toBeDefined();
+  }));
+
+  it('should return 1 "skitouren" gallery', inject(function ($filter) {
+    var activityfilter = $filter('activity')(repository.galleries, '/skitouren');
+    expect(activityfilter.length).toBe(1);
+  }));
+
+  it('should return 1 "bergtouren" gallery', inject(function ($filter) {
+    var activityfilter = $filter('activity')(repository.galleries, '/bergtouren');
+    expect(activityfilter.length).toBe(1);
+  }));
+
+  it('should return 0 "exped" galleries', inject(function ($filter) {
+    var activityfilter = $filter('activity')(repository.galleries, '/exped');
+    expect(activityfilter.length).toBe(0);
+  }));
 
 });
