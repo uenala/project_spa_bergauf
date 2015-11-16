@@ -43,7 +43,7 @@ module Home.LoginCtrl {
         vm.dataLoading = true;
         Authentication.login(vm.username, vm.password, function (response) { // function (response) is a callback-function
           if (response.success) {
-            Authentication.setCredentials(vm.username, vm.password);
+            Authentication.setCredentials(vm.username, response.token);
             $location.path('/userhome');
             $log.debug("Login success for username " + vm.username);
             } else {

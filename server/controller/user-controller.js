@@ -1,4 +1,5 @@
 var fs = require('fs');
+var jwt = require('jsonwebtoken');// json web tokens
 
 var dataFile = "./data/users.json";
 var adminFile = "./data/admins.json";
@@ -199,6 +200,42 @@ module.exports.getAdminUserByUsername = function(req, res) {
     return res.send('Error 404: No user with matching username found');
 
 };
+
+// authentication
+module.exports.authenticateUser = function(req, res) {
+    console.log("authenticateUser called.");
+    var username = req.body.username;
+    var password = req.body.password;
+    var match = false;
+    if(getMatchingUserByUsername(username)){
+        var userWithMatchingUsername = getMatchingUserByUsername(username);
+        if (userWithMatchingUsername.password === password){
+            match = true;
+            console.log(req.body);
+            //properties contained in the token, of course you can add first name, last name and so on
+            var profile = {
+                username: username,
+                firstname: userWithMatchingUsername.firstname,
+                lastname: userWithMatchingUsername.lastname,
+                id: userWithMatchingUsername.id
+            };
+            // We are encoding the profile inside the token
+            var token = jwt.sign(profile, req.app.get('secret'), {
+                expiresIn: 18000
+            });
+
+            res.json({
+                token: token
+            });
+        }
+    }
+    if(!match) {
+        // handle wrong username or password
+        console.log("Wrong user or password");
+        res.status(401).send('Wrong user or password');
+    }
+
+}
 
 
 

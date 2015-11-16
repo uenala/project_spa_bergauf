@@ -7,7 +7,8 @@ var spaBergaufDotCh;
      * @description
      *
      */
-    angular.module('spaBergaufDotCh', [
+    angular
+        .module('spaBergaufDotCh', [
         'ngRoute',
         'viewhead',
         'ngAnimate',

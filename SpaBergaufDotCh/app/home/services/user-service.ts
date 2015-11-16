@@ -11,6 +11,7 @@ module User {
     update(user): any;
     delete(id): any;
     isAdmin(username): any;
+    authenticateUser(username, password): any;
   }
 
   class User {
@@ -39,7 +40,7 @@ module User {
     }
 
     create(user) {
-      return this.$http.post(this.baseurl + '/ws/users', user).then(this.handleSuccess, this.handleError('Fehler beim Erstellen des Benutzers.'));
+      return this.$http.post(this.baseurl + '/api/users', user).then(this.handleSuccess, this.handleError('Fehler beim Erstellen des Benutzers.'));
     }
 
     update(user) {
@@ -52,6 +53,10 @@ module User {
 
     isAdmin(username) {
       return this.$http.get(this.baseurl + '/ws/admins/' + username).then(this.handleSuccess, this.handleError('Der Benutzername "' + username + '" konnte nicht gefunden werden.'));
+    }
+
+    authenticateUser(username, password) {
+      return this.$http.post(this.baseurl + '/api/authenticate', { username: username, password: password }).then(this.handleSuccess, this.handleError('Fehler beim Authentisieren des Benutzers.'));
     }
 
 

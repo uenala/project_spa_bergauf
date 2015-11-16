@@ -16,4 +16,8 @@ module spaBergaufDotCh {
       'dcbImgFallback',
       'home'
     ]);
+
+  //.config(function ($httpProvider) {
+  //  $httpProvider.interceptors.push('home.authInterceptor');
+  //});
 }

@@ -40,40 +40,33 @@ module Authentication {
       //      callback(response);
       //    });
 
-      // Rest-Version
-      var response;
-      this.User.getByUsername(username)
-        .then(function (user) {
-          if (user.data && user.data.password === password) {
-            response = {success: true};
-          } else {
-            response = {success: false, message: 'Email oder Passwort falsch'};
-          }
-          callback(response);
-        });
-
 
       /* Use something like this for more secure authentication
        ----------------------------------------------*/
-      //$http.post('/api/authenticate', { username: username, password: password })
-      //    .success(function (response) {
-      //        callback(response);
-      //    });
+      var response: any;
+      this.User.authenticateUser(username, password)
+          .then(function (auth: any) {
+            if (auth.data && auth.data.token) {
+              response = {success: true, token: auth.data.token};
+            } else {
+              response = {success: false, message: 'Email oder Passwort falsch'};
+        }
+        callback(response);
+      });
 
     }
 
 
-    setCredentials(username: string, password: string) {
-      var authdata = (username + ':' + password);
+    setCredentials(username: string, token: string) {
 
       this.$rootScope.globals = { // we can only set in globals, what we have recieved as method params. no firstname.
         currentUser: {
           username: username,
-          authdata: authdata
+          token: token
         }
       };
 
-      this.$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
+      this.$http.defaults.headers.common['Authorization'] = 'Bearer ' + token; // jshint ignore:line
       this.$cookieStore.put('globals', this.$rootScope.globals);
     }
 
