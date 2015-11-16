@@ -15,9 +15,9 @@ module spaBergaufDotCh {
       'mgcrea.ngStrap',
       'dcbImgFallback',
       'home'
-    ]);
+    ])
 
-  //.config(function ($httpProvider) {
-  //  $httpProvider.interceptors.push('home.authInterceptor');
-  //});
+.config(['$httpProvider', function ($httpProvider: ng.IHttpProvider) {
+  $httpProvider.interceptors.push(Home.Factories.AuthenticationInterceptor.Factory);
+}]);
 }

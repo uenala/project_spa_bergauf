@@ -15,6 +15,9 @@ var spaBergaufDotCh;
         'mgcrea.ngStrap',
         'dcbImgFallback',
         'home'
-    ]);
+    ])
+        .config(['$httpProvider', function ($httpProvider) {
+            $httpProvider.interceptors.push(Home.Factories.AuthenticationInterceptor.Factory);
+        }]);
 })(spaBergaufDotCh || (spaBergaufDotCh = {}));
 //# sourceMappingURL=app-module.js.map

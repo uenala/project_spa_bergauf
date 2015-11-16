@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // We are going to protect /ws routes with JWT
-//app.use('/ws', expressJwt({secret: SECRET})); // not yet
+app.use('/ws/users', expressJwt({secret: SECRET}));
 //Make your passphrase accessible from app object
 app.set('secret', SECRET);
 

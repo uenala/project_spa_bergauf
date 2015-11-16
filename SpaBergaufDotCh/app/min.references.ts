@@ -8,6 +8,8 @@
 ///<reference path='home/services/logger-service.ts' />
 ///<reference path='home/services/tagging-service.ts' />
 
+///<reference path='home/factories/AuthenticationInterceptor.ts' />
+
 ///<reference path='home/data/gallery.ts' />
 ///<reference path='home/data/image.ts' />
 ///<reference path='home/data/cart.ts' />
