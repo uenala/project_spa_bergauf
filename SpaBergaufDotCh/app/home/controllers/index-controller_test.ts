@@ -12,9 +12,9 @@ describe('IndexCtrl', function () {
     ctrl = $controller('IndexCtrl');
   }));
 
-  it('should have ctrlName as IndexCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('IndexCtrl');
-  });
+  //it('should have ctrlName as IndexCtrl', function () {
+  //  expect(ctrl.ctrlName).toEqual('IndexCtrl');
+  //});
   /*
   it('index pages with path "/bergtouren" should have a title "Bergtouren"', function () {
     expect(ctrl.getTitle('/bergtouren')).toEqual('Bergtouren');

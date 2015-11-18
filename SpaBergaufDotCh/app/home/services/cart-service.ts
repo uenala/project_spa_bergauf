@@ -44,7 +44,7 @@ module Home.Services {
       var products = this.readCartCookie();
       var cart: Home.Data.ICart = {username: "", changed: 0, products: []};
 
-      cart.username = this.$rootScope.globals.currentUser.username;
+      cart.username = this.readUserName();
       cart.changed = new Date().getTime();
 
       for (var i=0; i < products.length; i++) {
@@ -96,7 +96,7 @@ module Home.Services {
     }
 
     emptyCart(): void {
-      var cartCookieName: string = this.cartCookiePrefix + this.$rootScope.globals.currentUser.username;
+      var cartCookieName: string = this.cartCookiePrefix + this.readUserName();
       this.$cookieStore.put(cartCookieName, []);
       this.$log.debug("CartService.emptyCart called");
     }
@@ -146,7 +146,7 @@ module Home.Services {
   }
 
     readCartCookie(): Array<Home.Data.IProduct> {
-      var cartCookieName: string = this.cartCookiePrefix + this.$rootScope.globals.currentUser.username;
+      var cartCookieName: string = this.cartCookiePrefix + this.readUserName();
       if(!(this.$cookieStore.get(cartCookieName) instanceof Array)) {
         this.$cookieStore.put(cartCookieName, []);
       }
@@ -155,8 +155,16 @@ module Home.Services {
     }
 
     writeCartCookie(products: Array<Home.Data.IProduct>): void {
-      var cartCookieName: string = this.cartCookiePrefix + this.$rootScope.globals.currentUser.username;
+      var cartCookieName: string = this.cartCookiePrefix + this.readUserName();
       this.$cookieStore.put(cartCookieName, products);
+    }
+
+    readUserName(): string {
+      var username: string = "";
+      if( this.$rootScope.globals && this.$rootScope.globals.currentUser && this.$rootScope.globals.currentUser.username ) {
+        username = this.$rootScope.globals.currentUser.username;
+      }
+      return username;
     }
 
   }
