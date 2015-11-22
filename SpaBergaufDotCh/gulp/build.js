@@ -207,7 +207,7 @@ module.exports = function (gulp, $, config) {
 
   // copy Bower fonts and images into build directory
   gulp.task('bowerAssets', ['clean'], function () {
-    var assetFilter = $.filter('**/*.{eot,otf,svg,ttf,woff,gif,jpg,jpeg,png}');
+    var assetFilter = $.filter('**/*.{eot,otf,svg,ttf,woff,woff2,gif,jpg,jpeg,png}');
     return gulp.src($.mainBowerFiles(), {base: bowerDir})
       .pipe(assetFilter)
       .pipe(gulp.dest(config.extDir))
@@ -216,7 +216,7 @@ module.exports = function (gulp, $, config) {
 
   // copy custom fonts into build directory
   gulp.task('fonts', ['clean'], function () {
-    var fontFilter = $.filter('**/*.{eot,otf,svg,ttf,woff}');
+    var fontFilter = $.filter('**/*.{eot,otf,svg,ttf,woff,woff2}');
     return gulp.src([config.appFontFiles])
       .pipe(fontFilter)
       .pipe(gulp.dest(config.buildFonts))
