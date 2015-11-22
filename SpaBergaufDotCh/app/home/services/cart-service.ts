@@ -11,8 +11,8 @@ module Home.Services {
     emptyCart(): void;
     checkout(cart: Home.Data.ICart): any;
     getOrdersByUsername(username: string): any;
-    getAllOrders():any;
-    markOrderProcessed(ordered:number):any;
+    getAllOrders(): any;
+    markOrderProcessed(ordered: number): any;
   }
 
   // service to handle a shopping cart's data in a cookie on the client side.
@@ -59,7 +59,7 @@ module Home.Services {
       this.$log.debug("CartService.addProduct called: " + product.path);
       var products = this.readCartCookie();
 
-      if(!this.contains(products, product)) {
+      if(!this.containsProduct(products, product)) {
 
         products.push({ // add product
           path: product.path
@@ -92,7 +92,7 @@ module Home.Services {
 
     getNumberOfProducts(): number {
       var products = this.readCartCookie();
-      return products.length + 1;
+      return products.length;
     }
 
     emptyCart(): void {
@@ -115,7 +115,7 @@ module Home.Services {
       return this.$http.get(this.baseurl + '/ws/orders/').then(this.handleSuccess, this.handleError('Es gab Probleme beim Suchen von allen Orders.'));
     }
 
-    markOrderProcessed(ordered:number): any{
+    markOrderProcessed(ordered: number): any{
       return this.$http.put(this.baseurl + '/ws/orders/' + ordered).then(this.handleSuccess, this.handleError('Es gab Probleme beim markieren der Order ' + ordered));
     }
 
@@ -135,7 +135,7 @@ module Home.Services {
       };
     }
 
-    contains(array : Array<Home.Data.IProduct>, elem: Home.Data.IProduct): boolean{
+    containsProduct(array : Array<Home.Data.IProduct>, elem: Home.Data.IProduct): boolean{
       var len = array.length;
       for(var i = 0 ; i < len;i++)
       {
