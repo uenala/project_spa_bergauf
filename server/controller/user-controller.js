@@ -262,7 +262,7 @@ var readJsonDataFile = function(filepath){
 
 // get matching user by username
 var getMatchingUserByUsername = function (username){
-    var users = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+    var users = readJsonDataFile(dataFile);
 
     for (var i = 0; i < users.length; i++){
         if(users[i].username == username){
@@ -275,7 +275,7 @@ var getMatchingUserByUsername = function (username){
 
 // get matching user by id
 var getMatchingUserById = function (id){
-    var users = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+    var users = readJsonDataFile(dataFile);
 
     if(id < 0) {
         return;
