@@ -21,21 +21,21 @@
         <ul>
           <li ng-repeat="user in vm.allUsers">
             {{user.username}} ({{user.firstname}} {{user.lastname}})
-            - <a href="#" ng-click="vm.deleteUser(user.id)">User löschen</a>
+            - <a href="#" ng-click="vm.deleteUser(user.id)" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> User löschen</a>
           </li>
         </ul>
-        <h3>ADMIN-Funktion: Alle Orders:</h3>
+        <h3>ADMIN-Funktion: Alle noch nicht verarbeiteten Bestellungen:</h3>
         <div ng-repeat="userorders in vm.allOrders">
           <ul>
             <li ng-repeat="oneorder in userorders | filter:{processed:false}">
               {{oneorder.username}} um {{oneorder.ordered | date:'yyyy-MM-dd HH:mm:ss Z' }} :
+              <a href="#" ng-click="vm.markOrderProcessed(oneorder.ordered)" class="btn btn-default">
+                <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Als verarbeitet markieren.</a>
                 <ul>
                   <li ng-repeat="oneproduct in oneorder.products">
                     {{oneproduct.path}}
                   </li>
                 </ul>
-              verarbeitet: {{oneorder.processed}}<br>
-              <a href="#" ng-click="vm.markOrderProcessed(oneorder.ordered)">Bestellung als verarbeitet markieren.</a>
             </li>
           </ul>
         </div>
