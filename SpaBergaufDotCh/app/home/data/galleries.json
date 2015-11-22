@@ -10506,7 +10506,7 @@
         "path": "/exped/amazon_fishing",
         "icon": "/exped/icons/fishing.jpg",
         "iconAlt": "Jatapu",
-        "date": "2001",
+        "date": "2001-10",
         "dateStart": "",
         "country": "brasilien",
         "region": "amazonas"
@@ -10521,7 +10521,7 @@
         "path": "/exped/amazon_futbol",
         "icon": "/exped/icons/futbol.jpg",
         "iconAlt": "Rot - Blau",
-        "date": "2001",
+        "date": "2001-10",
         "dateStart": "",
         "country": "brasilien",
         "region": "amazonas"
@@ -10539,7 +10539,7 @@
         "path": "/exped/greenland00_forel",
         "icon": "/exped/icons/mt_forel.jpg",
         "iconAlt": "Mont Forel Expedition",
-        "date": "2000",
+        "date": "2000-04",
         "dateStart": "",
         "country": "groenland",
         "region": "ostgroenland"
@@ -10555,7 +10555,7 @@
         "path": "/exped/greenland00_waiting",
         "icon": "/exped/icons/waiting.jpg",
         "iconAlt": "Schweizerland Alps",
-        "date": "2000",
+        "date": "2000-04",
         "dateStart": "",
         "country": "groenland",
         "region": "ostgroenland"
@@ -10573,8 +10573,8 @@
         "path": "/exped/mtmeru",
         "icon": "/exped/icons/mt_meru.jpg",
         "iconAlt": "Mt. Meru",
-        "date": "2000",
-        "dateStart": "",
+        "date": "2000-01-06",
+        "dateStart": "2000-01-01",
         "country": "tansania",
         "region": "arusha"
       },
@@ -10588,8 +10588,8 @@
         "path": "/exped/ngorongoro",
         "icon": "/exped/icons/ngorongoro.jpg",
         "iconAlt": "Ngorongoro",
-        "date": "2000",
-        "dateStart": "",
+        "date": "2000-01-08",
+        "dateStart": "2000-01-07",
         "country": "tansania",
         "region": "arusha"
       },
@@ -10655,7 +10655,7 @@
         "path": "/exped/arctic_club",
         "icon": "/exped/icons/london.jpg",
         "iconAlt": "",
-        "date": "1998",
+        "date": "1998-12-12",
         "dateStart": "",
         "country": "England",
         "region": "london"
@@ -10674,8 +10674,8 @@
         "path": "/exped/baruntse_lukla_basecamp",
         "icon": "/exped/icons/lukla_bascamp.jpg",
         "iconAlt": "Trekking Lukla - Basecamp",
-        "date": "1996",
-        "dateStart": "",
+        "date": "1996-10-12",
+        "dateStart": "1996-10-01",
         "country": "nepal",
         "region": "himalaya"
       },
@@ -10692,8 +10692,8 @@
         "path": "/exped/baruntse_climb",
         "icon": "/exped/icons/baruntse.jpg",
         "iconAlt": "Baruntse 7168 m",
-        "date": "1996",
-        "dateStart": "",
+        "date": "1996-10-23",
+        "dateStart": "1996-10-13",
         "country": "nepal",
         "region": "himalaya"
       },
@@ -10711,8 +10711,8 @@
         "path": "/exped/baruntse_amphu_labtsa",
         "icon": "/exped/icons/amphu_labtsa.jpg",
         "iconAlt": "Amphu Labtsa 5850 m",
-        "date": "1996",
-        "dateStart": "",
+        "date": "1996-10-30",
+        "dateStart": "1996-10-24",
         "country": "nepal",
         "region": "himalaya"
       },

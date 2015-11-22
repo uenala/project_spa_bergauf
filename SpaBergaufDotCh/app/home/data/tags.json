@@ -146,6 +146,10 @@
   ],
   "regions": [
     {
+      "name": "Alle Regionen",
+      "id": ""
+    },
+    {
       "name": "Alborz",
       "id": "alborz"
     },
