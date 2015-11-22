@@ -55,6 +55,7 @@ module Home.CartCtrl {
 
       function deleteProduct(product) {
         vm.products =  this.CartService.removeProduct(product);
+        vm.cart.products = vm.products;
       }
 
       function checkout() {
