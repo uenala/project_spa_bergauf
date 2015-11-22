@@ -47,29 +47,50 @@ body {
 
 /* search styles */
 .search {
-  padding-top: 20px;
+  padding-top: 30px;
+}
+
+.search .search-input {
+  padding-left: 43px;
+  padding-right: 43px;
+}
+
+.search label {
+  position: absolute;
+  left: 26px;
+  top: 13px;
+}
+
+.search .search-clear {
+  text-decoration: none;
+  position: absolute;
+  right: 25px;
+  top: 18px;
+  color: #b3b3b3;
 }
 
 .search-hits {
   font-size: $font-size-big;
   font-weight: $font-weight-bold;
-  padding-top: 10px;
   padding-bottom: 30px;
   @media(max-width:767px) {
-    padding-bottom: 0px;
+    padding-bottom: 20px;
   }
 }
+
 
 .search-filter {
   font-size: $font-size-big;
   font-weight: $font-weight-bold;
-  padding-top: 10px;
   padding-bottom: 30px;
   @media(max-width:767px) {
-    margin-top: 0px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
+
   }
 }
+
+
+
 
 .list-inline > li {
   padding-right: 10px;

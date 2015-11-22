@@ -11,10 +11,6 @@
         <div class="col-xs-*">
           <h4 class="aside-title">Anzahl Bildergalerien: <span class="label label-default">{{filteredGalleries.length}}</span></h4>
           <div class="form-group">
-            <label for="fulltext" class="sr-only">Volltextsuche:</label>
-            <input class="form-control" type="text" placeholder="Volltextsuche" ng-model="home.query" id="fulltext"/>
-          </div>
-          <div class="form-group">
             <label for="activity" class="sr-only">Nach Aktivität filtern:</label>
             <select class="form-control" id="activity" ng-model="home.activity"
                     ng-options="activity.id as activity.name for activity in home.activityTags"
@@ -27,6 +23,17 @@
                     ng-options="country.id as country.name for country in home.countryTags"
                     ng-init="home.country=home.country||home.countryTags[0].id">
             </select>
+          </div>
+          <div class="form-group">
+            <label for="region" class="sr-only">Nach Region filtern:</label>
+            <select class="form-control" id="region" ng-model="home.region"
+                    ng-options="region.id as region.name for region in home.regionTags"
+                    ng-init="home.region=home.region||home.regionTags[0].id">
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fulltext" class="sr-only">Suche:</label>
+            <input class="form-control" type="text" placeholder="Suchen..." ng-model="home.query" id="fulltext"/>
           </div>
         </div>
       </div>
