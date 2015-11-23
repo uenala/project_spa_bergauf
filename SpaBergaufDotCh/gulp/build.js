@@ -223,6 +223,12 @@ module.exports = function (gulp, $, config) {
       .pipe(fontFilter.restore());
   });
 
+  // copy optional favicon in app directory
+  gulp.task('favicon', ['clean'], function () {
+    return gulp.src(path.join(config.appDir, 'favicon.ico'))
+      .pipe(gulp.dest(config.buildDir));
+  });
+
   // copy and optimize images into build directory
   gulp.task('images', ['clean'], function () {
     return gulp.src(config.appImageFiles)
@@ -279,7 +285,7 @@ module.exports = function (gulp, $, config) {
     cb();
   });
 
-  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'fonts', 'data']);
+  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'favicon', 'fonts', 'data']);
   gulp.task('copy2server', ['copy2nodeServer']);
 };
 
