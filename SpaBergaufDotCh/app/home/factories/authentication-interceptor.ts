@@ -35,4 +35,8 @@ module Home.Factories {
       return this.$q.reject(rejection);
     }
   }
+
+  angular
+    .module('home')
+    .factory('AuthenticationInterceptor', AuthenticationInterceptor);
 }

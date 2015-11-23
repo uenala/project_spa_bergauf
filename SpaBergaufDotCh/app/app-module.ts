@@ -17,7 +17,9 @@ module spaBergaufDotCh {
       'home'
     ])
 
-.config(['$httpProvider', function ($httpProvider: ng.IHttpProvider) {
-  $httpProvider.interceptors.push(Home.Factories.AuthenticationInterceptor.Factory);
+.config([
+  "$httpProvider", function($httpProvider: ng.IHttpProvider) {
+    //$httpProvider.interceptors.push(Home.Factories.AuthenticationInterceptor.Factory);
 }]);
+
 }
