@@ -207,7 +207,7 @@ module.exports = function (gulp, $, config) {
 
   // copy Bower fonts and images into build directory
   gulp.task('bowerAssets', ['clean'], function () {
-    var assetFilter = $.filter('**/*.{eot,otf,svg,ttf,woff,gif,jpg,jpeg,png}');
+    var assetFilter = $.filter('**/*.{eot,otf,svg,ttf,woff,woff2,gif,jpg,jpeg,png}');
     return gulp.src($.mainBowerFiles(), {base: bowerDir})
       .pipe(assetFilter)
       .pipe(gulp.dest(config.extDir))
@@ -216,11 +216,17 @@ module.exports = function (gulp, $, config) {
 
   // copy custom fonts into build directory
   gulp.task('fonts', ['clean'], function () {
-    var fontFilter = $.filter('**/*.{eot,otf,svg,ttf,woff}');
+    var fontFilter = $.filter('**/*.{eot,otf,svg,ttf,woff,woff2}');
     return gulp.src([config.appFontFiles])
       .pipe(fontFilter)
       .pipe(gulp.dest(config.buildFonts))
       .pipe(fontFilter.restore());
+  });
+
+  // copy optional favicon in app directory
+  gulp.task('favicon', ['clean'], function () {
+    return gulp.src(path.join(config.appDir, 'favicon.ico'))
+      .pipe(gulp.dest(config.buildDir));
   });
 
   // copy and optimize images into build directory
@@ -279,7 +285,7 @@ module.exports = function (gulp, $, config) {
     cb();
   });
 
-  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'fonts', 'data']);
+  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'favicon', 'fonts', 'data']);
   gulp.task('copy2server', ['copy2nodeServer']);
 };
 

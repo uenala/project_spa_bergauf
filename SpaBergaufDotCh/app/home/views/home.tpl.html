@@ -6,33 +6,39 @@
 <meta view-head property="og:title" content="Willkommen beim Outdoor Photoblog bergauf.ch" />
 <meta view-head property="og:description" content="Outdoor Photo-Blog zu den Themen Skiouren, Bersteigen, MTB und Reisen" />
 <div class="row search">
-  <div class="col-xs-9 col-sm-8 col-md-10 col-lg-10">
-    <button type="button" class="btn btn-default btn-lg btn-block" data-title="Suchen"
+  <div class="col-xs-9 col-sm-8 col-md-8 col-lg-8 form-group input-group-lg">
+    <label for="search-input"><i class="fa fa-search fa-lg"></i></label>
+    <input class="form-control search-input" type="text" placeholder="Suchen..." ng-model="home.query" id="search-input" />
+    <a id="search-clear" href="#/home/suche" class="search-clear fa fa-times-circle fa-lg show"></a>
+  </div>
+  <!--div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    <a href="/#/home/suche" class="btn btn-default btn-lg btn-block" role="button">
+      <i class="fa fa-times fa-fw fa-lg hidden-sm hidden-md hidden-lg"></i><span class="hidden-xs">zurücksetzen</span>
+    </a>
+  </div-->
+  <div class="col-xs-3 col-sm-4 col-md-4 col-lg-4">
+    <button type="button" class="btn btn-default btn-lg btn-block" data-title="Filtern / Suchen"
         data-template-url="home/views/search.tpl.html"
         data-animation="am-slide-right"
         data-controller-as="home"
         bs-aside="aside"
         data-container="body">
-      <i class="fa fa-search fa-fw fa-lg"></i> Suchen</button>
+      <i class="fa fa-sliders fa-fw fa-lg"></i><span class="hidden-xs"> Filtern</span></button>
   </div>
-  <div class="col-xs-3 col-sm-4 col-md-2 col-lg-2">
-    <a href="/#/home/suche" class="btn btn-default btn-lg btn-block" role="button">
-      <i class="fa fa-times fa-fw fa-lg hidden-sm hidden-md hidden-lg"></i><span class="hidden-xs">zurücksetzen</span>
-    </a>
-    </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-    <p class="search-hits">Bildergalerien: {{filteredGalleries.length}} von {{home.galleries.length}}</p>
-  </div>
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
     <p class="search-filter" ng-if="home.query || home.activity || home.country  || home.region">
       Suchfilter:
-      {{home.query}} {{home.activity | convertIdToProperty:home.tags:'activities':'name'}}
-      {{home.country | convertIdToProperty:home.tags:'countries':'name'}}
-      {{home.region | convertIdToProperty:home.tags:'regions':'name'}}
+      <span ng-if="home.activity">"{{home.activity | convertIdToProperty:home.tags:'activities':'name'}}"</span>
+      <span ng-if="home.country">"{{home.country | convertIdToProperty:home.tags:'countries':'name'}}"</span>
+      <span ng-if="home.region">"{{home.region | convertIdToProperty:home.tags:'regions':'name'}}"</span>
+      {{home.query}}
     </p>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+    <p class="search-hits">Bildergalerien: {{filteredGalleries.length}} von {{home.galleries.length}}</p>
   </div>
 </div>
 

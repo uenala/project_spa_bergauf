@@ -6,7 +6,7 @@ module Home.Services {
     loadGalleryData() : ng.IPromise<Home.Data.IGallery>;
     getGalleries() : Array<Home.Data.IGallery>;
     getGallery() : Home.Data.IGallery;
-    getGalleryFromPath() : Home.Data.IGallery;
+    getGalleryFromPath(path:String) : Home.Data.IGallery;
   }
 
   class Repository {
@@ -73,13 +73,16 @@ module Home.Services {
     getGalleryFromPath(path:String):Home.Data.IGallery {
 
       var i=0;
-      for (i; i<this.galleryData.length; i++) {
-        if (this.galleryData[i].path === path) {
-          break;
+      if (this.galleryData) {
+        for (i; i<this.galleryData.length; i++) {
+          if (this.galleryData[i].path === path) {
+            break;
+          }
         }
+        return this.galleryData[i];
       }
 
-      return this.galleryData[i];
+      return null;
     }
 
 

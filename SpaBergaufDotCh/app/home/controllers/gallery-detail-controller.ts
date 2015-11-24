@@ -53,19 +53,20 @@ module Home.GalleryDetailCtrl {
       vm.tags = tagging.getTags();
       vm.gallery = repository.getGallery();
       vm.isGallery = (typeof(vm.gallery) === "object");
-      //vm.$log.debug("isGallery: " + vm.isGallery);
       vm.addToCart = addToCart;
 
       if (vm.isGallery) {
         vm.loadImages();
         vm.galleryLabel = $routeParams.galleryLabel;
 
-        // ToDo: Validate values, e.g not every gallery has an altitudeLabel
-        vm.metaTitle = vm.gallery.activity[0] + " " + vm.gallery.name + ' ' + vm.gallery.altitudeLabel +
-          ' (' + vm.gallery.country + " " + vm.gallery.region +  ')';
+        // validate some gallery attributes first, not every gallery has an altitudeLabel or region assigned
+        var altitudeLabel = vm.gallery.altitudeLabel ? vm.gallery.altitudeLabel : "";
+        var region = vm.gallery.region ? vm.gallery.region : "";
+        vm.metaTitle = vm.gallery.activity[0] + " " + vm.gallery.name + ' ' + altitudeLabel +
+          ' (' + vm.gallery.country + " " + region +  ')';
         // ToDo: create gallery type dependent descriptions and keywords
         vm.metaDescription = 'Fotoalbum ' + vm.gallery.name;
-        vm.metaKeywords = vm.gallery.name + ", " + vm.gallery.region + ", " + vm.gallery.activity[0] + ', Photoblog';
+        vm.metaKeywords = vm.gallery.name + ", " + region + ", " + vm.gallery.activity[0] + ', Photoblog';
       }
 
       function addToCart() {
