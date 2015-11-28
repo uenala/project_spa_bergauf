@@ -4,11 +4,12 @@ var users = require('../controller/user-controller.js');
 var orders = require('../controller/order-controller.js');
 
 // test route to make sure everything is working
-router.get('/ws/', function(req, res) {
+router.get('/api/', function(req, res) {
     res.json({ message: 'welcome to our webservice-api!' });
 });
 
 // api-calls are not secured by jwt-token
+// ws-calls are secured by jwt-token, for config see index.js
 router.get("/ws/users", users.getAllUsers);
 router.get("/ws/users/:id", users.getUserById);
 router.post("/api/users", users.addUser); // User-Data is getting submitted in JSON-Body
