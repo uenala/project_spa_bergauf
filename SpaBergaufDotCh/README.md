@@ -31,6 +31,7 @@
 - Run `gulp` to run the build task and setup the development environment
 This runs the frontend on localhost:3000 with browsersync
 
-## administration of users and orders
-- at least one registered user must be manually added to a new file named admins.json placed into the data-folder on the server: `../server/data/admins.json`
+## enable administration of users and orders
+- at least one registered user (data in `../server/data/users.json`) must be manually added to a new file named admins.json placed into the data-folder on the server: `../server/data/admins.json`
+(example content [{"username":"wyseli@gyr.ch"}])
 - admin users have access to administration functions for users and orders on the profile (userhome) page.
