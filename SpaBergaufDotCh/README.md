@@ -23,7 +23,7 @@
 - open new terminal window (for a separate process)
 - navigate into the server directory `cd ../server`
 - Run the server on port 3003 with `node index.js`
-- open your browser and navigate to [bergauf.app](http://localhost:3003)
+- open your browser and navigate to [bergauf.app http://localhost:3003](http://localhost:3003)
 
 ## start Frontend for development
 - open new terminal window (for a separate process)
