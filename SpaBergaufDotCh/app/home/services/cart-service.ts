@@ -12,7 +12,7 @@ module Home.Services {
     checkout(cart: Home.Data.ICart): any;
     getOrdersByUsername(username: string): any;
     getAllOrders(): any;
-    markOrderProcessed(ordered: number): any;
+    markOrderProcessed(order): any;
   }
 
   // service to handle a shopping cart's data in a cookie on the client side.
@@ -115,8 +115,8 @@ module Home.Services {
       return this.$http.get(this.baseurl + '/ws/orders/').then(this.handleSuccess, this.handleError('Es gab Probleme beim Suchen von allen Orders.'));
     }
 
-    markOrderProcessed(ordered: number): any{
-      return this.$http.put(this.baseurl + '/ws/orders/' + ordered).then(this.handleSuccess, this.handleError('Es gab Probleme beim markieren der Order ' + ordered));
+    markOrderProcessed(order): any{
+      return this.$http.put(this.baseurl + '/ws/orders/' + order.ordered, order).then(this.handleSuccess, this.handleError('Es gab Probleme beim markieren der Order ' + order.ordered));
     }
 
     get(): string { // return the name of this service

@@ -29,7 +29,7 @@
           <ul>
             <li ng-repeat="oneorder in userorders | filter:{processed:false}">
               {{oneorder.username}} um {{oneorder.ordered | date:'yyyy-MM-dd HH:mm:ss Z' }} :
-              <a href="#" ng-click="vm.markOrderProcessed(oneorder.ordered)" class="btn btn-default">
+              <a href="#" ng-click="vm.markOrderProcessed(oneorder)" class="btn btn-default">
                 <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Als verarbeitet markieren.</a>
                 <ul>
                   <li ng-repeat="oneproduct in oneorder.products">
