@@ -13,15 +13,18 @@ module Home.Services {
     galleryData : Array<Home.Data.IGallery>;
     imagesData : Array<Home.Data.IImage>;
 
-    public static $inject = ['$log','$http', '$q','$location'];
+    public static $inject = ['$log','$http', '$q','$location', 'serverUrl'];
 
-    constructor(private $log : ng.ILogService, private $http:ng.IHttpService, private $q : ng.IQService,
-                private $location : ng.ILocationService) {
+    constructor(private $log : ng.ILogService,
+                private $http:ng.IHttpService,
+                private $q : ng.IQService,
+                private $location : ng.ILocationService,
+                private serverUrl : String ) {
     }
 
     loadGalleryData() : ng.IPromise<Home.Data.IGallery> {
       var deferred = this.$q.defer();
-      var jsonfile = '/data/galleries.json';
+      var jsonfile = this.serverUrl + '/data/galleries.json';
 
       if (!this.galleryData) {
         this.$http.get(jsonfile).then((data) => {

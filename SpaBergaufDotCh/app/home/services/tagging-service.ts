@@ -15,9 +15,12 @@ module Home.Services {
     allTags : Array<Array<Home.Data.ITag>>;
 
 
-    public static $inject = ['$log','$http', '$q'];
+    public static $inject = ['$log','$http', '$q', 'serverUrl'];
 
-    constructor(private $log : ng.ILogService, private $http:ng.IHttpService, private $q : ng.IQService) {
+    constructor(private $log : ng.ILogService,
+                private $http : ng.IHttpService,
+                private $q : ng.IQService,
+                private serverUrl : String) {
 
     }
 
@@ -28,7 +31,7 @@ module Home.Services {
 
     loadAllTags() : ng.IPromise<any> {
       var deferred = this.$q.defer();
-      var jsonfile = '/data/tags.json';
+      var jsonfile = this.serverUrl + '/data/tags.json';
 
         if (!this.allTags) {
         this.$http.get(jsonfile).then((data) => {

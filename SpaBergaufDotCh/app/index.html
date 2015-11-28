@@ -27,7 +27,7 @@
       <div class="container" data-bs-collapse data-start-collapsed="true">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#/" data-match-route='/home'>
+          <a class="navbar-brand" href="#home" data-match-route='/home'>
             <span>bergauf.app</span>
             <!--span class="hidden-xs">bergauf.app</span>--
             <!--span class="visible-xs glyphicon glyphicon glyphicon-home" aria-hidden="true"></span-->
@@ -43,8 +43,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" data-bs-collapse-target>
           <ul class="nav navbar-nav pull-left">
-            <li data-match-route="/skitouren$"><a href="#/skitouren" data-bs-collapse-toggle>Skitouren</a></li>
-            <li data-match-route="/bergtouren$"><a href="#/bergtouren" data-bs-collapse-toggle>Bergtouren</a></li>
+            <li data-match-route="/skitouren$"><a href="#skitouren" data-bs-collapse-toggle>Skitouren</a></li>
+            <li data-match-route="/bergtouren$"><a href="#bergtouren" data-bs-collapse-toggle>Bergtouren</a></li>
             <li class="dropdown" data-match-route="/exped.*">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">Reisen <i class="fa fa-caret-down fa-fw"></i></a>
               <ul class="dropdown-menu">
@@ -52,56 +52,57 @@
                   <a href="#/exped/reise-nach-cabo-verde" data-bs-collapse-toggle>Kap Verde</a>
                 </li>
                 <li data-match-route="/exped/reise-nach-kuba">
-                  <a href="#/exped/reise-nach-kuba" data-bs-collapse-toggle>Kuba</a>
+                  <a href="#exped/reise-nach-kuba" data-bs-collapse-toggle>Kuba</a>
                 </li>
                 <li data-match-route="/exped/reise-nach-myanmar">
-                  <a href="#/exped/reise-nach-myanmar" data-bs-collapse-toggle>Burma (Myanmar)</a>
+                  <a href="#exped/reise-nach-myanmar" data-bs-collapse-toggle>Burma (Myanmar)</a>
                 </li>
                 <li data-match-route="/exped/oman">
-                  <a href="#/exped/oman" data-bs-collapse-toggle>Oman</a>
+                  <a href="#exped/oman" data-bs-collapse-toggle>Oman</a>
                 </li>
                 <li role="separator" class="divider"></li>
                 <li role="presentation" class="dropdown-header">Ski-Reisen</li>
                 <li data-match-route="/exped/skitouren-im-iran">
-                  <a href="#/exped/skitouren-im-iran" data-bs-collapse-toggle>Damavand (Iran)</a>
+                  <a href="#exped/skitouren-im-iran" data-bs-collapse-toggle>Damavand (Iran)</a>
                 </li>
                 <li data-match-route="/exped/eastgreenland06">
-                  <a href="#/exped/eastgreenland06" data-bs-collapse-toggle>Schweizerland (Grönland)</a>
+                  <a href="#exped/eastgreenland06" data-bs-collapse-toggle>Schweizerland (Grönland)</a>
                 </li>
                 <li data-match-route="/exped/maroc04">
-                  <a href="#/exped/maroc04" data-bs-collapse-toggle>Hoher Atlas (Marokko)</a>
+                  <a href="#exped/maroc04" data-bs-collapse-toggle>Hoher Atlas (Marokko)</a>
                 </li>
                 <li role="separator" class="divider"></li>
                 <li role="presentation" class="dropdown-header">MTB-Reisen</li>
                 <li data-match-route="/exped/mtb-reise-ladakh">
-                  <a href="#/exped/mtb-reise-ladakh" data-bs-collapse-toggle>Ladakh</a>
+                  <a href="#exped/mtb-reise-ladakh" data-bs-collapse-toggle>Ladakh</a>
                 </li>
                 <li data-match-route="/exped/altiplano">
-                  <a href="#/exped/altiplano" data-bs-collapse-toggle>Altiplano</a>
+                  <a href="#exped/altiplano" data-bs-collapse-toggle>Altiplano</a>
                 </li>
                 <li role="separator" class="divider"></li>
-                <li data-bs-collapse-toggle><a href="#/exped">Alle Reisen</a></li>
+                <li data-bs-collapse-toggle><a href="#exped">Alle Reisen</a></li>
               </ul>
             </li>
             <li class="dropdown" data-match-route="/contact|/impressum">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">Extras <i class="fa fa-caret-down fa-fw"></i></a>
               <ul class="dropdown-menu">
-                <li data-match-route="/impressum.*"><a href="#/impressum" data-bs-collapse-toggle>Impressum</a></li>
+                <li data-match-route="/impressum.*"><a href="#impressum" data-bs-collapse-toggle>Impressum</a></li>
+                <!--li data-match-route="/contact.*"><a href="#contact" data-bs-collapse-toggle>Kontakt</a></li-->
               </ul>
             </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right pull-right">
-            <li data-match-route="/login.*" ng-if="!globals.currentUser"><a href="#/login" data-bs-collapse-toggle>
+            <li data-match-route="/login.*" ng-if="!globals.currentUser"><a href="#login" data-bs-collapse-toggle>
               <i class="fa fa-sign-in fa-fw"></i> Anmelden</a></li>
             <li class="dropdown" data-match-route="/user.*|/cart.*" ng-if="globals.currentUser">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down fa-fw"></i></a>
               <ul class="dropdown-menu">
-                <li data-match-route="/userhome.*"><a href="#/userhome" data-bs-collapse-toggle>
+                <li data-match-route="/userhome.*"><a href="#userhome" data-bs-collapse-toggle>
                   <i class="fa fa-user fa-fw"></i> <span ng-bind="globals.currentUser.username">Profil</span></a></li>
                 <li role="separator" class="divider"></li>
-                <li ng-controller="HomeCtrl as home"><a href="#/login" data-bs-collapse-toggle ng-click="home.logout();"><i class="fa fa-sign-out fa-fw"></i> Abmelden</a></li>
+                <li ng-controller="HomeCtrl as home"><a href="#login" data-bs-collapse-toggle ng-click="home.logout();"><i class="fa fa-sign-out fa-fw"></i> Abmelden</a></li>
               </ul>
             </li>
             <li ng-if="globals.currentUser">
@@ -113,7 +114,7 @@
                  data-container="body">
                 <i class="fa fa-shopping-cart fa-fw"></i><span class="hidden-sm">Warenkorb</span></a>
             </li>
-            <li><a href="#/home" data-bs-collapse-toggle><i class="fa fa-search fa-fw"></i> <span class="hidden-sm">Suche</span></a></li>
+            <li><a href="#home/suche" data-bs-collapse-toggle><i class="fa fa-search fa-fw"></i> <span class="hidden-sm">Suche</span></a></li>
           </ul>
 
         </div><!-- /.navbar-collapse -->

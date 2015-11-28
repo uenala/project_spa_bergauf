@@ -23,10 +23,9 @@ module Home.Services {
       '$rootScope',
       '$log',
       '$http',
-      'Logger'
+      'Logger',
+      'serverUrl'
     ];
-
-    private baseurl: string = "http://localhost:3003";
 
     // the prefix of the cookie holding the cart-data
     private cartCookiePrefix: String = 'cartCookie';
@@ -35,7 +34,8 @@ module Home.Services {
                 private $rootScope: any,
                 private $log: ng.ILogService,
                 private $http: ng.IHttpService,
-                private logger : Logger.ILoggerService) {
+                private logger : Logger.ILoggerService,
+                private serverUrl : String) {
 
     }
 
@@ -103,20 +103,20 @@ module Home.Services {
 
     checkout(cart): any {
       this.$log.debug("CartService.checkout called");
-        return this.$http.post(this.baseurl + '/ws/orders', cart).then(this.handleSuccess, this.handleError('Error creating new order'));
+        return this.$http.post(this.serverUrl + '/ws/orders', cart).then(this.handleSuccess, this.handleError('Error creating new order'));
 
     }
 
     getOrdersByUsername(username: string): any{
-      return this.$http.get(this.baseurl + '/ws/orders/' + username).then(this.handleSuccess, this.handleError('Es gab Probleme mit dem Benutzernamen "' + username + '" beim Suchen von Orders.'));
+      return this.$http.get(this.serverUrl + '/ws/orders/' + username).then(this.handleSuccess, this.handleError('Es gab Probleme mit dem Benutzernamen "' + username + '" beim Suchen von Orders.'));
     }
 
     getAllOrders(): any{
-      return this.$http.get(this.baseurl + '/ws/orders/').then(this.handleSuccess, this.handleError('Es gab Probleme beim Suchen von allen Orders.'));
+      return this.$http.get(this.serverUrl + '/ws/orders/').then(this.handleSuccess, this.handleError('Es gab Probleme beim Suchen von allen Orders.'));
     }
 
     markOrderProcessed(order): any{
-      return this.$http.put(this.baseurl + '/ws/orders/' + order.ordered, order).then(this.handleSuccess, this.handleError('Es gab Probleme beim markieren der Order ' + order.ordered));
+      return this.$http.put(this.serverUrl + '/ws/orders/' + order.ordered, order).then(this.handleSuccess, this.handleError('Es gab Probleme beim markieren der Order ' + order.ordered));
     }
 
     get(): string { // return the name of this service

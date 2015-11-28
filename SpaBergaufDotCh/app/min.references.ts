@@ -10,12 +10,12 @@
 
 ///<reference path='home/factories/authentication-interceptor.ts' />
 
-///<reference path='home/data/gallery.ts' />
-///<reference path='home/data/image.ts' />
-///<reference path='home/data/cart.ts' />
-///<reference path='home/data/product.ts' />
-///<reference path='home/data/tag.ts' />
-///<reference path='home/data/order.ts' />
+///<reference path='home/ts/gallery.ts' />
+///<reference path='home/ts/image.ts' />
+///<reference path='home/ts/cart.ts' />
+///<reference path='home/ts/product.ts' />
+///<reference path='home/ts/tag.ts' />
+///<reference path='home/ts/order.ts' />
 
 ///<reference path='home/directives/gallery-thumbnail-directive.ts' />
 ///<reference path='home/directives/lazy-directive.ts' />

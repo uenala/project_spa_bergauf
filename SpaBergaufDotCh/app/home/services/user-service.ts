@@ -15,12 +15,10 @@ module User {
   }
 
   class User {
-    public static $inject = ['$http'
-    ];
+    public static $inject = ['$http', 'serverUrl'];
 
-    private baseurl: string = "http://localhost:3003";
 
-    constructor(private $http: ng.IHttpService) {
+    constructor(private $http: ng.IHttpService, private serverUrl : String) {
     }
 
     get():string {
@@ -28,35 +26,35 @@ module User {
     }
 
     getAll() {
-      return this.$http.get(this.baseurl + '/ws/users').then(this.handleSuccess, this.handleError('Die Liste mit allen Benutzern konnten nicht gefunden werden.'));
+      return this.$http.get(this.serverUrl + '/ws/users').then(this.handleSuccess, this.handleError('Die Liste mit allen Benutzern konnten nicht gefunden werden.'));
     }
 
     getById(id) {
-      return this.$http.get(this.baseurl + '/ws/users/' + id).then(this.handleSuccess, this.handleError('Der Benutzer "' + id + '" konnte nicht gefunden werden.'));
+      return this.$http.get(this.serverUrl + '/ws/users/' + id).then(this.handleSuccess, this.handleError('Der Benutzer "' + id + '" konnte nicht gefunden werden.'));
     }
 
     getByUsername(username) {
-      return this.$http.get(this.baseurl + '/ws/users/' + username).then(this.handleSuccess, this.handleError('Der Benutzername "' + username + '" konnte nicht gefunden werden.'));
+      return this.$http.get(this.serverUrl + '/ws/users/' + username).then(this.handleSuccess, this.handleError('Der Benutzername "' + username + '" konnte nicht gefunden werden.'));
     }
 
     create(user) {
-      return this.$http.post(this.baseurl + '/api/users', user).then(this.handleSuccess, this.handleError('Fehler beim Erstellen des Benutzers.'));
+      return this.$http.post(this.serverUrl + '/api/users', user).then(this.handleSuccess, this.handleError('Fehler beim Erstellen des Benutzers.'));
     }
 
     update(user) {
-      return this.$http.put(this.baseurl + '/ws/users/' + user.id, user).then(this.handleSuccess, this.handleError('Fehler beim Anpassen des Benutzers.'));
+      return this.$http.put(this.serverUrl + '/ws/users/' + user.id, user).then(this.handleSuccess, this.handleError('Fehler beim Anpassen des Benutzers.'));
     }
 
     delete(id) {
-      return this.$http.delete(this.baseurl + '/ws/users/' + id).then(this.handleSuccess, this.handleError('Der Benutzer "' + id + '" konnte nicht gelöscht werden.'));
+      return this.$http.delete(this.serverUrl + '/ws/users/' + id).then(this.handleSuccess, this.handleError('Der Benutzer "' + id + '" konnte nicht gelöscht werden.'));
     }
 
     isAdmin(username) {
-      return this.$http.get(this.baseurl + '/ws/admins/' + username).then(this.handleSuccess, this.handleError('Der Benutzername "' + username + '" konnte nicht gefunden werden.'));
+      return this.$http.get(this.serverUrl + '/ws/admins/' + username).then(this.handleSuccess, this.handleError('Der Benutzername "' + username + '" konnte nicht gefunden werden.'));
     }
 
     authenticateUser(username, password) {
-      return this.$http.post(this.baseurl + '/api/authenticate', { username: username, password: password }).then(this.handleSuccess, this.handleError('Fehler beim Authentisieren des Benutzers.'));
+      return this.$http.post(this.serverUrl + '/api/authenticate', { username: username, password: password }).then(this.handleSuccess, this.handleError('Fehler beim Authentisieren des Benutzers.'));
     }
 
 

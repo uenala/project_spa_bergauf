@@ -22,23 +22,29 @@ module GalleryThumbnail {
   interface IGalleryScope extends angular.IScope {
     galleryObj: Array<Home.Data.IGallery>;
     tagsObj: Array<Home.Data.ITag>;
+    serverUrl: String;
   }
 
   interface IGalleryThumbnailController {
     // specify exposed controller methods and properties
     getTags(): any;
+    getServerUrl(): String;
 
   }
 
   class galleryThumbnailController implements IGalleryThumbnailController {
 
-    public static $inject = ['Tagging'];
-    constructor(private tagging: Home.Services.ITagging) {
+    public static $inject = ['Tagging', 'serverUrl'];
+    constructor(private tagging: Home.Services.ITagging, private serverUrl: String) {
       // countries, regions and activities are now properties of the controller
     }
 
     getTags(): any {
       return this.tagging.getTags();
+    }
+
+    getServerUrl(): String {
+      return this.serverUrl;
     }
 
   }
@@ -69,6 +75,7 @@ module GalleryThumbnail {
         });
 
         scope.tagsObj = controller.getTags();
+        scope.serverUrl = controller.getServerUrl();
 
       }
     };

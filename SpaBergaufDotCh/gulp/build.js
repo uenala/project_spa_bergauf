@@ -18,24 +18,17 @@ module.exports = function (gulp, $, config) {
   // compile markup files and copy into build directory
   gulp.task('markup', ['clean'], function () {
     return gulp.src([
-      config.appMarkupFiles
-    ])
+        config.appMarkupFiles
+      ])
       .pipe(gulp.dest(config.buildDir));
   });
 
-  // copy data files into build directory
-  gulp.task('data', ['clean'], function () {
-    return gulp.src([
-      config.appDataFiles
-    ])
-      .pipe(gulp.dest(config.buildData));
-  });
 
   // compile styles and copy into build directory
   gulp.task('styles', ['clean'], function () {
     return gulp.src([
-      config.appStyleFiles
-    ])
+        config.appStyleFiles
+      ])
       .pipe($.plumber({errorHandler: function (err) {
         $.notify.onError({
           title: 'Error linting at ' + err.plugin,
@@ -82,11 +75,11 @@ module.exports = function (gulp, $, config) {
       , tsFilter = $.filter('**/*.ts');
 
     return gulp.src([
-      config.appScriptFiles,
-      config.buildDir + '**/*.html',
-      '!**/*_test.*',
-      '!**/index.html'
-    ])
+        config.appScriptFiles,
+        config.buildDir + '**/*.html',
+        '!**/*_test.*',
+        '!**/index.html'
+      ])
       .pipe($.sourcemaps.init())
       .pipe(tsFilter)
       .pipe($.typescript(config.tsProject))
@@ -261,7 +254,6 @@ module.exports = function (gulp, $, config) {
           config.buildDir + '*',
           '!' + config.buildCss,
           '!' + config.buildFonts,
-          '!' + config.buildData,
           '!' + config.buildImages,
           '!' + config.buildJs,
           '!' + config.extDir,
@@ -270,23 +262,54 @@ module.exports = function (gulp, $, config) {
       });
   });
 
+
+// gulp tasks for manual use
+
+  // convert old pics.txt to new pics.json format
+  // this have be done once while migration
+  var convert = require('gulp-convert');
+  var header = require('gulp-header');
+
+  gulp.task('csv2json', function(){
+    gulp.src('app/img-to-json/exped/*/pics.txt')
+      .pipe(header('filename;description;width;height;alt\n'))
+      .pipe(convert({
+        from: 'csv',
+        to: 'json'
+      }))
+      .pipe(gulp.dest('app/img-to-json/exped'));
+  });
+
+
+// END gulp tasks for manual use
+
 // Server stuff
   // delete server deployment directory
   gulp.task('cleanServerDir', function (cb) {
-    return $.del('../server/static/**/*', {
-      force: true
-    }, cb);
+    return $.del([config.serverStaticDir + '**/*',
+      '!' + config.serverStaticDir + '{data,data/**}'
+    ], {force: true}, cb);
+
   });
 
   gulp.task('copy2nodeServer', ['cleanServerDir'], function(cb) {
     // copy to node server
     gulp.src([config.buildDir + '**/*'])
-      .pipe(gulp.dest('../server/static'));
+      .pipe(gulp.dest(config.serverStaticDir));
     cb();
   });
 
-  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'favicon', 'fonts', 'data']);
+  // minify json files build directory
+  var jsonminify = require('gulp-jsonminify');
+
+  gulp.task('minify', function () {
+    return gulp.src([config.serverStaticDir + '**/*.json'])
+      .pipe(jsonminify())
+      .pipe(gulp.dest(config.serverStaticDir));
+  });
+
+  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'favicon', 'fonts']);
   gulp.task('copy2server', ['copy2nodeServer']);
 };
 
-
+// ToDo: Favicon isn't copied in --stage=prod build

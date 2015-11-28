@@ -301,6 +301,11 @@ module home {
         controller: 'CartCtrl',
         controllerAs: 'cart'
       })
+      .when('/contact', {
+        templateUrl: 'home/views/contact.tpl.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'contact'
+      })
       .otherwise({
         redirectTo: '/home'
       });

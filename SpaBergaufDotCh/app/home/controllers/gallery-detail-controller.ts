@@ -18,6 +18,7 @@ module Home.GalleryDetailCtrl {
     isGallery: boolean;
     addToCart: any;
     tags: any;
+    serverUrl: String;
 
 
     // $inject annotation.
@@ -33,7 +34,8 @@ module Home.GalleryDetailCtrl {
       '$window',
       'CartService',
       'Tagging',
-      '$q'];
+      '$q',
+      'serverUrl'];
 
     // dependencies are injected via AngularJS $injector
     constructor(private $log : ng.ILogService,
@@ -44,11 +46,13 @@ module Home.GalleryDetailCtrl {
                 private $window : ng.IWindowService,
                 private CartService: Home.Services.ICartService,
                 private tagging: Home.Services.ITagging,
-                private $q : ng.IQService
+                private $q : ng.IQService,
+                private _serverUrl_ : String
     ) {
 
       var vm = this;
       vm.ctrlName = 'GalleryDetailCtrl';
+      vm.serverUrl = _serverUrl_;
 
       vm.tags = tagging.getTags();
       vm.gallery = repository.getGallery();
@@ -81,7 +85,7 @@ module Home.GalleryDetailCtrl {
       var deferred = this.$q.defer();
       var log = this.$log;
       if (!this.galleryImages) {
-        var picsfile = '/images/' + this.gallery.path + '/pics.json';
+        var picsfile = this.serverUrl + '/data' + this.gallery.path + '/pics.json';
         this.$http.get(picsfile).then((data) => {
           var pics = [];
           angular.forEach(data.data, function(pic) {
