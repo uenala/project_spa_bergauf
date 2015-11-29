@@ -12,7 +12,12 @@ describe('serverUrl', function () {
     constant = serverUrl;
   }));
 
-  it('should equal http://localhost:3003', function () {
-    expect(constant).toBe('http://localhost:3003');
+  it('server should be equal to http://localhost:3003', function () {
+    expect(constant.server).toBe('http://localhost:3003');
   });
+
+  it('data base should equal to http://localhost:3003/data', function () {
+    expect(constant.data).toBe('http://localhost:3003/data');
+  });
+
 });
