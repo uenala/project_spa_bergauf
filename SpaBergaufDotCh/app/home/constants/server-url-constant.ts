@@ -11,6 +11,10 @@ module serverUrl {
   */
   angular
     .module('home')
-    .constant('serverUrl', 'http://localhost:3003');
-//    .constant('serverUrl', 'https://app.bergauf.ch');
+    .constant('serverUrl', {
+      // used for user login and cart
+      server: 'http://localhost:3003',
+      // used for image data
+      data: 'http://localhost:3003/data'
+  });
 }

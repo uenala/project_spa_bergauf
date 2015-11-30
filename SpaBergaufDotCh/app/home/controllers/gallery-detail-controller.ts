@@ -18,7 +18,7 @@ module Home.GalleryDetailCtrl {
     isGallery: boolean;
     addToCart: any;
     tags: any;
-    serverUrl: String;
+    serverUrl: any;
 
 
     // $inject annotation.
@@ -47,7 +47,7 @@ module Home.GalleryDetailCtrl {
                 private CartService: Home.Services.ICartService,
                 private tagging: Home.Services.ITagging,
                 private $q : ng.IQService,
-                private _serverUrl_ : String
+                private _serverUrl_ : any
     ) {
 
       var vm = this;
@@ -85,7 +85,7 @@ module Home.GalleryDetailCtrl {
       var deferred = this.$q.defer();
       var log = this.$log;
       if (!this.galleryImages) {
-        var picsfile = this.serverUrl + '/data' + this.gallery.path + '/pics.json';
+        var picsfile = this.serverUrl.data + this.gallery.path + '/pics.json';
         this.$http.get(picsfile).then((data) => {
           var pics = [];
           angular.forEach(data.data, function(pic) {

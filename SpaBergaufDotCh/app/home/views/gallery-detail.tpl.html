@@ -44,8 +44,8 @@
       <div class="col-lg-12">
         <div class="bergauf-gallery center-block" itemscope itemtype="http://schema.org/ImageGallery">
           <figure ng-repeat="image in galleryDetail.galleryImages" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="{{galleryDetail.serverUrl}}/data{{galleryDetail.gallery.path}}/{{image.filename}}" itemprop="contentUrl" data-size="{{image.width}}x{{image.height}}">
-              <img ng-src="{{galleryDetail.serverUrl}}/data/thumbnails{{galleryDetail.gallery.path}}/{{image.filename}}" fallback-src="{{'/images/thumbnails/placeholder.jpg'}}" itemprop="thumbnail" alt="{{image.alt}}" />
+            <a href="{{galleryDetail.serverUrl.data}}{{galleryDetail.gallery.path}}/{{image.filename}}" itemprop="contentUrl" data-size="{{image.width}}x{{image.height}}">
+              <img ng-src="{{galleryDetail.serverUrl.data}}/thumbnails{{galleryDetail.gallery.path}}/{{image.filename}}" fallback-src="{{'/images/thumbnails/placeholder.jpg'}}" itemprop="thumbnail" alt="{{image.alt}}" />
             </a>
             <figcaption itemprop="caption description">{{image.description}}</figcaption>
           </figure>

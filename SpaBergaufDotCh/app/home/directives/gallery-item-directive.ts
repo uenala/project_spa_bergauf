@@ -21,20 +21,20 @@ module GalleryItem {
 
   interface IGalleryScope extends angular.IScope {
     galleryObj: Home.Data.IGallery;
-    serverUrl: String;
+    serverUrl: any;
   }
 
   interface IGalleryItemController {
     // specify exposed controller methods and properties here
     getGallery(path): Home.Data.IGallery;
-    getServerUrl(): String;
+    getServerUrl(): any;
 
   }
 
   class galleryItemController implements IGalleryItemController {
 
     public static $inject = ['Repository', 'serverUrl'];
-    constructor(private repository : Home.Services.IRepository, private serverUrl : String) {
+    constructor(private repository : Home.Services.IRepository, private serverUrl : any) {
       // repository and serverUrl are now properties of the controller
     }
 
@@ -42,7 +42,7 @@ module GalleryItem {
       return this.repository.getGalleryFromPath(path);
     }
 
-    getServerUrl() : String {
+    getServerUrl() : any {
       return this.serverUrl;
     }
 

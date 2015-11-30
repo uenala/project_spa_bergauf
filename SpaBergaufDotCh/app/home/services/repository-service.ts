@@ -19,12 +19,12 @@ module Home.Services {
                 private $http:ng.IHttpService,
                 private $q : ng.IQService,
                 private $location : ng.ILocationService,
-                private serverUrl : String ) {
+                private serverUrl : any ) {
     }
 
     loadGalleryData() : ng.IPromise<Home.Data.IGallery> {
       var deferred = this.$q.defer();
-      var jsonfile = this.serverUrl + '/data/galleries.json';
+      var jsonfile = this.serverUrl.data + '/galleries.json';
 
       if (!this.galleryData) {
         this.$http.get(jsonfile).then((data) => {

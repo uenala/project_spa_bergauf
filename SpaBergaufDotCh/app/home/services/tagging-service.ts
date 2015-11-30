@@ -20,7 +20,7 @@ module Home.Services {
     constructor(private $log : ng.ILogService,
                 private $http : ng.IHttpService,
                 private $q : ng.IQService,
-                private serverUrl : String) {
+                private serverUrl : any) {
 
     }
 
@@ -31,7 +31,7 @@ module Home.Services {
 
     loadAllTags() : ng.IPromise<any> {
       var deferred = this.$q.defer();
-      var jsonfile = this.serverUrl + '/data/tags.json';
+      var jsonfile = this.serverUrl.data + '/tags.json';
 
         if (!this.allTags) {
         this.$http.get(jsonfile).then((data) => {
