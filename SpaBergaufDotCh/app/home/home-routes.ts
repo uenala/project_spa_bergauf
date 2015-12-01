@@ -306,6 +306,38 @@ module home {
         controller: 'ContactCtrl',
         controllerAs: 'contact'
       })
+
+      // workarounds for issue #68 "Click on a navigation item gives Sizzle.error @ jquery.js:1458 errors
+      // and issue #36 "Navbar: Dropdown do not always close after selection"
+      .when('/reise-nach-cabo-verde', {
+        redirectTo: '/exped/reise-nach-cabo-verde'
+      })
+      .when('/reise-nach-kuba', {
+        redirectTo: '/exped/reise-nach-kuba'
+      })
+      .when('/reise-nach-myanmar', {
+        redirectTo: '/exped/reise-nach-myanmar'
+      })
+      .when('/oman', {
+        redirectTo: '/exped/oman'
+      })
+      .when('/skitouren-im-iran', {
+        redirectTo: '/exped/skitouren-im-iran'
+      })
+      .when('/eastgreenland06', {
+        redirectTo: '/exped/eastgreenland06'
+      })
+      .when('/maroc04', {
+        redirectTo: '/exped/maroc04'
+      })
+      .when('/mtb-reise-ladakh', {
+        redirectTo: '/exped/mtb-reise-ladakh'
+      })
+      .when('/altiplano', {
+        redirectTo: '/exped/altiplano'
+      })
+
+      // default redirect
       .otherwise({
         redirectTo: '/home'
       });
