@@ -1,47 +1,119 @@
-<div class="jumbotron">
-  <div class="container">
-    <div class="col-sm-8 col-sm-offset-2">
-      <h1>Hallo {{vm.user.firstname}}!</h1>
-      <p>Sie sind eingeloggt!!</p>
-      <h3>Ihre offenen Bestellungen:</h3>
-      <div ng-repeat="myuserorders in vm.userOrder">
-        <ul>
-          <li ng-repeat="myorder in myuserorders | filter:{processed:false}">
-             Bestellt um {{myorder.ordered | date:'yyyy-MM-dd HH:mm:ss Z'}} :
-            <ul>
-              <li ng-repeat="myproduct in myorder.products">
-                {{myproduct.path}}
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div ng-if="vm.admin">
-        <h3>ADMIN-Funktion: Alle registrierten User:</h3>
-        <ul>
-          <li ng-repeat="user in vm.allUsers">
-            {{user.username}} ({{user.firstname}} {{user.lastname}})
-            - <a href="#" ng-click="vm.deleteUser(user.id)" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> User löschen</a>
-          </li>
-        </ul>
-        <h3>ADMIN-Funktion: Alle noch nicht verarbeiteten Bestellungen:</h3>
-        <div ng-repeat="userorders in vm.allOrders">
-          <ul>
-            <li ng-repeat="oneorder in userorders | filter:{processed:false}">
-              {{oneorder.username}} um {{oneorder.ordered | date:'yyyy-MM-dd HH:mm:ss Z' }} :
-              <a href="#" ng-click="vm.markOrderProcessed(oneorder)" class="btn btn-default">
-                <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Als verarbeitet markieren.</a>
-                <ul>
-                  <li ng-repeat="oneproduct in oneorder.products">
-                    {{oneproduct.path}}
-                  </li>
-                </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <p>&nbsp;</p>
-      <p><a href="#/login" class="btn btn-primary">Logout</a></p>
-    </div>
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">{{vm.user.firstname}} {{vm.user.lastname}} <small>{{vm.user.username}}</small>
+      <a href="#/login" class="btn btn-primary">Logout</a>
+    </h1>
   </div>
 </div>
+<!-- /.row -->
+
+<!-- start impressum http://www.bag.ch/impressum-generator -->
+
+<!-- Content Row -->
+<div class="row">
+  <div class="col-lg-12">
+    <h2>Meine offenen Bestellungen</h2>
+    <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse ng-repeat="myuserorders in vm.userOrder">
+      <div class="panel panel-default" ng-model="panels.activePanel" ng-repeat="myorder in myuserorders | filter:{processed:false}">
+        <div class="panel-heading" role="tab">
+          <h4 class="panel-title">
+            <a bs-collapse-toggle>{{myorder.products.length}} <span ng-if="myorder.products.length > 1">Bildgalerien</span><span ng-if="myorder.products.length < 2">Bildgalerie</span>
+              am {{myorder.ordered | date:'dd.MM.yyyy HH:mm:ss'}} bestellt
+              </a>
+          </h4>
+        </div>
+        <div class="panel-collapse" role="tabpanel" bs-collapse-target>
+          <div class="panel-body">
+            <ul class="list-unstyled">
+              <li ng-repeat="myproduct in myorder.products">
+                <gallery-item path="{{myproduct.path}}"></gallery-item>
+              </li>
+            </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- ToDo: show all delivered orders -->
+  </div>
+
+  <div class="col-lg-12" ng-if="vm.admin">
+
+
+      <h1 class="page-header">Shop Administrator</h1>
+
+        <h2>Alle pendenten Bestellungen</h2>
+
+      <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse ng-repeat="userorders in vm.allOrders">
+        <div class="panel panel-default" ng-model="panels.activePanel" ng-repeat="oneorder in userorders | filter:{processed:false}">
+          <div class="panel-heading" role="tab">
+            <h4 class="panel-title">
+              <a bs-collapse-toggle>
+                Bestellung von {{oneorder.username}} am {{oneorder.ordered | date:'dd.MM.yyyy HH:mm:ss' }}
+              </a>
+            </h4>
+          </div>
+          <div class="panel-collapse" role="tabpanel" bs-collapse-target>
+            <div class="panel-body">
+              <ul class="list-unstyled">
+                <li ng-repeat="oneproduct in oneorder.products">
+                  <gallery-item path="{{oneproduct.path}}"></gallery-item>
+                </li>
+              </ul>
+              <a href="#" ng-click="vm.markOrderProcessed(oneorder)" class="btn btn btn-success">
+                <i class="fa fa-check-square-o fa-fw"></i> Als verarbeitet markieren</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <h2>Alle erledigten Bestellungen</h2>
+
+      <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse ng-repeat="userorders in vm.allOrders">
+        <div class="panel panel-default" ng-model="panels.activePanel" ng-repeat="oneorder in userorders | filter:{processed:true} | orderBy:'-ordered'">
+          <div class="panel-heading" role="tab">
+            <h4 class="panel-title">
+              <a bs-collapse-toggle>
+                Bestellung von {{oneorder.username}} am {{oneorder.ordered | date:'dd.MM.yyyy HH:mm:ss' }}
+              </a>
+            </h4>
+          </div>
+          <div class="panel-collapse" role="tabpanel" bs-collapse-target>
+            <div class="panel-body">
+              <ul>
+                <li ng-repeat="oneproduct in oneorder.products">
+                  {{oneproduct.path}}
+                </li>
+              </ul>
+              <!-- ToDo: ng-click="vm.markOrderUnProcessed(oneorder)" -->
+              <!--a href="" class="btn btn btn-danger">
+                <i class="fa fa-square-o fa-fw"></i> Wieder als pendent markieren</a-->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+        <h3>Registrierte Benutzer verwalten</h3>
+        <ul class="list-unstyled">
+          <li ng-repeat="user in vm.allUsers">
+            <a href="#" ng-click="vm.deleteUser(user.id)" class="btn btn-default">
+              <i class="fa fa-trash fa-fw"></i> User löschen
+            </a> {{user.username}} ({{user.firstname}} {{user.lastname}})
+          </li>
+        </ul>
+
+      </div>
+
+
+  </div>
+  <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+
+
+
+
