@@ -7,12 +7,10 @@
 </div>
 <!-- /.row -->
 
-<!-- start impressum http://www.bag.ch/impressum-generator -->
-
 <!-- Content Row -->
-<div class="row">
+<div class="row profile">
   <div class="col-lg-12">
-    <h2>Meine offenen Bestellungen</h2>
+    <h2 class="profile-header">Meine offenen Bestellungen</h2>
     <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse ng-repeat="myuserorders in vm.userOrder">
       <div class="panel panel-default" ng-model="panels.activePanel" ng-repeat="myorder in myuserorders | filter:{processed:false}">
         <div class="panel-heading" role="tab">
@@ -37,12 +35,12 @@
     <!-- ToDo: show all delivered orders -->
   </div>
 
+
   <div class="col-lg-12" ng-if="vm.admin">
 
+    <h2 class="profile-header">Shop Administrator</h2>
 
-      <h1 class="page-header">Shop Administrator</h1>
-
-        <h2>Alle pendenten Bestellungen</h2>
+    <h3 class="profile-subheader">Alle pendenten Bestellungen</h3>
 
       <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse ng-repeat="userorders in vm.allOrders">
         <div class="panel panel-default" ng-model="panels.activePanel" ng-repeat="oneorder in userorders | filter:{processed:false}">
@@ -68,7 +66,7 @@
       </div>
 
 
-      <h2>Alle erledigten Bestellungen</h2>
+    <h3 class="profile-subheader">Alle erledigten Bestellungen</h3>
 
       <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse ng-repeat="userorders in vm.allOrders">
         <div class="panel panel-default" ng-model="panels.activePanel" ng-repeat="oneorder in userorders | filter:{processed:true} | orderBy:'-ordered'">
@@ -81,9 +79,9 @@
           </div>
           <div class="panel-collapse" role="tabpanel" bs-collapse-target>
             <div class="panel-body">
-              <ul>
+              <ul class="list-unstyled">
                 <li ng-repeat="oneproduct in oneorder.products">
-                  {{oneproduct.path}}
+                  <gallery-item path="{{oneproduct.path}}"></gallery-item>
                 </li>
               </ul>
               <!-- ToDo: ng-click="vm.markOrderUnProcessed(oneorder)" -->
@@ -91,22 +89,34 @@
                 <i class="fa fa-square-o fa-fw"></i> Wieder als pendent markieren</a-->
             </div>
           </div>
-
         </div>
-
       </div>
 
-        <h3>Registrierte Benutzer verwalten</h3>
-        <ul class="list-unstyled">
-          <li ng-repeat="user in vm.allUsers">
-            <a href="#" ng-click="vm.deleteUser(user.id)" class="btn btn-default">
-              <i class="fa fa-trash fa-fw"></i> User löschen
-            </a> {{user.username}} ({{user.firstname}} {{user.lastname}})
-          </li>
-        </ul>
 
+    <h3 class="profile-subheader">Registrierte Benutzer verwalten</h3>
+
+    <div class="panel-group" role="tablist" data-start-collapsed="true" aria-multiselectable="true" bs-collapse>
+      <div class="panel panel-default"  ng-repeat="user in vm.allUsers">
+        <div class="panel-heading" role="tab">
+          <h4 class="panel-title">
+            <a bs-collapse-toggle>
+               {{user.firstname}} {{user.lastname}} ({{user.username}})
+            </a>
+          </h4>
+        </div>
+        <div class="panel-collapse" role="tabpanel" bs-collapse-target>
+          <div class="panel-body">
+            <dl class="dl-horizontal">
+              <dt>Benutzername</dt><dd>{{user.username}}</dd>
+              <dt>Vorname</dt><dd>{{user.firstname}}</dd>
+              <dt>Nachname</dt><dd>{{user.lastname}}</dd>
+            </dl>
+            <a href="#" ng-click="vm.deleteUser(user.id)" class="btn btn btn-danger">
+              <i class="fa fa-trash fa-fw"></i> Benutzer löschen</a>
+          </div>
+        </div>
       </div>
-
+    </div>
 
   </div>
   <!-- /.col-lg-12 -->
