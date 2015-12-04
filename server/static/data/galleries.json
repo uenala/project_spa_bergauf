@@ -1014,7 +1014,7 @@
           "zoom": 6
         },
         "activity": [
-          "Skitour"
+          "skitour"
         ],
         "description": "Skitour Blatten - Anenhütte - Mittaghorn",
         "path": "/skitouren/mittaghorn-anenhuette",
@@ -1036,7 +1036,7 @@
           "zoom": 7
         },
         "activity": [
-          "Skitour"
+          "skitour"
         ],
         "description": "Skitour Oberschan / Reggella - Gauschla",
         "path": "/skitouren/reggella-gauschla",
@@ -1044,8 +1044,30 @@
         "iconAlt": "Winterwonderland",
         "date": "2015-02-070",
         "dateStart": "",
-        "country": "CH",
-        "region": "Wartau"
+        "country": "schweiz",
+        "region": "wartau"
+      },
+      "bivio-piz-surpare": {
+        "name": "Piz Surparé",
+        "navTitle": "",
+        "altitude": 3078,
+        "altitudeLabel": "3078 m",
+        "map": {
+          "x": 147800.77,
+          "y": 767296.50,
+          "zoom": 7
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Piz Surparé um Bivio",
+        "path": "/skitouren/bivio-piz-surpare",
+        "icon": "/skitouren/icons/piz-surpare.jpg",
+        "iconAlt": "Powderabfahrt im Gegenlicht",
+        "date": "2015-02-02",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "bivio"
       },
       "bivio-piz-la-pelle": {
         "name": "Piz La Pelle",
@@ -1134,6 +1156,89 @@
         "dateStart": "",
         "country": "schweiz",
         "region": "bedrettotal"
+      },
+      "redertengrat-innerthal": {
+        "name": "Redertenstock",
+        "navTitle": "",
+        "altitude": 2210,
+        "altitudeLabel": "P. 2210 m",
+        "map": {
+          "x": 212968.50,
+          "y": 712787.06,
+          "zoom": 7
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Wägitalersee - Redertengrat",
+        "path": "/skitouren/redertengrat-innerthall",
+        "icon": "/skitouren/icons/redertengrat.jpg",
+        "iconAlt": "Wägitalersee",
+        "date": "2015-01-18",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "wägital"
+      },
+      "waegitalersee-redertenstock": {
+        "name": "Redertenstock",
+        "navTitle": "",
+        "altitude": 2210,
+        "altitudeLabel": "P. 2210 m",
+        "map": {
+          "x": 212968.50,
+          "y": 712787.06,
+          "zoom": 7
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Redertenstock im Wägital",
+        "path": "/skitouren/waegitalersee-redertenstock",
+        "icon": "/skitouren/icons/skitour-redertenstock.jpg",
+        "iconAlt": "Im Aufstieg bei der Rinderweid: der Fluebrig ragt aus den Wolken",
+        "date": "2015-01-030",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "wägital"
+      },
+      "chli-griessenhorn-meiental": {
+        "name": "Chli Griessenhorn",
+        "navTitle": "",
+        "altitude": 2851,
+        "altitudeLabel": "2851 m",
+        "map": {
+          "x": 175717.40,
+          "y": 679401.84,
+          "zoom": 7
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Chli Griessenhorn im Meiental",
+        "path": "/skitouren/chli-griessenhorn-meiental",
+        "icon": "/skitouren/icons/chli-griessenhorn.jpg",
+        "iconAlt": "Chli Griessenhorn: Aufstieg im Nieselregen durch die Erlenstauden",
+        "date": "2014-04-26",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "meiental"
+      },
+      "dolomiten-skitour-punta-de-larsech-rosengarten": {
+        "name": "Punta de Larsech",
+        "navTitle": "",
+        "altitude": 2891,
+        "altitudeLabel": "2891 m",
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Rosengarten Durchquerung / Punta de Larsech",
+        "path": "/skitouren/dolomiten-skitour-punta-de-larsech-rosengarten",
+        "icon": "/skitouren/icons/punta-de-larsech.jpg",
+        "iconAlt": "Punta de Larsech: Firnabfahrt",
+        "date": "2014-04-04",
+        "dateStart": "",
+        "country": "italien",
+        "region": "rosengarten"
       },
       "dolomiten-skitour-marmolada-punta-penia": {
         "name": "Marmolada",
@@ -1242,6 +1347,28 @@
         "country": "schweiz",
         "region": "rosenlaui"
       },
+      "lue-pass-da-costainas-alp-astras": {
+        "name": "Pass da Costainas",
+        "navTitle": "",
+        "altitude": 2251,
+        "altitudeLabel": "2251 m",
+        "map": {
+          "x": 170292.20,
+          "y": 824131.28,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Lü - Pass da Costainas - Alp Astras",
+        "path": "/skitouren/lue-pass-da-costainas-alp-astras",
+        "icon": "/skitouren/icons/pass-da-costainas.jpg",
+        "iconAlt": "MTB Wegweiser Nationalpark Bike-Marathon",
+        "date": "2014-02-02",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "val-muestair"
+      },
       "fuldera-sadra-cum-da-val-muestair-piz-dora": {
         "name": "Alp Tabladatsch",
         "navTitle": "",
@@ -1307,6 +1434,23 @@
         "dateStart": "",
         "country": "schweiz",
         "region": "bannalp"
+      },
+      "innere-sommerwand": {
+        "name": "Innere Sommerwand",
+        "navTitle": "",
+        "altitude": 3122,
+        "altitudeLabel": "3122 m",
+        "activity": [
+          "skitour"
+        ],
+        "description": "Stubaier Alpen: Innere Sommerwand",
+        "path": "/skitouren/innere-sommerwandl",
+        "icon": "/skitouren/icons/innere-sommerwand.jpg",
+        "iconAlt": "Innere Sommerwand 3122 m",
+        "date": "2013-04-11",
+        "dateStart": "",
+        "country": "oesterreich",
+        "region": "stubaier-alpen"
       },
       "wildes-hinterbergl": {
         "name": "Wildes Hinterbergl",
@@ -1508,6 +1652,23 @@
         "country": "schweiz",
         "region": "schaechental"
       },
+      "wildspitze": {
+        "name": "Wildspitze",
+        "navTitle": "",
+        "altitude": 3768,
+        "altitudeLabel": "3768 m",
+        "activity": [
+          "skitour"
+        ],
+        "description": "Wildspitze",
+        "path": "/skitouren/wildspitze",
+        "icon": "/skitouren/icons/wildspitze.jpg",
+        "iconAlt": "Skitour Wildspitze 3768 m",
+        "date": "2012-03-31",
+        "dateStart": "",
+        "country": "oesterreich",
+        "region": "tirol"
+      },
       "similaun": {
         "name": "Similaun",
         "navTitle": "",
@@ -1702,6 +1863,28 @@
         "dateStart": "",
         "country": "schweiz",
         "region": "goescheneralp"
+      },
+      "stucklistock": {
+        "name": "Stucklistock",
+        "navTitle": "",
+        "altitude": 3313,
+        "altitudeLabel": "3313 m",
+        "map": {
+          "x": 174534,
+          "y": 680177,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Stucklistock",
+        "path": "/skitouren/stucklistock",
+        "icon": "/skitouren/icons/stucklistock.jpg",
+        "iconAlt": "Skitour Stucklistock 3313 m",
+        "date": "2011-04-22",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "meiental"
       },
       "cima-marmotta-koellkuppe": {
         "name": "Cima Marmotta",
@@ -1937,6 +2120,138 @@
         "country": "schweiz",
         "region": "hoch-ybrig"
       },
+      "cima-della-bondasca": {
+        "name": "Cima d. Bondasca",
+        "navTitle": "",
+        "altitude": 3289,
+        "altitudeLabel": "3289 m",
+        "map": {
+          "x": 130702.01126,
+          "y": 767149.03442,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "",
+        "path": "/skitouren/cima-della-bondasca",
+        "icon": "/skitouren/icons/cima-della-bondasca.jpg",
+        "iconAlt": "",
+        "date": "20111-01-23",
+        "dateStart": "2011-01-22",
+        "country": "schweiz",
+        "region": "bergell"
+      },
+      "piz-zupo": {
+        "name": "Piz Zupò",
+        "navTitle": "",
+        "altitude": 3996,
+        "altitudeLabel": "3996 m",
+        "map": {
+          "x": 138265.35671,
+          "y": 791778.00234,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "",
+        "path": "/skitouren/piz-zupo",
+        "icon": "/skitouren/icons/piz-zupo.jpg",
+        "iconAlt": "",
+        "date": "2010-05-23",
+        "dateStart": "2010-05-22",
+        "country": "schweiz",
+        "region": "bernina"
+      },
+      "gross_ruchen": {
+        "name": "Gross Ruchen",
+        "navTitle": "",
+        "altitude": 3138,
+        "altitudeLabel": "3138 m",
+        "map": {
+          "x": 185205.66337,
+          "y": 701974.14801,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "",
+        "path": "/skitouren/gross_ruchen",
+        "icon": "/skitouren/icons/gross-ruchen.jpg",
+        "iconAlt": "",
+        "date": "2010-04-17",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "schaechental"
+      },
+      "dufourspitze_10": {
+        "name": "Dufourspitze",
+        "navTitle": "",
+        "altitude": 4400,
+        "altitudeLabel": "P. 4400 m",
+        "map": {
+          "x": 87351.26749,
+          "y": 633209.02647,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Dufourspitze (Zermatt 2010)",
+        "path": "/skitouren/dufourspitze_10",
+        "icon": "/skitouren/icons/dufourspitze_10.jpg",
+        "iconAlt": "",
+        "date": "2010-03-24",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "monte-rosa"
+      },
+      "parrotspitze_10": {
+        "name": "Parrotspitze",
+        "navTitle": "",
+        "altitude": 4432,
+        "altitudeLabel": "4432 m",
+        "map": {
+          "x": 85428.1334,
+          "y": 633562.93686,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Parrotspitze (Zermatt 2010)",
+        "path": "/skitouren/parrotspitze_10",
+        "icon": "/skitouren/icons/parrotspitze_10.jpg",
+        "iconAlt": "",
+        "date": "2010-03-23",
+        "dateStart": "2010-03-22",
+        "country": "schweiz",
+        "region": "monte-rosa"
+      },
+      "clariden_10": {
+        "name": "Clariden",
+        "navTitle": "",
+        "altitude": 3267,
+        "altitudeLabel": "3267 m",
+        "map": {
+          "x": 188871.32512,
+          "y": 709274.09585,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "",
+        "path": "/skitouren/clariden_10",
+        "icon": "/skitouren/icons/clariden_10.jpg",
+        "iconAlt": "",
+        "date": "2010-02-14",
+        "dateStart": "2010-02-13",
+        "country": "schweiz",
+        "region": "glarner-alpen"
+      },
       "olivone": {
         "name": "Olivone",
         "navTitle": "",
@@ -1951,6 +2266,67 @@
         "dateStart": "2010-02-06",
         "country": "schweiz",
         "region": "lukmanier"
+      },
+      "winterhorn": {
+        "name": "Winterhorn",
+        "navTitle": "",
+        "altitude": 2660,
+        "altitudeLabel": "2660 m",
+        "map": {
+          "x": 160090.67794,
+          "y": 684350.88194,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "",
+        "path": "/skitouren/winterhorn",
+        "icon": "/skitouren/icons/winterhorn.jpg",
+        "iconAlt": "",
+        "date": "2010-01-03",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "urseren"
+      },
+      "mueterlishorn": {
+        "name": "Müeterlishorn",
+        "navTitle": "",
+        "altitude": 3059,
+        "altitudeLabel": "3059 m",
+        "map": {
+          "x": 164280.94695,
+          "y": 681144.44894,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "",
+        "path": "/skitouren/mueterlishorn",
+        "icon": "/skitouren/icons/mueterlishorn.jpg",
+        "iconAlt": "",
+        "date": "2009-05-30",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "goeschenertal"
+      },
+      "castor_09": {
+        "name": "Castor",
+        "navTitle": "",
+        "altitude": 4228,
+        "altitudeLabel": "4228 m",
+        "activity": [
+          "skitour"
+        ],
+        "description": "Castor - Zwillingsgletscher",
+        "path": "/skitouren/castor_09",
+        "icon": "/skitouren/icons/castor_09.jpg",
+        "iconAlt": "",
+        "date": "2009-04-04",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "monte-rosa"
       },
       "breithorn_09": {
         "name": "Breithorn",
@@ -2096,6 +2472,260 @@
         "country": "schweiz",
         "region": "mels"
       },
+      "sustenhorn": {
+        "name": "Sustenhorn",
+        "navTitle": "",
+        "altitude": 3503,
+        "altitudeLabel": "3503 m",
+        "map": {
+          "x": 172477.16166,
+          "y": 677750.20646,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Sustenhorn",
+        "path": "/skitouren/sustenhorn",
+        "icon": "/skitouren/icons/sustenhorn.jpg",
+        "iconAlt": "Sustenhorn",
+        "date": "2009-02-01",
+        "dateStart": "2009-01-31",
+        "country": "schweiz",
+        "region": "gadmen"
+      },
+      "hoech_pfaffen": {
+        "name": "Höch Pfaffen",
+        "navTitle": "",
+        "altitude": 2459,
+        "altitudeLabel": "2459 m",
+        "map": {
+          "x": 194640.68818,
+          "y": 701102.1508,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour vom Schächental ins Muotatal über Höch Pfaffen - Älpler Tor",
+        "path": "/skitouren/hoech_pfaffen",
+        "icon": "/skitouren/icons/hoech_pfaffen.jpg",
+        "iconAlt": "Höch Pfaffen - Älpler Tor",
+        "date": "2009-01-10",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "spiringen"
+      },
+      "chli_chaerpf_090104": {
+        "name": "Chli Chärpf",
+        "navTitle": "",
+        "altitude": 2700,
+        "altitudeLabel": "2700 m",
+        "map": {
+          "x": 197824.75376,
+          "y": 726031.92899,
+          "zoom": 7
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Chli Chärpf",
+        "path": "/skitouren/chli_chaerpf_090104",
+        "icon": "/skitouren/icons/chli_chaerpf_090104.jpg",
+        "iconAlt": "Chli Chärpf",
+        "date": "2009-01-04",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "glarus-sued"
+      },
+      "gorihorn": {
+        "name": "Gorihorn",
+        "navTitle": "",
+        "altitude": 2986,
+        "altitudeLabel": "2986 m",
+        "map": {
+          "x": 185776.22267,
+          "y": 792413.34187,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Davos Gorihorn / Isentällispitz",
+        "path": "/skitouren/gorihorn",
+        "icon": "/skitouren/icons/gorihorn.jpg",
+        "iconAlt": "Gorihorn / Isentällispitz",
+        "date": "2009-01-01",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "davos"
+      },
+      "lochberg": {
+        "name": "Lochberg",
+        "navTitle": "",
+        "altitude": 3074,
+        "altitudeLabel": "3074 m",
+        "map": {
+          "x": 164036.51329,
+          "y": 679271.47996,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Lochberg",
+        "path": "/skitouren/lochberg",
+        "icon": "/skitouren/icons/lochberg.jpg",
+        "iconAlt": "Lochberg",
+        "date": "2008-05-07",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "goeschenen"
+      },
+      "morgenhorn": {
+        "name": "Morgenhorn",
+        "navTitle": "",
+        "altitude": 3623,
+        "altitudeLabel": "3623 m",
+        "map": {
+          "x": 149375.84089,
+          "y": 627150.79874,
+          "zoom": 7
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Morgenhorn",
+        "path": "/skitouren/morgenhorn",
+        "icon": "/skitouren/icons/morgenhorn.jpg",
+        "iconAlt": "Morgenhorn",
+        "date": "2008-05-04",
+        "dateStart": "2008-05-03",
+        "country": "schweiz",
+        "region": "griesalp"
+      },
+      "breithorn_08": {
+        "name": "Breithorn",
+        "navTitle": "",
+        "altitude": 4164,
+        "altitudeLabel": "4164 m",
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Breithorn - Schwarztor",
+        "path": "/skitouren/breithorn_08",
+        "icon": "/skitouren/icons/breithorn_08.jpg",
+        "iconAlt": "Breithorn - Schwarztor",
+        "date": "2008-04-05",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "monte_rosa_08": {
+        "name": "Monte Rosa Sattel",
+        "navTitle": "",
+        "altitude": 4300,
+        "altitudeLabel": "4300 m",
+        "map": {
+          "x": 87351.26749,
+          "y": 633209.02647,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Monte Rosa Sattel",
+        "path": "/skitouren/monte_rosa_08",
+        "icon": "/skitouren/icons/monte_rosa_08.jpg",
+        "iconAlt": "Monte Rosa Sattel",
+        "date": "2008-04-04",
+        "dateStart": "2008-04-03",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "valpelline_08": {
+        "name": "Tête de Valpelline",
+        "navTitle": "",
+        "altitude": 3799,
+        "altitudeLabel": "3799 m",
+        "map": {
+          "x": 91521.99544,
+          "y": 611047.13251,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Tête de Valpelline",
+        "path": "/skitouren/valpelline_08",
+        "icon": "/skitouren/icons/valpelline_08.jpg",
+        "iconAlt": "Tête de Valpelline",
+        "date": "2008-04-01",
+        "dateStart": "2008-03-31",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "cima_brioschi_08": {
+        "name": "Cima Brioschi",
+        "navTitle": "",
+        "altitude": 3642,
+        "altitudeLabel": "3642 m",
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Cima Brioschi",
+        "path": "/skitouren/cima_brioschi_08",
+        "icon": "/skitouren/icons/cima_brioschi_08.jpg",
+        "iconAlt": "Cima Brioschi",
+        "date": "2008-03-30",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "hochfinsler": {
+        "name": "Hochfinsler",
+        "navTitle": "",
+        "altitude": 2421,
+        "altitudeLabel": "2421 m",
+        "map": {
+          "x": 210894.60772,
+          "y": 741471.4672,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Hochfinsler",
+        "path": "/skitouren/hochfinsler",
+        "icon": "/skitouren/icons/hochfinsler.jpg",
+        "iconAlt": "Hochfinsler",
+        "date": "2008-02-22",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "mels"
+      },
+      "clariden": {
+        "name": "Clariden",
+        "navTitle": "",
+        "altitude": 3267,
+        "altitudeLabel": "3267 m",
+        "map": {
+          "x": 188871.32512,
+          "y": 709274.09585,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Clariden / Tüfelsjoch",
+        "path": "/skitouren/clariden",
+        "icon": "/skitouren/icons/clariden.jpg",
+        "iconAlt": "Clariden / Tüfelsjoch",
+        "date": "2008-02-10",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "glarus-sued"
+      },
       "misaun": {
         "name": "Piz Misaun",
         "navTitle": "",
@@ -2117,6 +2747,194 @@
         "dateStart": "2008-02-02",
         "country": "schweiz",
         "region": "morteratsch"
+      },
+      "mutteristock_07": {
+        "name": "Mutteristock",
+        "navTitle": "",
+        "altitude": 2294,
+        "altitudeLabel": "2294 m",
+        "map": {
+          "x": 211953.65214,
+          "y": 714292.63769,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Mutteristock",
+        "path": "/skitouren/mutteristock_07",
+        "icon": "/skitouren/icons/mutteristock_07.jpg",
+        "iconAlt": "Mutteristock",
+        "date": "2007-12-16",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "waegital"
+      },
+      "buetlasse": {
+        "name": "Bütlasse",
+        "navTitle": "",
+        "altitude": 3193,
+        "altitudeLabel": "3193 m",
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Bütlasse",
+        "path": "/skitouren/buetlasse",
+        "icon": "/skitouren/icons/buetlasse.jpg",
+        "iconAlt": "Bütlasse",
+        "date": "2007-04-22",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "kiental"
+      },
+      "schwarztor_07": {
+        "name": "Schwarztor",
+        "navTitle": "",
+        "altitude": 3731,
+        "altitudeLabel": "3731 m",
+        "map": {
+          "x": 86542.33505,
+          "y": 626287.20345,
+          "zoom": 7
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Schwarztor",
+        "path": "/skitouren/schwarztor_07",
+        "icon": "/skitouren/icons/schwarztor_07.jpg",
+        "iconAlt": "Schwarztor",
+        "date": "2007-03-31",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "castor_07": {
+        "name": "Castor",
+        "navTitle": "",
+        "altitude": 4228,
+        "altitudeLabel": "4228 m",
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Castor",
+        "path": "/skitouren/castor_07",
+        "icon": "/skitouren/icons/castor_07.jpg",
+        "iconAlt": "Castor",
+        "date": "2007-03-29",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "valpelline_07": {
+        "name": "Tête de Valpelline",
+        "navTitle": "",
+        "altitude": 3799,
+        "altitudeLabel": "3799 m",
+        "map": {
+          "x": 91521.99544,
+          "y": 611047.13251,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Tête de Valpelline",
+        "path": "/skitouren/valpelline_07",
+        "icon": "/skitouren/icons/valpelline_07.jpg",
+        "iconAlt": "Tête de Valpelline",
+        "date": "2007-03-28",
+        "dateStart": "2007-03-27",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "aebihorn_07": {
+        "name": "Äbihorn",
+        "navTitle": "",
+        "altitude": 3473,
+        "altitudeLabel": "3473 m",
+        "map": {
+          "x": 96597.94348,
+          "y": 616645.52145,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Äbihorn",
+        "path": "/skitouren/aebihorn_07",
+        "icon": "/skitouren/icons/aebihorn_07.jpg",
+        "iconAlt": "Äbihorn",
+        "date": "2007-03-25",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "bluemberg_07": {
+        "name": "Blüemberg",
+        "navTitle": "",
+        "altitude": 2405,
+        "altitudeLabel": "2405 m",
+        "map": {
+          "x": 199073.73272,
+          "y": 698723.76539,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Blüemberg",
+        "path": "/skitouren/bluemberg_07",
+        "icon": "/skitouren/icons/bluemberg_07.jpg",
+        "iconAlt": "Blüemberg",
+        "date": "2007-03-11",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "muotatal"
+      },
+      "chli_chaerpf_07": {
+        "name": "Chli Chärpf",
+        "navTitle": "",
+        "altitude": 2700,
+        "altitudeLabel": "2700 m",
+        "map": {
+          "x": 197824.75376,
+          "y": 726031.92899,
+          "zoom": 7
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Chli Chärpf",
+        "path": "/skitouren/chli_chaerpf_07",
+        "icon": "/skitouren/icons/chli_chaerpf_07.jpg",
+        "iconAlt": "Chli Chärpf",
+        "date": "2007-02-08",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "glarus-sued"
+      },
+      "guggernuell": {
+        "name": "Guggernüll",
+        "navTitle": "",
+        "altitude": 2886,
+        "altitudeLabel": "2886 m",
+        "map": {
+          "x": 154155.50137,
+          "y": 740619.09368,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Guggernüll",
+        "path": "/skitouren/guggernuell",
+        "icon": "/skitouren/icons/guggernuell.jpg",
+        "iconAlt": "Guggernüll",
+        "date": "2007-02-11",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "spluegen"
       },
       "schollenhorn": {
         "name": "Schollenhorn",
@@ -2178,6 +2996,200 @@
         "dateStart": "",
         "country": "schweiz",
         "region": "realp"
+      },
+      "sissone": {
+        "name": "Monte Sissone",
+        "navTitle": "",
+        "altitude": 3330,
+        "altitudeLabel": "3330 m",
+        "map": {
+          "x": 129380.8259,
+          "y": 775351.09407,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Monte Sissone",
+        "path": "/skitouren/sissone",
+        "icon": "/skitouren/icons/sissone.jpg",
+        "iconAlt": "Monte Sissone",
+        "date": "2007-01-14",
+        "dateStart": "2007-01-13",
+        "country": "schweiz",
+        "region": "forno"
+      },
+      "ruchen": {
+        "name": "Gross Ruchen",
+        "navTitle": "",
+        "altitude": 3138,
+        "altitudeLabel": "3138 m",
+        "map": {
+          "x": 185205.66337,
+          "y": 701974.14801,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Gross Ruchen",
+        "path": "/skitouren/ruchen",
+        "icon": "/skitouren/icons/ruchen.jpg",
+        "iconAlt": "Gross Ruchen",
+        "date": "2006-04-22",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "unterschaechen"
+      },
+      "rautispitz": {
+        "name": "Rautispitz",
+        "navTitle": "",
+        "altitude": 2283,
+        "altitudeLabel": "2283 m",
+        "map": {
+          "x": 214584.47368,
+          "y": 720748.31278,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Rautispitz",
+        "path": "/skitouren/rautispitz",
+        "icon": "/skitouren/icons/rautispitz.jpg",
+        "iconAlt": "Rautispitz",
+        "date": "2006-04-15",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "glarus"
+      },
+      "pollux_06": {
+        "name": "Pollux",
+        "navTitle": "",
+        "altitude": 4092,
+        "altitudeLabel": "4092 m",
+        "map": {
+          "x": 85537.51186,
+          "y": 627520.8542,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Pollux",
+        "path": "/skitouren/pollux_06",
+        "icon": "/skitouren/icons/pollux_06.jpg",
+        "iconAlt": "Pollux",
+        "date": "2006-04-01",
+        "dateStart": "2006-03-03",
+        "sortDate": 20060401,
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "monte_rosa_06": {
+        "name": "Monte Rosa",
+        "navTitle": "",
+        "altitude": 4100,
+        "altitudeLabel": "ca. 4100 m",
+        "map": {
+          "x": 87351.26749,
+          "y": 633209.02647,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Monte Rosa, ca. 4100 m",
+        "path": "/skitouren/monte_rosa_06",
+        "icon": "/skitouren/icons/monte_rosa_06.jpg",
+        "iconAlt": "Monte Rosa",
+        "date": "2006-03-30",
+        "dateStart": "2006-03-29.6",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "aebihorn_06": {
+        "name": "Äbihorn",
+        "navTitle": "",
+        "altitude": 3473,
+        "altitudeLabel": "3473 m",
+        "map": {
+          "x": 96597.94348,
+          "y": 616645.52145,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Äbihorn",
+        "path": "/skitouren/aebihorn_06",
+        "icon": "/skitouren/icons/aebihorn_06.jpg",
+        "iconAlt": "Äbihorn",
+        "date": "2006-03-27",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "cima_di_jazzi_06": {
+        "name": "Cima di Jazzi",
+        "navTitle": "",
+        "altitude": 3803,
+        "altitudeLabel": "3803 m",
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Cima di Jazzi",
+        "path": "/skitouren/cima_di_jazzi_06",
+        "icon": "/skitouren/icons/cima_di_jazzi_06.jpg",
+        "iconAlt": "Cima di Jazzi",
+        "date": "2006-03-26",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "zermatt"
+      },
+      "alpbiglenstoeckli": {
+        "name": "Schilt",
+        "navTitle": "",
+        "altitude": 2299,
+        "altitudeLabel": "2299 m",
+        "map": {
+          "x": 213642.5,
+          "y": 728715.25,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Schilt und Alpbiglenstöckli",
+        "path": "/skitouren/alpbiglenstoeckli",
+        "icon": "/skitouren/icons/alpbiglenstoeckli.jpg",
+        "iconAlt": "Schilt und Alpbiglenstöckli",
+        "date": "2006-03-18",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "walensee"
+      },
+      "stallerberg": {
+        "name": "Stallerberg",
+        "navTitle": "",
+        "altitude": 2581,
+        "altitudeLabel": "2581 m",
+        "map": {
+          "x": 146379.4173,
+          "y": 766000.73939,
+          "zoom": 6
+        },
+        "activity": [
+          "skitour"
+        ],
+        "description": "Skitour Stallerberg",
+        "path": "/skitouren/stallerberg",
+        "icon": "/skitouren/icons/stallerberg.jpg",
+        "iconAlt": "Stallerberg",
+        "date": "2006-02-06",
+        "dateStart": "",
+        "country": "schweiz",
+        "region": "bivio"
       },
       "turba": {
         "name": "Piz Turba",
