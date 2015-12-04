@@ -64,13 +64,13 @@ module Home.GalleryDetailCtrl {
         vm.galleryLabel = $routeParams.galleryLabel;
 
         // validate some gallery attributes first, not every gallery has an altitudeLabel or region assigned
-        var altitudeLabel = vm.gallery.altitudeLabel ? vm.gallery.altitudeLabel : "";
-        var region = vm.gallery.region ? vm.gallery.region : "";
-        vm.metaTitle = vm.gallery.activity[0] + " " + vm.gallery.name + ' ' + altitudeLabel +
-          ' (' + vm.gallery.country + " " + region +  ')';
-        // ToDo: create gallery type dependent descriptions and keywords
-        vm.metaDescription = 'Fotoalbum ' + vm.gallery.name;
-        vm.metaKeywords = vm.gallery.name + ", " + region + ", " + vm.gallery.activity[0] + ', Photoblog';
+        var altitudeLabel = vm.gallery.altitudeLabel ? ' '+vm.gallery.altitudeLabel : "";
+        var country = vm.gallery.country  ? vm.convertIdToProperty(vm.gallery.country,'countries','name') : "";
+        var region = vm.gallery.region ? vm.convertIdToProperty(vm.gallery.region,'regions','name') : "";
+        var activity = vm.gallery.activity[0] ? vm.convertIdToProperty(vm.gallery.activity[0],'activities','name') : "";
+        vm.metaTitle = activity + " " + vm.gallery.name + altitudeLabel + ' (' + country + " - " + region + ')';
+        vm.metaDescription = 'Fotoalbum ' + vm.gallery.name + " " + activity + " (" + region + " - " + country + ")";
+        vm.metaKeywords = vm.gallery.name + ", " + region + ", " + activity + ', Photoblog';
       }
 
       function addToCart() {
@@ -99,6 +99,35 @@ module Home.GalleryDetailCtrl {
       }
       return deferred.promise;
     }
+
+    // get tag names from id
+    private convertIdToProperty(id, namespace, property) : String {
+
+        var propName = property ? property : 'name';
+        var namespaceId = 1;
+
+        switch (namespace) {
+          case 'activities':
+            namespaceId = 0;
+            break;
+          case 'countries':
+            namespaceId = 1;
+            break;
+          case 'regions':
+            namespaceId = 2;
+            break;
+        }
+
+        if (this.tags && this.tags[namespaceId]) {
+          for (var i = 0; i < this.tags[namespaceId].length; i++) {
+            if (id === this.tags[namespaceId][i].id) {
+              return this.tags[namespaceId][i][propName];
+            }
+          }
+        }
+
+        return id;
+      }
 
 
   }
