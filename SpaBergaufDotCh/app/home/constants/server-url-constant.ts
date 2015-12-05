@@ -14,7 +14,7 @@ module serverUrl {
     .constant('serverUrl', {
       // used for user login and cart
       server: 'http://localhost:3003',
-      // used for image data
-      data: 'http://localhost:3003/data'
+      // used for image data, use 'http://localhost:3003/data' for local sample data
+      data: 'https://data.bergauf.ch'
   });
 }
