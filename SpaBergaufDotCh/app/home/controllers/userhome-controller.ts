@@ -12,7 +12,6 @@ module Home.UserhomeCtrl {
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
     public static $inject = [
-      'UserLocalStorage',
       'User',
       '$rootScope',
       '$location',
@@ -31,8 +30,7 @@ module Home.UserhomeCtrl {
 
 
     // dependencies are injected via AngularJS $injector
-    constructor(private UserLocalStorage: Home.Services.IUserLocalStorage,
-                private User: User.IUser,
+    constructor(private User: User.IUser,
                 private $rootScope: any,
                 private $location: ng.ILocationService,
                 private $log: ng.ILogService,
@@ -62,10 +60,8 @@ module Home.UserhomeCtrl {
       }
 
       function loadCurrentUser() {
-        //UserLocalStorage.GetByUsername($rootScope.globals.currentUser.username) // Local Storage Version
-        User.getByUsername($rootScope.globals.currentUser.username) // Rest-Version, async call! wait for result with .then()
+        User.getByUsername($rootScope.globals.currentUser.username) // async call! wait for result with .then()
           .then(function (user) {
-            //vm.user = user; // Local Storage Version
             vm.user = user.data;
             $log.debug("loadCurrentUser " + vm.user.username);
             getOrdersByUsername(vm.user.username);
@@ -75,10 +71,8 @@ module Home.UserhomeCtrl {
 
       function loadAllUsers() {
         if (vm.admin) {
-          //UserLocalStorage.GetAll() // Local Storage Version
-          User.getAll() // Rest-Version, async call! wait for result with .then()
+          User.getAll() //  async call! wait for result with .then()
             .then(function (users) {
-              //vm.allUsers = users;// Local Storage Version
               vm.allUsers = users.data;
               loadAllOrders();
             });
@@ -87,8 +81,7 @@ module Home.UserhomeCtrl {
 
       function deleteUser(id) {
         if (vm.admin) {
-          //UserLocalStorage.Delete(id) // Local Storage Version
-          User.delete(id) // Rest-Version, async call!
+          User.delete(id) // async call!
             .then(function (response) { // wait for result with .then() and toast if successful
               if (response.data) {
                 Logger.logSuccess('Der User wurde gelöscht', 'empty', this, true);
@@ -134,7 +127,7 @@ module Home.UserhomeCtrl {
 
       function markOrderProcessed(ordered) {
         if (vm.admin) {
-          CartService.markOrderProcessed(ordered) // Rest-Version, async call!
+          CartService.markOrderProcessed(ordered) // async call!
             .then(function (response) { // wait for result with .then() and toast if successful
               if (response.data) {
                 Logger.logSuccess('Die Bestellung wurde als verarbeitet markiert.', 'empty', this, true);

@@ -17,7 +17,6 @@ module Authentication {
     constructor(private $http: ng.IHttpService,
                 private $cookieStore: any,
                 private $rootScope: any,
-                //private UserLocalStorage: Home.Services.IUserLocalStorage,
                 private User: User.IUser) {
     }
 
@@ -27,22 +26,6 @@ module Authentication {
 
     login(username: string, password: string , callback: any) {
 
-
-      // LocalStorage-Version
-      //  var response;
-      //  this.UserLocalStorage.GetByUsername(username)
-      //    .then(function (user) {
-      //      if (user !== null && user.password === password) {
-      //        response = {success: true};
-      //      } else {
-      //        response = {success: false, message: 'Email oder Passwort falsch'};
-      //      }
-      //      callback(response);
-      //    });
-
-
-      /* Use something like this for more secure authentication
-       ----------------------------------------------*/
       var response: any;
       this.User.authenticateUser(username, password)
           .then(function (auth: any) {

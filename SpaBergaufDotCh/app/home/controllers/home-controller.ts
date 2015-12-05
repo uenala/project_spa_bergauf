@@ -38,7 +38,7 @@ module HomeCtrl {
       function logout(): void {
         Authentication.clearCredentials();
         $log.debug("logout called");
-        logger.logWarning("logged out ", 'empty', this, true);
+        logger.logWarning("Erfolgreich ausgeloggt.", 'empty', this, true);
         $location.path('/login');
       }
 

@@ -11,7 +11,6 @@ module Home.RegisterCtrl {
     // it is better to have it close to the constructor, because the parameters must match in count and type.
     // See http://docs.angularjs.org/guide/di
     public static $inject = [
-      'UserLocalStorage',
       'User',
       '$location',
       '$rootScope',
@@ -23,8 +22,7 @@ module Home.RegisterCtrl {
     user: any;
 
     // dependencies are injected via AngularJS $injector
-    constructor(private UserLocalStorage: Home.Services.IUserLocalStorage,
-                private User: User.IUser,
+    constructor(private User: User.IUser,
                 private $location: ng.ILocationService,
                 private $rootScope: any,
                 private logger : Logger.ILoggerService) {
@@ -36,8 +34,7 @@ module Home.RegisterCtrl {
 
       function register() {
         vm.dataLoading = true;
-        //UserLocalStorage.Create(vm.user) // Local-Storage-Version
-         User.create(vm.user) // Rest-Version
+         User.create(vm.user) // async call
           .then(function (response) {
             if (response.data) {
               logger.logSuccess('Registration erfolgreich, bitte einloggen', 'empty', this, true);

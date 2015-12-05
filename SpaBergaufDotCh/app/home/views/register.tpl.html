@@ -2,28 +2,28 @@
   <div class="container">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Register</h2>
+        <h2>Registrieren</h2>
         <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
         <form name="form" ng-submit="vm.register()" role="form">
           <div class="form-group" ng-class="{ 'has-error': form.firstname.$dirty && form.firstname.$error.required }">
             <label for="firstname">Vorname</label>
-            <input type="text" name="firstname" id="firstname" class="form-control" ng-model="vm.user.firstname" required />
+            <input type="text" name="firstname" id="firstname" class="form-control" ng-model="vm.user.firstname" required placeholder="Vorname eingeben"/>
             <span ng-show="form.firstname.$dirty && form.firstname.$error.required" class="help-block">Vorname ist ein Mussfeld</span>
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.lastname.$dirty && form.lastname.$error.required }">
             <label for="lastname">Nachname</label>
-            <input type="text" name="lastname" id="lastname" class="form-control" ng-model="vm.user.lastname" required />
+            <input type="text" name="lastname" id="lastname" class="form-control" ng-model="vm.user.lastname" required placeholder="Nachname eingeben"/>
             <span ng-show="form.lastname.$dirty && form.lastname.$error.required" class="help-block">Nachname ist ein Mussfeld</span>
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
             <label for="username">Email</label>
-            <input type="email" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
+            <input type="email" name="username" id="username" class="form-control" ng-model="vm.user.username" required placeholder="Email eingeben"/>
             <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Email ist ein Mussfeld</span>
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
             <label for="password">Passwort</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Passwort ist ein Mussfeld</span>
+            <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" ng-minlength="6" required placeholder="Passwort eingeben"/>
+            <span ng-show="form.password.$dirty && (form.password.$error.required || form.password.$invalid)" class="help-block">Mindestens 6-stelliges Passwort ist ein Muss</span>
           </div>
           <div class="form-actions">
             <button type="submit" ng-disabled="vm.dataLoading" class="btn btn-primary">Registrieren</button>
@@ -33,5 +33,10 @@
         </form>
       </div>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <p>Vorteile mit einem Login: Bestellen Sie konstenlos hochauflösende Versionen Ihrer Lieblings-Bildergalerien (für den privaten Gebrauch).</p>
   </div>
 </div>

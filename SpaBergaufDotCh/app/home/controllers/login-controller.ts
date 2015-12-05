@@ -45,7 +45,7 @@ module Home.LoginCtrl {
           if (response.success) {
             Authentication.setCredentials(vm.username, response.token);
             $location.path('/userhome');
-            $log.debug("Login success for username " + vm.username);
+            $log.debug("Login erfolgreich für username " + vm.username);
             } else {
             $log.debug(response.message + " " + vm.username);
             logger.logError(response.message, 'empty', this, true);

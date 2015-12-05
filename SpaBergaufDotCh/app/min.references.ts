@@ -2,7 +2,6 @@
 
 ///<reference path='home/services/authentication-service.ts' />
 ///<reference path='home/services/repository-service.ts' />
-///<reference path='home/services/user-local-storage-service.ts' />
 ///<reference path='home/services/user-service.ts' />
 ///<reference path='home/services/cart-service.ts' />
 ///<reference path='home/services/logger-service.ts' />
