@@ -134,7 +134,7 @@ module PhotoSwipe {
             // parse picture index and gallery index from URL (#&pid=1&gid=2)
             var photoswipeParseHash = function() {
               var hash = window.location.hash.substring(1),
-                params = {};
+                params:any = {};
 
               if(hash.length < 5) {
                 return params;
@@ -164,7 +164,7 @@ module PhotoSwipe {
             };
 
             var openPhotoSwipe = function(index, galleryElement, disableAnimation) {
-              var pswpElement = document.querySelectorAll('.pswp')[0],
+              var pswpElement: any = document.querySelectorAll('.pswp')[0],
                 gallery,
                 options,
                 items;
@@ -199,10 +199,10 @@ module PhotoSwipe {
             };
 
             // loop through all gallery elements and bind events
-            var galleryElements = document.querySelectorAll( gallerySelector );
+            var galleryElements: any = document.querySelectorAll( gallerySelector );
 
             for(var i = 0, l = galleryElements.length; i < l; i++) {
-              galleryElements[i].setAttribute('data-pswp-uid', i+1);
+              galleryElements[i].setAttribute('data-pswp-uid', (i+1).toString());
               galleryElements[i].onclick = onThumbnailsClick;
             }
 
