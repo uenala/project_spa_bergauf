@@ -26,5 +26,5 @@ Photoblog-Application with JSON-based data-handling. Features: fulltext-search a
 ## Installation:
 (it is assumed that you have git, node and bower installed and working)
 
-1. [start Webserver for Rest API ](server/README.md)
-1.  [start Frontend for development](SpaBergaufDotCh/README.md)
+1. [Setup Webserver for Rest API ](server/README.md)
+1.  [Setup Frontend for development](SpaBergaufDotCh/README.md)

@@ -2,7 +2,7 @@
 
 *Generated with [ng-poly](https://github.com/dustinspecker/generator-ng-poly/tree/v0.10.3) version 0.10.3*
 
-## Setup
+## Setup Frontend
 (it is assumed that you have git, node and bower installed and working)
 
 1. (Run `npm install -g bower gulp yo generator-ng-poly@0.10.3`)

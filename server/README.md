@@ -1,6 +1,6 @@
 # node server / REST backend for SpaBergaufDotCh
 
-## Setup
+## Setup Webserver
 (it is assumed that you have git, node and bower installed and working)
 
 
@@ -26,4 +26,4 @@ Pages are accessible from the server url [http://localhost:3003] (http://localho
 - admin users have access to administration functions for users and orders on the profile (userhome) page.
 - start the webserver
 
-[Frontend readme](../SpaBergaufDotCh/README.md)
+[Frontend - Readme](../SpaBergaufDotCh/README.md)
