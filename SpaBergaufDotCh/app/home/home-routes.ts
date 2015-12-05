@@ -65,36 +65,10 @@ module home {
         controller: 'DefaultCtrl',
         controllerAs: 'home'
       })
-      .when('/skitouren', {
-        templateUrl: 'home/views/index.tpl.html',
-        controller: 'IndexCtrl',
-        controllerAs: 'home',
-        resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
-            return Repository.loadGalleryData();
-          }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
-            return Tagging.loadAllTags();
-          }]
-        }
-      })
       .when('/skitouren/:galleryLabel', {
         templateUrl: 'home/views/gallery-detail.tpl.html',
         controller: 'GalleryDetailCtrl',
         controllerAs: 'galleryDetail',
-        resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
-            return Repository.loadGalleryData();
-          }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
-            return Tagging.loadAllTags();
-          }]
-        }
-      })
-      .when('/bergtouren', {
-        templateUrl: 'home/views/index.tpl.html',
-        controller: 'IndexCtrl',
-        controllerAs: 'home',
         resolve: {
           'Something': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
@@ -117,19 +91,7 @@ module home {
           }]
         }
       })
-      .when('/exped', {
-        templateUrl: 'home/views/index.tpl.html',
-        controller: 'IndexCtrl',
-        controllerAs: 'home',
-        resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
-            return Repository.loadGalleryData();
-          }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
-            return Tagging.loadAllTags();
-          }]
-        }
-      })
+      // travel galleries with a collection (index view)
       .when('/exped/reise-nach-cabo-verde', {
         templateUrl: 'home/views/index.tpl.html',
         controller: 'IndexCtrl',
@@ -260,6 +222,7 @@ module home {
           }]
         }
       })
+      // travel galleries without a collection (gallery view)
       .when('/exped/:galleryLabel', {
         templateUrl: 'home/views/gallery-detail.tpl.html',
         controller: 'GalleryDetailCtrl',
@@ -335,6 +298,17 @@ module home {
       })
       .when('/altiplano', {
         redirectTo: '/exped/altiplano'
+      })
+
+      // vanity url's
+      .when('/skitouren', {
+        redirectTo: '/bildergalerien-nach-outdoor-aktivitaet/skitour'
+      })
+      .when('/bergtouren', {
+        redirectTo: '/bildergalerien-nach-outdoor-aktivitaet/bergtour'
+      })
+      .when('/exped', {
+        redirectTo: '/bildergalerien-nach-outdoor-aktivitaet/reise'
       })
 
       // default redirect
