@@ -264,11 +264,13 @@ module home {
         controller: 'CartCtrl',
         controllerAs: 'cart'
       })
+      /*
       .when('/contact', {
         templateUrl: 'home/views/contact.tpl.html',
         controller: 'ContactCtrl',
         controllerAs: 'contact'
       })
+      */
 
       // workarounds for issue #68 "Click on a navigation item gives Sizzle.error @ jquery.js:1458 errors
       // and issue #36 "Navbar: Dropdown do not always close after selection"

@@ -52,18 +52,18 @@ $img-height-small: 60px;
   margin: 0 0 10px;
   @media (max-width: 767px) {
     font-size: $font-size-big;
-    margin: 0 0 5px;
   }
 }
 
 .media-heading--small {
   font-size: $font-size-normal;
   font-weight: $font-weight-normal;
+  @media (max-width: 767px) {
+    margin-bottom: 5px;
+  }
+
 }
 
-.search-theme {
-  @media(max-width:767px) {
-    margin-top: 0px;
-    padding-bottom: 20px;
-  }
+.page-header-collections {
+  margin-bottom: 50px;
 }

@@ -51,6 +51,7 @@ module Home.IndexCtrl {
       vm.galleries = vm.repository.getGalleries();
       vm.themeFilter = vm.$location.path();
       vm.title = vm.getTitle(vm.themeFilter);
+
       vm.country = $routeParams.countryId;
       vm.region = $routeParams.regionId;
       vm.activity = $routeParams.activityId;
@@ -75,28 +76,28 @@ module Home.IndexCtrl {
           title = 'Skitouren';
           break;
         case '/exped/reise-nach-cabo-verde':
-          title = 'Kapverden 2015 - Inseln São Vicente, Santo Antão und Santiago';
+          title = 'Kapverden - Inseln São Vicente, Santo Antão und Santiago';
           break;
         case '/exped/reise-nach-kuba':
-          title = 'Kuba 2013 - Unterwegs in Kuba';
+          title = 'Kuba - Unterwegs in Kuba';
           break;
         case '/exped/reise-nach-myanmar':
-          title = 'Burma 2012 - eine Reise durch Myanmar';
+          title = 'Burma - eine Reise durch Myanmar';
           break;
         case '/exped/oman':
           title = 'Oman';
           break;
         case '/exped/skitouren-im-iran':
-          title = "Iran 2015 - Skitouren im Iran";
+          title = "Iran - Skitouren im Zardkouh- und Alborz-Gebirge";
           break;
         case '/exped/eastgreenland06':
-          title = "Skitouren Ost-Grönland - Karale Ski-Haute Route (Bergwelt)";
+          title = "Ost-Grönland - Karale Ski-Haute Route (Bergwelt)";
           break;
         case '/exped/maroc04':
-          title = "Marokko";
+          title = "Marokko - Skitouren im Hohen Atlas";
           break;
         case '/exped/mtb-reise-ladakh':
-          title = 'Himalaya - Ladakh das kleine Tibet (bike adventure tours Bikereise)';
+          title = 'Ladakh - MTB-Tour durch das kleine Tibet (bike adventure tours Bikereise)';
           break;
         case '/exped/altiplano':
           title = 'Altiplano Argentina - Bikeabenteuer in Nordargentinien (bike adventure tours Bikereise)';
