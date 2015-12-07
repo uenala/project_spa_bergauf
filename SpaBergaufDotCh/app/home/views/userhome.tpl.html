@@ -5,9 +5,7 @@
     </h1>
   </div>
 </div>
-<!-- /.row -->
 
-<!-- Content Row -->
 <div class="row profile">
   <div class="col-lg-12">
     <h2 class="profile-header">Meine offenen Bestellungen</h2>
@@ -31,8 +29,6 @@
       </div>
       </div>
     </div>
-
-    <!-- ToDo: show all delivered orders -->
   </div>
 
 
@@ -68,7 +64,7 @@
 
     <h3 class="profile-subheader">Alle erledigten Bestellungen</h3>
 
-      <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse ng-repeat="userorders in vm.allOrders">
+      <div class="panel-group" role="tablist" data-start-collapsed="true" aria-multiselectable="true" bs-collapse ng-repeat="userorders in vm.allOrders">
         <div class="panel panel-default" ng-model="panels.activePanel" ng-repeat="oneorder in userorders | filter:{processed:true} | orderBy:'-ordered'">
           <div class="panel-heading" role="tab">
             <h4 class="panel-title">
@@ -84,9 +80,6 @@
                   <gallery-item path="{{oneproduct.path}}"></gallery-item>
                 </li>
               </ul>
-              <!-- ToDo: ng-click="vm.markOrderUnProcessed(oneorder)" -->
-              <!--a href="" class="btn btn btn-danger">
-                <i class="fa fa-square-o fa-fw"></i> Wieder als pendent markieren</a-->
             </div>
           </div>
         </div>
@@ -119,11 +112,5 @@
     </div>
 
   </div>
-  <!-- /.col-lg-12 -->
+
 </div>
-<!-- /.row -->
-
-
-
-
-
