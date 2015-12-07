@@ -95,7 +95,7 @@ module.exports = function (gulp, $, config) {
       .pipe($.if(isProd, $.angularFilesort()))
       .pipe($.if(isProd, $.concat('app.js')))
       .pipe($.if(isProd, $.ngAnnotate()))
-      .pipe($.if(isProd, $.uglify()))
+      //.pipe($.if(isProd, $.uglify()))
       .pipe($.if(isProd, $.rev()))
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest(config.buildJs))
