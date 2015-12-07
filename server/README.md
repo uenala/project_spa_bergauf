@@ -7,7 +7,7 @@
 ### navigate into server-directory
 `cd server`
 
-### install NPM-Dependencies (defined in package.json)
+### install NPM-dependencies (defined in package.json)
 `npm i`
 
 ### start webserver

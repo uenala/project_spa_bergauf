@@ -13,7 +13,7 @@ Only needed for further development. This enables Bower, Gulp, and Yeoman genera
 1. Run `bower install` to install client-side dependencies
 1. Run `tsd install` to install TypeScript definition files
 
-## Gulp tasks
+## gulp tasks
 1. Run `gulp unitTest` to run unit tests via Karma and to create code coverage reports
 1. Run `gulp --stage=prod` to run the build task with minification etc. for the production environment
 1. Run `gulp copy2server` to copy frontend-files to the server-directory
@@ -22,7 +22,7 @@ Only needed for further development. This enables Bower, Gulp, and Yeoman genera
 ## navigate to app 
 - open your browser and navigate to [bergauf.app http://localhost:3003](http://localhost:3003)
 
-## or start separate Frontend for development
+## or start separate frontend for development
 - open new terminal window (for a separate process)
 - Run `gulp` to run the build task and setup the development environment (standard-task)
 This runs the frontend on localhost:3000 with browsersync

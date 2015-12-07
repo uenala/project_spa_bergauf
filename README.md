@@ -1,11 +1,13 @@
 # project_spa_bergauf
-CAS-FEE 2015, Group 10, 2nd Project
+[HSR CAS Front End Engineering](http://www.hsr.ch/CAS-Front-End-Engineering.12432.0.html) class 2015, Group 10, 2nd Project
 
-Photoblog-Application with JSON-based data-handling. Features: fulltext-search and filters, user-account and user-administration, cart and order-administration.
+Photoblog application with JSON-based data-handling.
 
-## Technology-Stack:
+Features: slideshows with >300 galleries, fulltext-search and filters, user-account and user-administration, cart and order-administration.
 
-### Server, REST-API:
+## Technology-Stack
+
+### Server, REST-API
 - Node.js
 - express, body-parser for REST
 - express-jwt, jsonwebtoken for Token based authentication
@@ -23,8 +25,8 @@ Photoblog-Application with JSON-based data-handling. Features: fulltext-search a
 - bower
 - gulp
 
-## Installation:
+## Installation
 (it is assumed that you have git, node and bower installed and working)
 
 1. [Setup Webserver for Rest API ](server/README.md)
-1.  [Setup Frontend for development](SpaBergaufDotCh/README.md)
+1. [Setup Frontend for development](SpaBergaufDotCh/README.md)
