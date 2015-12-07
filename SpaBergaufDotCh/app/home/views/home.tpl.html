@@ -24,20 +24,19 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-    <p class="search-filter" ng-if="home.query || home.activity || home.country  || home.region">
-      Suchfilter:
+    <h1 class="search-filter" ng-if="home.query || home.activity || home.country  || home.region">
+      <span class="sr-only">Alle Bildergalerien mit </span>Suchfilter:
       <span ng-if="home.activity">"{{home.activity | convertIdToProperty:home.tags:'activities':'name'}}"</span>
       <span ng-if="home.country">"{{home.country | convertIdToProperty:home.tags:'countries':'name'}}"</span>
       <span ng-if="home.region">"{{home.region | convertIdToProperty:home.tags:'regions':'name'}}"</span>
       {{home.query}}
-    </p>
+    </h1>
   </div>
   <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
     <p class="search-hits">Bildergalerien: {{filteredGalleries.length}} von {{home.galleries.length}}</p>
   </div>
 </div>
 
-<h1 class="sr-only">Zu den Bildergalerien der Skitouren, Bergtouren, MTB-Touren und Reisen</h1>
 <div class="row">
   <div ng-repeat="gallery in filteredGalleries = (home.galleries | orderBy:'-date' | filter:home.query | filter:home.activity:true | filter:home.country:true  | filter:home.region:true) track by gallery.path" class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
     <gallery-thumbnail gallery="{{gallery}}"></gallery-thumbnail>

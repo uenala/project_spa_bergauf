@@ -82,6 +82,7 @@ body {
 .search-filter {
   font-size: $font-size-big;
   font-weight: $font-weight-bold;
+  margin: 0 0 10px;
   padding-bottom: 30px;
   @media(max-width:767px) {
     padding-bottom: 0px;
