@@ -1,5 +1,5 @@
 # project_spa_bergauf
-[HSR CAS Front End Engineering](http://www.hsr.ch/CAS-Front-End-Engineering.12432.0.html) class 2015, Group 10, 2nd Project
+[HSR CAS Front End Engineering](http://www.hsr.ch/CAS-Front-End-Engineering.12432.0.html){:target="_blank"} class 2015, Group 10, 2nd Project
 
 Photoblog application with JSON-based data-handling.
 
