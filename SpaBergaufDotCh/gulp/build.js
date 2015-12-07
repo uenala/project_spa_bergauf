@@ -257,7 +257,8 @@ module.exports = function (gulp, $, config) {
           '!' + config.buildImages,
           '!' + config.buildJs,
           '!' + config.extDir,
-          '!' + config.buildDir + 'index.html'
+          '!' + config.buildDir + 'index.html',
+          '!' + config.buildDir + 'favicon.ico'
         ], {mark: true}, cb);
       });
   });
