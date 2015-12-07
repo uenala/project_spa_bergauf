@@ -1,4 +1,4 @@
-<div class="row">
+<div ng-cloak class="row">
   <div class="col-lg-12">
     <h1 class="page-header">{{vm.user.firstname}} {{vm.user.lastname}} <small>{{vm.user.username}}</small>
       <a href="#/login" class="btn btn-primary">Logout</a>
@@ -7,7 +7,7 @@
 </div>
 
 <div class="row profile">
-  <div class="col-lg-12">
+  <div ng-cloak class="col-lg-12">
     <h2 class="profile-header">Meine offenen Bestellungen</h2>
     <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse ng-repeat="myuserorders in vm.userOrder">
       <div class="panel panel-default" ng-model="panels.activePanel" ng-repeat="myorder in myuserorders | filter:{processed:false}">
@@ -32,7 +32,7 @@
   </div>
 
 
-  <div class="col-lg-12" ng-if="vm.admin">
+  <div ng-cloak class="col-lg-12" ng-if="vm.admin">
 
     <h2 class="profile-header">Shop Administrator</h2>
 
