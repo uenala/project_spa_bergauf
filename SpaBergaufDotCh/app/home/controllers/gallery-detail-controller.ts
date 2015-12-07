@@ -30,11 +30,10 @@ module Home.GalleryDetailCtrl {
       '$routeParams',
       '$http',
       'Repository',
-      '$rootScope',
-      '$window',
       'CartService',
       'Tagging',
       '$q',
+      '$filter',
       'serverUrl'];
 
     // dependencies are injected via AngularJS $injector
@@ -42,11 +41,10 @@ module Home.GalleryDetailCtrl {
                 $routeParams : IGalleryRouteParams,
                 private $http : ng.IHttpService,
                 private repository : Home.Services.IRepository,
-                private $rootScope :ng.IRootScopeService,
-                private $window : ng.IWindowService,
                 private CartService: Home.Services.ICartService,
                 private tagging: Home.Services.ITagging,
                 private $q : ng.IQService,
+                private $filter : ng.IFilterService,
                 private _serverUrl_ : any
     ) {
 
@@ -65,9 +63,13 @@ module Home.GalleryDetailCtrl {
 
         // validate some gallery attributes first, not every gallery has an altitudeLabel or region assigned
         var altitudeLabel = vm.gallery.altitudeLabel ? ' '+vm.gallery.altitudeLabel : "";
-        var country = vm.gallery.country  ? vm.convertIdToProperty(vm.gallery.country,'countries','name') : "";
-        var region = vm.gallery.region ? vm.convertIdToProperty(vm.gallery.region,'regions','name') : "";
-        var activity = vm.gallery.activity[0] ? vm.convertIdToProperty(vm.gallery.activity[0],'activities','name') : "";
+        var country = vm.gallery.country  ?
+          $filter('convertIdToProperty')(vm.gallery.country, vm.tags, 'countries','name') : "";
+        var region = vm.gallery.region ?
+          $filter('convertIdToProperty')(vm.gallery.region, vm.tags, 'regions','name') : "";
+        var activity = vm.gallery.activity[0] ?
+          $filter('convertIdToProperty')(vm.gallery.activity[0], vm.tags, 'activities','name') : "";
+
         vm.metaTitle = activity + " " + vm.gallery.name + altitudeLabel + ' (' + country + " - " + region + ')';
         vm.metaDescription = 'Fotoalbum ' + vm.gallery.name + " " + activity + " (" + region + " - " + country + ")";
         vm.metaKeywords = vm.gallery.name + ", " + region + ", " + activity + ', Photoblog';
@@ -99,35 +101,6 @@ module Home.GalleryDetailCtrl {
       }
       return deferred.promise;
     }
-
-    // get tag names from id
-    private convertIdToProperty(id, namespace, property) : String {
-
-        var propName = property ? property : 'name';
-        var namespaceId = 1;
-
-        switch (namespace) {
-          case 'activities':
-            namespaceId = 0;
-            break;
-          case 'countries':
-            namespaceId = 1;
-            break;
-          case 'regions':
-            namespaceId = 2;
-            break;
-        }
-
-        if (this.tags && this.tags[namespaceId]) {
-          for (var i = 0; i < this.tags[namespaceId].length; i++) {
-            if (id === this.tags[namespaceId][i].id) {
-              return this.tags[namespaceId][i][propName];
-            }
-          }
-        }
-
-        return id;
-      }
 
 
   }
