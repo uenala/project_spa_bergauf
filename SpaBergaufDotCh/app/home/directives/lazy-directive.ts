@@ -37,6 +37,7 @@ module Lazy {
         /*eslint "no-unused-vars": [2, {"args": "none"}]*/
         $timeout(function () {
           $(element).lazyload({
+            event: 'scroll change keyup',
             effect: 'fadeIn',
             effectspeed: 500,
             'skip_invisible': false
