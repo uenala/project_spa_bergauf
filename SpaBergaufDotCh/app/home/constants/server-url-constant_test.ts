@@ -16,8 +16,8 @@ describe('serverUrl', function () {
     expect(constant.server).toBe('http://localhost:3003');
   });
 
-  it('data base should equal to http://localhost:3003/data', function () {
-    expect(constant.data).toBe('http://localhost:3003/data');
+  it('data base should equal to https://data.bergauf.ch', function () {
+    expect(constant.data).toBe('https://data.bergauf.ch');
   });
 
 });
