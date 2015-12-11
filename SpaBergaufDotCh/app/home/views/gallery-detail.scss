@@ -10,7 +10,7 @@
   height: auto;
 }
 
-.bergauf-gallery figure {
+.bergauf-gallery figure{
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -39,6 +39,14 @@
   display: none;
 }
 
+.btn-cart {
+  width: 147px;
+  height: 98px;
+  padding: 6px 6px;
+  white-space: normal;
+  word-wrap:break-word;
+}
+
 /* photoswipe ui overlay */
 .pswp__caption__center {
   text-align: left;
@@ -50,7 +58,3 @@
   }
 }
 
-/* additional navigation / info after gallery thumbnails */
-.navbar-gallery {
-  padding-bottom: 0px;
-}

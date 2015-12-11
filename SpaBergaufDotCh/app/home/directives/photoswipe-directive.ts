@@ -214,7 +214,7 @@ module PhotoSwipe {
           };
 
           // execute above function
-          initPhotoSwipeFromDOM('.bergauf-gallery');
+          initPhotoSwipeFromDOM('.gallery');
 
         }, 0);
       }
