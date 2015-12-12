@@ -216,7 +216,7 @@ module PhotoSwipe {
           // execute above function
           initPhotoSwipeFromDOM('.gallery');
 
-        }, 0);
+        }, 1000);
       }
     };
   }
