@@ -10,7 +10,7 @@
   height: auto;
 }
 
-.bergauf-gallery figure{
+.bergauf-gallery figure, .bergauf-gallery .figure {
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -40,11 +40,22 @@
 }
 
 .btn-cart {
-  width: 147px;
-  height: 98px;
+  width: 160px;
+  height: 107px;
   padding: 6px 6px;
   white-space: normal;
   word-wrap:break-word;
+  @media screen and (max-width: 768px) {
+    width: 158px;
+  }
+  @media screen and (max-width: 412px) {
+    width: 143px;
+    height: 96px;
+  }
+  @media screen and (max-width: 360px) {
+    width: 120px;
+    height: 80px;
+  }
 }
 
 /* photoswipe ui overlay */
