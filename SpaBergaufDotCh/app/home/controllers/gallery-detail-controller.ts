@@ -19,6 +19,7 @@ module Home.GalleryDetailCtrl {
     addToCart: any;
     tags: any;
     serverUrl: any;
+    cartButtonTooltip: string;
 
 
     // $inject annotation.
@@ -34,7 +35,8 @@ module Home.GalleryDetailCtrl {
       'Tagging',
       '$q',
       '$filter',
-      'serverUrl'];
+      'serverUrl',
+      '$rootScope'];
 
     // dependencies are injected via AngularJS $injector
     constructor(private $log : ng.ILogService,
@@ -45,7 +47,8 @@ module Home.GalleryDetailCtrl {
                 private tagging: Home.Services.ITagging,
                 private $q : ng.IQService,
                 private $filter : ng.IFilterService,
-                private _serverUrl_ : any
+                private _serverUrl_ : any,
+                private $rootScope: any
     ) {
 
       var vm = this;
@@ -73,6 +76,10 @@ module Home.GalleryDetailCtrl {
         vm.metaTitle = activity + " " + vm.gallery.name + altitudeLabel + ' (' + country + " - " + region + ')';
         vm.metaDescription = 'Fotoalbum ' + vm.gallery.name + " " + activity + " (" + region + " - " + country + ")";
         vm.metaKeywords = vm.gallery.name + ", " + region + ", " + activity + ', Photoblog';
+
+        vm.cartButtonTooltip = ($rootScope.globals && $rootScope.globals.currentUser) ?
+          "zip File als Download aller Bilder dieser Galerie bestellen" :
+          "Um ein zip File aller Bilder dieser Galerie zu bestellen bitte zuerst anmelden";
       }
 
       function addToCart() {
