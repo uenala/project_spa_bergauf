@@ -6,6 +6,7 @@ module HomeCtrl {
 
     ctrlName: string;
     currentDate: Date;
+    currentUserOrders: number;
     logout: any;
 
     // $inject annotation.
@@ -17,6 +18,8 @@ module HomeCtrl {
       'Authentication',
       '$cookieStore',
       '$rootScope',
+      '$scope',
+      'CartService',
       '$log',
       'Logger'
     ];
@@ -26,12 +29,21 @@ module HomeCtrl {
                 private Authentication: Authentication.IAuthentication,
                 private $cookieStore: any,
                 private $rootScope: any,
+                private $scope: any,
+                private CartService: Home.Services.ICartService,
                 private $log: ng.ILogService,
                 private logger : Logger.ILoggerService) {
       var vm = this;
       vm.ctrlName = 'HomeCtrl';
       vm.currentDate = new Date();
+      vm.currentUserOrders = CartService.getNumberOfProducts();
       vm.logout = logout;
+
+      $scope.$watch(() => { return CartService.getNumberOfProducts(); }, (newValue, oldValue) => {
+        if (newValue !== oldValue) {
+          this.currentUserOrders = CartService.getNumberOfProducts();
+        }
+      });
 
       $rootScope.globals = this.$cookieStore.get('globals'); //read globals back from cookie as rootscope get's cleared on refresh!
 

@@ -112,7 +112,13 @@
                  data-animation="am-slide-right"
                  bs-aside="aside"
                  data-container="body">
-                <i class="fa fa-shopping-cart fa-fw"></i><span class="hidden-sm">Warenkorb</span></a>
+                <i class="fa fa-shopping-cart fa-fw"></i><span class="hidden-sm">Warenkorb</span>
+                <span ng-controller="HomeCtrl as home">
+                  <span ng-if="home.currentUserOrders > 0">
+                    <span class="badge" ng-bind="home.currentUserOrders"></span>
+                  </span>
+                </span>
+              </a>
             </li>
             <li><a href="#suche" data-bs-collapse-toggle><i class="fa fa-search fa-fw"></i> <span class="hidden-sm">Suche</span></a></li>
           </ul>
