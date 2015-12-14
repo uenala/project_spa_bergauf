@@ -13,10 +13,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -26,10 +26,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -39,10 +39,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -52,10 +52,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -70,10 +70,10 @@ module home {
         controller: 'GalleryDetailCtrl',
         controllerAs: 'galleryDetail',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -83,10 +83,10 @@ module home {
         controller: 'GalleryDetailCtrl',
         controllerAs: 'galleryDetail',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -97,10 +97,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -110,10 +110,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -123,10 +123,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -136,10 +136,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -149,10 +149,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -162,10 +162,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -175,10 +175,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -188,10 +188,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -201,10 +201,10 @@ module home {
         controller: 'IndexCtrl',
         controllerAs: 'home',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -214,10 +214,10 @@ module home {
         controller: 'GalleryDetailCtrl',
         controllerAs: 'galleryDetail',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -228,10 +228,10 @@ module home {
         controller: 'GalleryDetailCtrl',
         controllerAs: 'galleryDetail',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
@@ -241,10 +241,10 @@ module home {
         controller: 'UserhomeCtrl',
         controllerAs: 'vm',
         resolve: {
-          'Something': ['Repository', function (Repository: Home.Services.IRepository) {
+          'GalleryData': ['Repository', function (Repository: Home.Services.IRepository) {
             return Repository.loadGalleryData();
           }],
-          'Somethingelse': ['Tagging', function (Tagging: Home.Services.ITagging) {
+          'Tags': ['Tagging', function (Tagging: Home.Services.ITagging) {
             return Tagging.loadAllTags();
           }]
         }
