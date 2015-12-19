@@ -5,11 +5,13 @@
 
 describe('HomeCtrl', function () {
   var ctrl;
+  var scope;
 
   beforeEach(angular.mock.module('home'));
 
   beforeEach(inject(function ($rootScope, $controller) {
-    ctrl = $controller('HomeCtrl');
+    scope = $rootScope.$new();
+    ctrl = $controller('HomeCtrl' , {$scope: scope});
   }));
 
   it('should have ctrlName as HomeCtrl', function () {
